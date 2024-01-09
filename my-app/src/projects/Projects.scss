@@ -8,3 +8,9 @@
        margin-bottom: 20px;
     }
    }
+.projects {
+   display: flex;
+    justify-content: space-between; /* Align items at the start and end */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px;
+}

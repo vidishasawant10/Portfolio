@@ -1,9 +1,11 @@
-.home-container {
-  margin-top: 20px;
+.about-section {
+  align-items: center;
+  justify-content: left;
+  padding-top: 100px;
 }
-.home-container .home-section {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 20px;
+
+h1 {
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=About.css.map */
