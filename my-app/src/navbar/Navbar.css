@@ -2,14 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: white;
+  padding: 10px;
   color: black;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
+  background-image: url(./logo.png);
+}
+
+.logoimage {
+  width: 180px;
+  height: 150px;
 }
 
 nav ul {

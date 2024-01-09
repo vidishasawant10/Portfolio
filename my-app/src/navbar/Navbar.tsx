@@ -1,10 +1,11 @@
 import React from 'react';
 import './Navbar.css';
+import logo from './logo.png';
 
 const Navbar: React.FC = () => {
   return (
     <div className="navbar">
-      <div className="logo" >Logo</div>
+    <img src= {logo} alt="Logo" className='logoimage'/>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
