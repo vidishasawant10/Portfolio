@@ -1,12 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './Home';
+import Navbar from './navbar/Navbar';
+import Home from './home/Home';
+import About from './about/About';
+import Education from './education/Education';
+
+import Projects from './projects/Projects';
+import Contact from './contact/Contact';
+
 
 function App() {
   return (
     <div className="App">
+      <title>Vidisha Portfolio</title>
+      <Navbar/>
       <Home/>
+      <About/>
+      <Education/>
+      <Projects/>
+      <Contact/>
       
     </div>
   );
