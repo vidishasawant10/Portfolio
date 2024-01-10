@@ -51,20 +51,20 @@ const Projects = () => {
 
 
   return (
-    <div className="container home-container">
+    <div className="row">
+    <div className="col-md-8 info-section">
+          <h1 className='title'>Projects</h1>
+        <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
+        <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} />
+        <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
+        <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
+        <Project title="Student Hub" imgSrc={studenthub} url={StudenthubUrl} open={Studenthub} />
+        <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
+        <Project title="Friendly Car Dealership" imgSrc={spaceinvader} url={CardealerUrl} open={Cardealer} />
+        <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
+        <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
 
-    <div className="projects">
-      <h1 className='titleproject'>Projects</h1>
-      <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
-      <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} />
-      <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
-      <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
-      <Project title="Student Hub" imgSrc={studenthub} url={StudenthubUrl} open={Studenthub} />
-      <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
-      <Project title="Friendly Car Dealership" imgSrc={studenthub} url={CardealerUrl} open={Cardealer} />
-      <Project title="NYC Taxi Trip" imgSrc={studenthub} url={NycTaxiUrl} open={NycTaxitrip} />
-      <Project title="Audio Analysis" imgSrc={studenthub} url={AudioanalysisUrl} open={Audioanalysis} />
-</div>
+      </div>
     </div>
   );
 };

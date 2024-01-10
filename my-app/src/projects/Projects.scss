@@ -3,6 +3,8 @@
    margin: 10px;
    position: relative;
    overflow: hidden;
+   justify-content: space-between;
+   align-items: center;
  }
  
  .project img {
@@ -48,4 +50,9 @@
   align-items: left;
   justify-content: left;
   padding-top: 100px;
+}
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
