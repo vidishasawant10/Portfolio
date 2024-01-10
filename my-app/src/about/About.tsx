@@ -3,7 +3,7 @@ import './About.css';
 
 const About: React.FC = () => {
  return (
-  <div className="container home-container">
+  
   <div className="row">
     <div className="col about-section">
           <h1 className='title'>About</h1>
@@ -14,7 +14,7 @@ const About: React.FC = () => {
 
             <p>I am currently looking for Full-Time opportunities do check out my projects, resume. Reach out to me through the Contact Details mentioned at the end.</p>
             </div>
-            </div></div>
+            </div>
             
  );
 };

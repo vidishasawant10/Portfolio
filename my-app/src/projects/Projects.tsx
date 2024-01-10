@@ -1,33 +1,72 @@
-import React from 'react';
-import './Projects.css';
+import React from 'react'
+import './Projects.css'
+import canyimage from './CANYTour.png'
+import daily from './DailyYou.png'
+import easyway from './EasyWay.png'
+import spaceinvader from './SpaceInvader.png'
+import hope from './Hope.png'
+import studenthub from './StudentHub.png'
 
-const Projects: React.FC = () => {
- return (
+type ProjectProps = {
+  title: string;
+  imgSrc: string;
+  url: string;
+  open: () => void;
+};
+
+const Project: React.FC<ProjectProps> = ({ title, imgSrc, url, open }) => {
+  const [hover, setHover] = React.useState(false);
+
+  return (
+
+    <div className="project" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={open}>
+      <img src={imgSrc}/>
+      <div className="title">{title}</div>
+      <a href={url} target="_blank" rel="noopener noreferrer" className={hover ? "hover-link" : "hidden"}>
+      </a>
+    </div>
+  );
+};
+
+const Projects = () => {
+  const CanyUrl = "https://github.com/vidishasawant10/CANY-Tour-Guide";
+  const EasywayUrl = "https://github.com/vidishasawant10/EasyWay";
+  const HopeUrl = "https://github.com/vidishasawant10/Hope";
+  const DailyyouUrl = "https://github.com/vidishasawant10/Daily-You";
+  const SpaceinvaderUrl = "https://github.com/vidishasawant10/spaceInvader";
+  const StudenthubUrl = "https://github.com/vidishasawant10/StudentHub";
+  const CardealerUrl = "https://github.com/vidishasawant10/Friendly-Car-Dealership";
+  const NycTaxiUrl = "https://github.com/vidishasawant10/NYCTaxiTrip";
+  const AudioanalysisUrl = "https://github.com/vidishasawant10/AudioAnalysis";
+
+  const Cany = () => window.open(CanyUrl, "_blank");
+  const Easyway = () => window.open(EasywayUrl, "_blank");
+  const Hope = () => window.open(HopeUrl, "_blank");
+  const Studenthub = () => window.open(StudenthubUrl, "_blank");
+  const Dailyyou = () => window.open(DailyyouUrl, "_blank");
+  const Spaceinvader = () => window.open(SpaceinvaderUrl, "_blank");
+  const Cardealer = () => window.open(CardealerUrl, "_blank");
+  const NycTaxitrip = () => window.open(NycTaxiUrl, "_blank");
+  const Audioanalysis = () => window.open(AudioanalysisUrl, "_blank");
+
+
+  return (
     <div className="container home-container">
-      {/* <div className="row"> */}
-        <div className="col home-section">
-          <h1 className='title'>Projects</h1>
-          <div className='projects'>
-            <a href=''>CANY - Tour Guide</a>
-            <a href=''>EasyWay</a>
-            <a href=''>Daily You</a>
-          </div>
-          <div className='projects'>
-            <a href=''>Hope</a>
-            <a href=''>Student Hub</a>
-            <a href =''>Space Invader</a>
-            </div>
-            <div className='projects'>
-            <a href=''>Friendly Car Dealership</a>
-            <a href=''>Big Query and Data Warehousing</a>
-            <a href=''>NYC Taxi Trip</a>
-            <a href=''>Audio Analysis</a>
-          </div>
-          <p>Check out my projects section to see the variety of work I've done.</p>
-        </div>
-      </div>
-    // </div>
- );
+
+    <div className="projects">
+      <h1 className='titleproject'>Projects</h1>
+      <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
+      <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} />
+      <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
+      <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
+      <Project title="Student Hub" imgSrc={studenthub} url={StudenthubUrl} open={Studenthub} />
+      <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
+      <Project title="Friendly Car Dealership" imgSrc={studenthub} url={CardealerUrl} open={Cardealer} />
+      <Project title="NYC Taxi Trip" imgSrc={studenthub} url={NycTaxiUrl} open={NycTaxitrip} />
+      <Project title="Audio Analysis" imgSrc={studenthub} url={AudioanalysisUrl} open={Audioanalysis} />
+</div>
+    </div>
+  );
 };
 
 export default Projects;

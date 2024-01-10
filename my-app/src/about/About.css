@@ -1,11 +1,11 @@
 .about-section {
-  align-items: center;
+  align-items: left;
   justify-content: left;
   padding-top: 100px;
 }
 
 h1 {
   font-weight: bold;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }/*# sourceMappingURL=About.css.map */

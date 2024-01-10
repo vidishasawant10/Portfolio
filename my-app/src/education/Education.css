@@ -5,8 +5,8 @@
 
 .detail {
   display: flex;
-  justify-content: space-between; /* Align items at the start and end */
-  align-items: center; /* Center items vertically */
+  justify-content: left; /* Align items at the start and end */
+  align-items: left; /* Center items vertically */
   margin-bottom: 10px;
 }
 .detail .date {

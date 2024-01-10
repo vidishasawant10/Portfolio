@@ -4,9 +4,8 @@ import './Education.css';
 
 const Education: React.FC = () => {
  return (
-    <div className="container home-container">
-    {/* //   <div className="row"> */}
-        <div className="col education-section">
+  <div className='row'>
+        <div className="col-md-11 education-section">
           <h1 className='title'>Education & Work Experience</h1>
           <div className='work'>
           <h3 className='subtitle'>Work Experience</h3>
@@ -29,8 +28,7 @@ const Education: React.FC = () => {
           </div>
           <p className='detail'>Check out my projects section to see the variety of work I've done.</p>
         </div>
-    {/* //   </div> */}
-     </div>
+        </div>
  );
 };
 

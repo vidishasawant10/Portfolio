@@ -4,15 +4,18 @@
     height: 400px;
   }
   .info-section {
-    align-items: center;
+    align-items: left;
     justify-content: left;
     padding-top: 100px;
   }
   p {
     font-size: 30px;
-    padding-right: 10px;
+    padding-right: 5px;
   }
   h1 {
     font-weight: bold;
+  }
+  .row {
+    padding-left: 100px;
   }
 }/*# sourceMappingURL=Home.css.map */
