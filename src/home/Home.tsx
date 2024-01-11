@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.css';
 import profile from './ProfilePhoto.jpg'
-import { url } from 'inspector';
 
 const handleGithub = () => {
   window.open('https://github.com/vidishasawant10','_blank');
