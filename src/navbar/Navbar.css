@@ -5,6 +5,7 @@
   padding: 10px;
   color: white;
   background: linear-gradient(to right, #252c42, #3030a6);
+  box-shadow: none !important;
 }
 
 .logo {
@@ -33,4 +34,8 @@ nav ul li a {
   color: white;
   font-weight: bold;
   font-size: 24px;
+}
+
+body .navbar {
+  box-shadow: none;
 }/*# sourceMappingURL=Navbar.css.map */
