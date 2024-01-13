@@ -21,7 +21,7 @@ const Home: React.FC = () => {
          </div>
          <h3 className='col-md-1 pb-1'>@vidishasawant10</h3>
          <div className='ps-2'>
-         <a onClick= {handleGithub} className="fa-brands fa-linkedin fa-2xl p-3"></a>
+         <a onClick= {handleLinkedln} className="fa-brands fa-linkedin fa-2xl p-1"></a>
          <a onClick= {handleGithub} className="fa-brands fa-square-github fa-2xl p-3"></a>
          </div>
          </div>
