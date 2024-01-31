@@ -58,8 +58,8 @@ const Projects = () => {
     <div className="col info-section">
         <h1 className='title'>Projects</h1>
         <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
-        <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
         <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} />
+        <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
         <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
         <Project title="Student Hub" imgSrc={studenthub} url={StudenthubUrl} open={Studenthub} />
         <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />

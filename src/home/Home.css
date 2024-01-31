@@ -22,6 +22,12 @@
     height: 400px;
     animation: scaleUp 1s ease-in-out;
   }
+  .profileimage:hover {
+    transform: scale(1.021);
+  }
+  .profileimage:active {
+    transform: scale(0.95) rotateZ(1.1deg);
+  }
   .info-section {
     align-items: left;
     justify-content: left;
