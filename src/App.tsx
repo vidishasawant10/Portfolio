@@ -14,7 +14,7 @@ function App() {
     // Hide the splash screen after a certain delay
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3000); // Change the delay as per your requirement
+    }, 1000); // Change the delay as per your requirement
 
     return () => clearTimeout(timer);
   }, []);
