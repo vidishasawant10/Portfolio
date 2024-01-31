@@ -18,8 +18,8 @@
 }
 @media screen {
   .profileimage {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     animation: scaleUp 1s ease-in-out;
   }
   .info-section {
