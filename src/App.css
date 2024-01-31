@@ -1,8 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 .App {
   /* text-align: center; */
-  scroll-behavior: smooth;
   -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -26,6 +26,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* .SplashScreenContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center; /* Add this line */
+ */
 
 .App-link {
   color: #61dafb;
@@ -33,13 +40,50 @@
 
 @keyframes App-logo-spin {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 .title{
   font-weight: bold;
 }
+.loader {
+  position: relative;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 0;
+  animation: typewriter 1s steps(10) infinite alternate, blink 0.2s steps(10) infinite;
+}
 
+.loader-text {
+  font-size: 40px;
+  font-weight: 700;
+  background: linear-gradient(to right, #159957, #155799);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 240px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+}
