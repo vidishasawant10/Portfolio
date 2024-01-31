@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     <div className="col-md-8 info-section">
           <h1 className='title'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
-          <p>I'm a Full Stack Developer at WelSpot Inc. with expertise in Software Engineering graduated from Pace University with Master's in Computer Science.</p>
+          <p>Hey there! I'm a passionate Full Stack Developer at WelSpot Inc based in California. With a solid foundation in Computer Science from Pace University and hands-on experience in the industry, I'm dedicated to crafting innovative solutions that merge cutting-edge technology with user-centric design.</p>
          </div>
          <div className="col-md-4 profile-section p-5">
          <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>

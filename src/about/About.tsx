@@ -7,12 +7,11 @@ const About: React.FC = () => {
   <div className="row">
     <div className="col about-section">
           <h1 className='title'>About</h1>
-          <p>I am someone who is driven by passion and ambition. With a keen interest in Software Engineering and development, 
-            I strive to improve my knowledge and abilities by challenging myself to learn new concepts and technologies beyond my work through 
-            pesonal projects and self-learning. Outsitde of work,  apply my technical skills and creative mindset to develop innovative web applications that solve complex problems and deliver value to users. I work with a variety of technologies, such as React, TypeScript, BootStrap, Figma, UI/UX, and  AWS, to create user-friendly and responsive interfaces, optimize performance, and ensure security and reliability.</p>
-            <p>I graduated from Pace University with a Master's Degree in Computer Science where I gained academic experience in software development and implemented it in the projects. I have worked using Docker, Kubernetes, AWS, Putty, WinSCP for project named Data Warehousing for my Introduction to Parallel Computing Coursework. In addition I have also worked with Cucumber, Cypress, Linux, React Native, Angular and many more and implemented it in my projects.</p>
-
-            <p>I am currently looking for Full-Time opportunities do check out my projects, resume. Reach out to me through the Contact Details mentioned at the end.</p>
+          <p>I'm deeply fascinated by the ever-evolving world of Software Engineering and committed to continuous learning and growth. I love learning new things, even outside of my job, and I'm always working on personal projects to get better.</p>
+         <p>In my free time, I channel my technical expertise and creative mindset into developing innovative web applications that address complex issues and deliver tangible value to users. I'm proficient in a wide array of technologies, including React, TypeScript, Bootstrap, Figma, UI/UX design principles, and AWS. From designing user-friendly interfaces to optimizing performance and ensuring security and reliability, I'm committed to delivering high-quality solutions that exceed expectations.</p>
+         <p>I hold a Master's Degree in Computer Science from Pace University, where I gained invaluable academic experience in software development. During my studies, I had the opportunity to work on a variety of projects, including a challenging Data Warehousing project for my Introduction to Parallel Computing Coursework. In this project, I utilized advanced tools and technologies such as Docker, Kubernetes, AWS, Putty, and WinSCP to implement efficient data management solutions.</p>
+         <p>Additionally, I have hands-on experience with a diverse range of tools and frameworks, including Cucumber, Cypress, Linux, React Native, and Angular. I've successfully implemented these technologies in various projects, honing my skills and expanding my expertise along the way.</p>
+         <p>Currently, I'm actively seeking Full-Time opportunities where I can leverage my extensive skill set and passion for innovation. I invite you to explore my projects and resume to learn more about my experience and qualifications. Feel free to reach out to me via the contact details provided below – I'm excited to connect and discuss how I can contribute to your team's success!</p>
             </div>
             </div>
             
