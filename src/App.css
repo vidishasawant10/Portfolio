@@ -26,13 +26,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-/* .SplashScreenContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: center; /* Add this line */
- */
+
 
 .App-link {
   color: #61dafb;

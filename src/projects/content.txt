@@ -47,3 +47,10 @@ function App() {
 }
 
 export default App;
+/* .SplashScreenContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center; /* Add this line */
+ */
