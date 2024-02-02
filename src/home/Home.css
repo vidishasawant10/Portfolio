@@ -40,6 +40,9 @@
   h1 {
     font-weight: bold;
   }
+  .name {
+    text-align: left;
+  }
   .row {
     padding-left: 100px;
   }

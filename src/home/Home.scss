@@ -43,6 +43,8 @@ p {
 h1 {
    font-weight: bold;
 }
+.name {text-align: left;
+}
 .row{
    padding-left: 100px;
 }
@@ -123,6 +125,7 @@ h1 {
 	backdrop-filter: blur(4px);
 	-webkit-backdrop-filter: blur(4px);
   }
+
   
   
 }

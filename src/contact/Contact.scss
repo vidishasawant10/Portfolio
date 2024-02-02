@@ -2,7 +2,7 @@
       margin-top: 20px;
     
       .home-section {
-          padding: 20px;
+          padding: 10px;
           border: 1px solid #ddd;
           border-radius: 5px;
           margin-bottom: 20px;
@@ -16,7 +16,7 @@
          flex-direction: column;
          align-items: center;
          justify-content: center;
-         padding: 20px 30px;
+         padding: 10px 10px;
          gap: 13px;
          position: relative;
          overflow: hidden;
@@ -57,7 +57,7 @@
       }
       
       .acceptButton {
-         width: 100px; // BEGIN: Increased button width
+         width: 120px; // BEGIN: Increased button width
          height: 40px; // BEGIN: Increased button height
          background-color: #7b57ff;
          transition-duration: .2s;
@@ -72,7 +72,7 @@
       }
       
     .declineButton {
-         width: 100px; // BEGIN: Increased button width
+         width: 120px; // BEGIN: Increased button width
          height: 40px; // BEGIN: Increased button height
          background-color: #7b57ff;
          transition-duration: .2s;

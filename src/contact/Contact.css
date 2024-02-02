@@ -2,7 +2,7 @@
   margin-top: 20px;
 }
 .home-container .home-section {
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 30px;
+  padding: 10px 10px;
   gap: 13px;
   position: relative;
   overflow: hidden;
@@ -49,7 +49,7 @@
   flex-direction: row;
 }
 .home-container .acceptButton {
-  width: 100px;
+  width: 120px;
   height: 40px;
   background-color: #7b57ff;
   transition-duration: 0.2s;
@@ -63,7 +63,7 @@
   font-family: Arial, sans-serif;
 }
 .home-container .declineButton {
-  width: 100px;
+  width: 120px;
   height: 40px;
   background-color: #7b57ff;
   transition-duration: 0.2s;

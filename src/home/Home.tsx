@@ -12,7 +12,7 @@ const Home: React.FC = () => {
  return (
   <div className="row">
     <div className="col-md-8 info-section">
-          <h1 className='title'>Vidisha Vijay Sawant</h1>
+          <h1 className='name'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
           <p>Hey there! I'm a passionate Full Stack Developer at WelSpot Inc based in California. With a solid foundation in Computer Science from Pace University and hands-on experience in the industry, I'm dedicated to crafting innovative solutions that merge cutting-edge technology with user-centric design.</p>
          </div>
