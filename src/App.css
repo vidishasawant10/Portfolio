@@ -3,6 +3,7 @@
   /* text-align: center; */
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
+  padding: 20px;
 }
 
 .App-logo {
@@ -46,6 +47,8 @@
   font-weight: bold;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .loader {
   position: relative;

@@ -28,7 +28,7 @@
          font-size: calc(10px + 2vmin);
          font-weight: bold;
          color: rgb(26, 26, 26);
-         font-family: Arial, sans-serif; // BEGIN: Added font-family
+         font-family: Arial, sans-serif; 
       }
       
       .contactDescription {
@@ -36,13 +36,13 @@
          font-size: 20px;
          font-weight: 400;
          color: rgb(99, 99, 99);
-         font-family: Arial, sans-serif; // BEGIN: Added font-family
+         font-family: Arial, sans-serif; 
       }
       
       .contactDescription a {
          --tw-text-opacity: 1;
          color: rgb(59 130 246);
-         font-family: Arial, sans-serif; // BEGIN: Added font-family
+         font-family: Arial, sans-serif; 
       }
       
       .contactDescription a:hover {
@@ -57,33 +57,35 @@
       }
       
       .acceptButton {
-         width: 120px; // BEGIN: Increased button width
-         height: 40px; // BEGIN: Increased button height
+         width: 140px; 
+         height: 50px; 
          background-color: #7b57ff;
          transition-duration: .2s;
          border: none;
          color: rgb(241, 241, 241);
          cursor: pointer;
-         font-weight: 600;
+         font-weight: 700;
+         font-size: 15px;
          border-radius: 20px;
          box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
          transition: all .6s ease;
-         font-family: Arial, sans-serif; // BEGIN: Added font-family
+         font-family: Arial, sans-serif; 
       }
       
     .declineButton {
-         width: 120px; // BEGIN: Increased button width
-         height: 40px; // BEGIN: Increased button height
+         width: 140px; 
+         height: 50px; 
          background-color: #7b57ff;
          transition-duration: .2s;
          border: none;
          color: rgb(241, 241, 241);
          cursor: pointer;
-         font-weight: 600;
+         font-weight: 700;
+         font-size: 15px;
          border-radius: 20px;
          box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
          transition: all .6s ease;
-         font-family: Arial, sans-serif; // BEGIN: Added font-family
+         font-family: Arial, sans-serif;
     }
       
       .declineButton:hover {
@@ -96,5 +98,10 @@
          background-color: #9173ff;
          box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
          transition-duration: .2s;
+      }
+      p{
+         align-items: center;
+         justify-content: center;
+         text-align: center;
       }
     }

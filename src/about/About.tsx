@@ -4,7 +4,7 @@ import './About.css';
 const About: React.FC = () => {
  return (
   
-  <div className="row">
+  <div className="row" id = 'about'>
     <div className="col about-section">
           <h1 className='title'>About</h1>
           <p>I'm deeply fascinated by the ever-evolving world of Software Engineering and committed to continuous learning and growth. I love learning new things, even outside of my job, and I'm always working on personal projects to get better.</p>

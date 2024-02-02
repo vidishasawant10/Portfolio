@@ -1,9 +1,9 @@
 .project {
    display: inline-block;
-   margin: 10px;
+   margin: 20px;
    position: relative;
    overflow: hidden;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
  }
  
@@ -20,7 +20,7 @@
    right: 0;
    background-color: rgba(0, 0, 0, 0.6);
    color: white;
-   padding: 5px;
+   padding: 10px;
    text-align: center;
    //opacity: 0;
    //transition: opacity .3s ease;
@@ -47,8 +47,8 @@
   font-weight: bold;
  }
  .project-section{
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   padding-top: 100px;
   
 }
@@ -56,5 +56,118 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 15px;
+}
+.card-container {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+.card-container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg,#48557d, #4949a7);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(10px);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .img-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.card .img-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #242b40, #3030a6);
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
+  position: relative; /* Add position relative */
+
+}
+
+.card .img-content svg {
+  width: 100px;
+  height: 100px;
+  fill: #e8e8e8;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+  color: #000000;
   padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+
+}
+
+.card:hover .content {
+  opacity: 2;
+  transform: translateY(0);
+  background-color: #242b40bb;
+  
+
+}
+
+.card:hover .img-content {
+  scale: 3.0;
+  filter: blur(7px);
+
+}
+
+.card:hover .img-content svg {
+  fill: #242b40;
+  background-color: #242b40;
+}
+.more{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
 }

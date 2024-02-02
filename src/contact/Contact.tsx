@@ -10,12 +10,12 @@ const handleLinkedln = () => {
 };
 const Contact: React.FC = () => {
  return (
-    <div className="container home-container">
+    <div className="container home-container" id = 'contact'>
        <div className="row">
         <div className="col-md-8 contactcard">
-          <h1 className='contactTitle'>Contact Me</h1>
+          <h1 className='title'>Contact Me</h1>
           
-          <p className='contactDescription'>I'm actively seeking new challenges and opportunities to contribute my skills and expertise to impactful projects. Whether it's discussing a potential role, sharing ideas, or simply connecting with fellow professionals in the field, I'm always open to new conversations. Feel free to reach out, I'd love to hear from you!</p>
+          <p>I'm actively seeking new challenges and opportunities to contribute my skills and expertise to impactful projects. Whether it's discussing a potential role, sharing ideas, or simply connecting with fellow professionals in the field, I'm always open to new conversations. Feel free to reach out, I'd love to hear from you!</p>
           <div className="buttonContainer">
             <button className="acceptButton" onClick={handleEmail}>Email</button>
           <button className="declineButton" onClick={handleLinkedln}>Linkedln</button>

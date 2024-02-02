@@ -49,28 +49,30 @@
   flex-direction: row;
 }
 .home-container .acceptButton {
-  width: 120px;
-  height: 40px;
+  width: 140px;
+  height: 50px;
   background-color: #7b57ff;
   transition-duration: 0.2s;
   border: none;
   color: rgb(241, 241, 241);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 15px;
   border-radius: 20px;
   box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
   transition: all 0.6s ease;
   font-family: Arial, sans-serif;
 }
 .home-container .declineButton {
-  width: 120px;
-  height: 40px;
+  width: 140px;
+  height: 50px;
   background-color: #7b57ff;
   transition-duration: 0.2s;
   border: none;
   color: rgb(241, 241, 241);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 15px;
   border-radius: 20px;
   box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
   transition: all 0.6s ease;
@@ -85,4 +87,9 @@
   background-color: #9173ff;
   box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
   transition-duration: 0.2s;
+}
+.home-container p {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }/*# sourceMappingURL=Contact.css.map */

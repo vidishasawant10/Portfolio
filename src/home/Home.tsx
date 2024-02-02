@@ -10,7 +10,7 @@ const handleLinkedln = () => {
 };
 const Home: React.FC = () => {
  return (
-  <div className="row">
+  <div className="row" id='home'>
     <div className="col-md-8 info-section">
           <h1 className='name'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
