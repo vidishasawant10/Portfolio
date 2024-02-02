@@ -54,9 +54,10 @@ const Projects = () => {
 
 
   return (
-    <div className="row justify-content-center" id='projects'>
+    <div id='projects'>
    {/* <div className="col">  */}
        <h1 className='title'>Projects</h1> 
+       <div  className="d-flex justify-content-center" >
         {/* <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
         <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
         <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
@@ -232,7 +233,7 @@ const Projects = () => {
 </div>
 <p className='more'>See my Certifications and more about me on Linkedln and explore many projects on my GitHub profile.</p>
 </div>
-// </div>
+</div>
   );
 };
 
