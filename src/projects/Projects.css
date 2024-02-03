@@ -71,7 +71,8 @@
   height: 420px;
   position: relative;
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
+  padding-top: 10px;
 }
 
 .card-container::before {
@@ -173,4 +174,34 @@
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+}
+
+@media (max-width: 900px) {
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    padding-left: 140px;
+  }
+  .card-container {
+    width: 500px;
+    height: 400px;
+  }
+  .card .img-content svg {
+    width: 50px;
+    height: 50px;
+  }
+  .card .content .heading {
+    font-size: 30px;
+  }
+  .card .content p {
+    font-size: 20px;
+  }
+  .card:hover .content {
+    padding: 10px;
+  }
+  .more {
+    padding-top: 40px;
+  }
 }/*# sourceMappingURL=Projects.css.map */

@@ -214,7 +214,7 @@ const Projects = () => {
 </div>
 </div>
 
-<div className="card-container">
+<div className="card-container mobile p-3">
   <div className="card">
   <div className="img-content">
   <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} />
