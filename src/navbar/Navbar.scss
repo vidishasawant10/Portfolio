@@ -46,9 +46,9 @@ body .navbar {
 .dropdown_menu {
   display: none;
   position: absolute;
-  right: 2rem;
+  right: 4rem;
   top: 150px;
-  width: 300px;
+  width: 80%;
   height: 0;
   background: #26267256;
   backdrop-filter: blur(15px);
@@ -59,10 +59,16 @@ body .navbar {
 }
 
 .dropdown_menu.open {
-  height: 300px;
+  height: 100%;
 }
 .dropdown_menu li a {
-  color: white; /* Set text color to white */
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  font-weight: bold; 
+  padding-top: 50px;/* Set text color to white */
 }
 
 .dropdown_menu li {
