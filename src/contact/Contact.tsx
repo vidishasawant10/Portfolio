@@ -10,9 +10,9 @@ const handleLinkedln = () => {
 };
 const Contact: React.FC = () => {
  return (
-    <div className="container home-container" id = 'contact'>
+    <div id='contact'>
        <div className="row">
-        <div className="col-md-8 contactcard">
+        <div className="col-md-11 contactcard">
           <h1 className='title'>Contact Me</h1>
           
           <p>I'm actively seeking new challenges and opportunities to contribute my skills and expertise to impactful projects. Whether it's discussing a potential role, sharing ideas, or simply connecting with fellow professionals in the field, I'm always open to new conversations. Feel free to reach out, I'd love to hear from you!</p>

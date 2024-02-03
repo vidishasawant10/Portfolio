@@ -170,10 +170,10 @@
 }
 
 .more {
-  display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -202,7 +202,8 @@
     padding: 10px;
   }
   .more {
-    padding-top: 40px;
+    padding: 80px;
+    text-align: center;
   }
   h1 {
     text-align: center;

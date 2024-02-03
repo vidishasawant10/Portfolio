@@ -1,16 +1,7 @@
-.home-container {
-  margin-top: 20px;
-}
-.home-container .home-section {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-.home-container .contactcard {
+.contactcard {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,33 +12,40 @@
   overflow: hidden;
   padding-bottom: 40px;
 }
-.home-container .contactTitle {
+
+.contactTitle {
   font-size: calc(10px + 2vmin);
   font-weight: bold;
   color: rgb(26, 26, 26);
   font-family: Arial, sans-serif;
 }
-.home-container .contactDescription {
+
+.contactDescription {
   text-align: center;
   font-size: 20px;
   font-weight: 400;
   color: rgb(99, 99, 99);
   font-family: Arial, sans-serif;
 }
-.home-container .contactDescription a {
+
+.contactDescription a {
   --tw-text-opacity: 1;
   color: rgb(59, 130, 246);
   font-family: Arial, sans-serif;
 }
-.home-container .contactDescription a:hover {
+
+.contactDescription a:hover {
   text-decoration-line: underline;
 }
-.home-container .buttonContainer {
+
+.buttonContainer {
   display: flex;
   gap: 20px;
   flex-direction: row;
+  padding-bottom: 20px;
 }
-.home-container .acceptButton {
+
+.acceptButton {
   width: 140px;
   height: 50px;
   background-color: #7b57ff;
@@ -56,13 +54,14 @@
   color: rgb(241, 241, 241);
   cursor: pointer;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
   transition: all 0.6s ease;
   font-family: Arial, sans-serif;
 }
-.home-container .declineButton {
+
+.declineButton {
   width: 140px;
   height: 50px;
   background-color: #7b57ff;
@@ -71,24 +70,21 @@
   color: rgb(241, 241, 241);
   cursor: pointer;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
   transition: all 0.6s ease;
   font-family: Arial, sans-serif;
 }
-.home-container .declineButton:hover {
+
+.declineButton:hover {
   background-color: #9173ff;
   box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
   transition-duration: 0.2s;
 }
-.home-container .acceptButton:hover {
+
+.acceptButton:hover {
   background-color: #9173ff;
   box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
   transition-duration: 0.2s;
-}
-.home-container p {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }/*# sourceMappingURL=Contact.css.map */
