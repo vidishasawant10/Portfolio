@@ -10,10 +10,14 @@
   height: 40vmin;
   pointer-events: none;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
   }
 }
 
