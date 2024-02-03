@@ -15,9 +15,16 @@
   flex-direction: column;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 900px) {
   .container {
     flex-direction: row;
+  }
+  .div {
+    font-size: 10px;
+  }
+  /* Add this rule to reduce font size for smaller screens */
+  body {
+    font-size: 14px; /* Adjust the font size as needed */
   }
 }
 

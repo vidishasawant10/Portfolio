@@ -54,7 +54,7 @@ const Projects = () => {
 
 
   return (
-    <div id='projects'>
+    <div id='projects' className='projects'>
    {/* <div className="col">  */}
        <h1 className='title'>Projects</h1> 
        <div  className="d-flex justify-content-center" >

@@ -4,13 +4,22 @@
   justify-content: center; /* Center items horizontally */
 }
 
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+}
+
 .project {
   display: inline-block;
-  margin: 20px;
+  margin: 30px;
   position: relative;
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  padding-left: 30px; /* Add padding to the left */
+  padding-right: 30px;
 }
 
 .project img {
