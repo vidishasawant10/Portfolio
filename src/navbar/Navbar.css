@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   color: white;
   box-shadow: none !important;
   position: fixed;
@@ -80,6 +79,16 @@ body .navbar {
   color: white;
 }
 
+.navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #262672;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
 @media (max-width: 992px) {
   .navbar .links {
     display: none;
@@ -89,6 +98,5 @@ body .navbar {
   }
   .dropdown_menu {
     display: block;
-    z-index: 999; /* Increase z-index for dropdown menu */
   }
 }/*# sourceMappingURL=Navbar.css.map */

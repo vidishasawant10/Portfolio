@@ -4,7 +4,16 @@ import logo from './logo1.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [fix, setFix] = useState(false);
 
+  function handleScroll() {
+    if (window.scrollY > 20) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  }
+ window.addEventListener('scroll', handleScroll);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     const dropdownMenu = document.querySelector('.dropdown_menu');
@@ -27,7 +36,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="navbar">
+      <div className= {fix ? 'navbar fixed' : 'navbar'} id='navbar'>
         <img src={logo} alt="Logo" className="logoimage" />
         <nav>
           <ul className="links">

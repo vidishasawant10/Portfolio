@@ -1,15 +1,14 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 body {
-  margin: 0;
-  padding-left: 20px;
-  padding-right: 50px;
+  padding: 30px;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     -webkit-text-fill-color: aliceblue;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #242b40, #3030a6);
+  background: linear-gradient(#242b40, #3030a6);
  
   
 }
@@ -20,3 +19,9 @@ code {
     color: white;
     
 }
+/* @media (max-width: 991px) {
+  body {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+} */
