@@ -40,6 +40,9 @@ body .navbar {
   font-size: 2rem;
   cursor: pointer;
   display: none;
+  position: absolute;
+  right: 5px;
+  top: 0;
 }
 
 .dropdown_menu {
@@ -100,5 +103,18 @@ body .navbar {
   }
   .dropdown_menu {
     display: block;
+  }
+  .dropdown_menu li a {
+    display: block;
+    text-align: center;
+    justify-content: flex-end;
+    margin-top: 2%;
+  }
+  .logoimage {
+    position: absolute;
+    margin-top: 45px;
+    padding: 2px;
+    width: 80px;
+    height: 100px;
   }
 }/*# sourceMappingURL=Navbar.css.map */

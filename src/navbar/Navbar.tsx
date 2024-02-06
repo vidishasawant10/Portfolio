@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       <div className="dropdown_menu">
-        <ul>
+        <ul className='pt-5 px-4 text-center'>
           <li><a href="#home" onClick={() => closeMenuAndNavigate('home')}>Home</a></li>
           <li><a href="#about" onClick={() => closeMenuAndNavigate('about')}>About</a></li>
           <li><a href="#education" onClick={() => closeMenuAndNavigate('education')}>Education</a></li>
