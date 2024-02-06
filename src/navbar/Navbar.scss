@@ -46,36 +46,40 @@ body .navbar {
 .dropdown_menu {
   display: none;
   position: absolute;
-  right: 4rem;
-  top: 150px;
-  width: 80%;
+  right: 0;
+  top: 0;
+  width: 50%;
   height: 0;
-  background: #26267256;
+  background: #262672df;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
-  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: right step-end;
+  // text-align: center;
 }
 
 .dropdown_menu.open {
-  height: 100%;
+  height:100%;
 }
 .dropdown_menu li a {
   color: white;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  // text-align: center;
   font-size: large;
   font-weight: bold; 
-  padding-top: 50px;/* Set text color to white */
+  padding-top: 10px;/* Set text color to white */
+  margin-top: 10px;
 }
 
 .dropdown_menu li {
-  padding: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  margin-top: 30px; /* Add margin-top to move items slightly below */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;/* Change justify-content to flex-end */
   color: white;
 }
 .navbar.fixed {

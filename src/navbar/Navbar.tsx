@@ -5,6 +5,7 @@ import logo from './logo1.png';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [fix, setFix] = useState(false);
+  const [isCrossIcon, setIsCrossIcon] = useState(false);
 
   function handleScroll() {
     if (window.scrollY > 20) {
@@ -13,9 +14,12 @@ const Navbar: React.FC = () => {
       setFix(false);
     }
   }
- window.addEventListener('scroll', handleScroll);
+
+  window.addEventListener('scroll', handleScroll);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setIsCrossIcon(!isCrossIcon);
     const dropdownMenu = document.querySelector('.dropdown_menu');
     if (dropdownMenu) {
       dropdownMenu.classList.toggle('open');
@@ -24,6 +28,7 @@ const Navbar: React.FC = () => {
 
   const closeMenuAndNavigate = (sectionId: string) => {
     setIsOpen(false);
+    setIsCrossIcon(false);
     const dropdownMenu = document.querySelector('.dropdown_menu');
     if (dropdownMenu) {
       dropdownMenu.classList.remove('open');
@@ -36,10 +41,10 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className= {fix ? 'navbar fixed' : 'navbar'} id='navbar'>
+      <div className={fix ? 'navbar fixed' : 'navbar'} id='navbar'>
         <img src={logo} alt="Logo" className="logoimage" />
         <nav>
-          <ul className="links">
+          <ul className={`links ${isOpen ? 'open' : ''}`}>
             <li><a href="#home" onClick={() => closeMenuAndNavigate('home')}>Home</a></li>
             <li><a href="#about" onClick={() => closeMenuAndNavigate('about')}>About</a></li>
             <li><a href="#education" onClick={() => closeMenuAndNavigate('education')}>Education</a></li>
@@ -49,7 +54,11 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
         <div className="toggle_btn" onClick={toggleMenu}>
-          <i className="fa-solid fa-bars"></i>
+          {isCrossIcon ? (
+            <i className="fa-solid fa-times"></i>
+          ) : (
+            <i className="fa-solid fa-bars"></i>
+          )}
         </div>
       </div>
       <div className="dropdown_menu">
