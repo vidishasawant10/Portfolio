@@ -167,7 +167,6 @@
   opacity: 2;
   transform: translateY(0);
   background-color: #242b40bb;
-  
 
 }
 
@@ -187,38 +186,43 @@
   padding-top: 50px;
   text-align: center;
 }
-
-@media (max-width: 900px){
-  .projects{
+@media (max-width: 900px) {
+  .projects {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 30px;
-    padding-left: 140px;
+    justify-content: center; /* Center-align the card container */
+    padding: 30px 5px; /* Add padding of 30px top and bottom, and 5px left and right */
   }
+
   .card-container {
-    width: 500px;
-    height: 400px;
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width of the card container as needed */
+    height: 10%;
   }
+
   .card .img-content svg {
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
   }
+
   .card .content .heading {
     font-size: 30px;
   }
+
   .card .content p {
     font-size: 20px;
   }
+
   .card:hover .content {
     padding: 10px;
   }
-  .more{
-    padding: 80px;
-    text-align: center;
-  }
-  h1{
+
+  .more {
+    margin-top: 150px;;
+    // padding: 80px;
     text-align: center;
   }
 
+  h1 {
+    text-align: center;
+  }
 }

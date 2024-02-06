@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from './logo1.png';
 
@@ -13,9 +13,23 @@ const Navbar: React.FC = () => {
     } else {
       setFix(false);
     }
+
+    if (isOpen) { // Check if the menu is open
+      const dropdownMenu = document.querySelector('.dropdown_menu');
+      if (dropdownMenu) {
+        dropdownMenu.classList.remove('open');
+      }
+      setIsOpen(false);
+      setIsCrossIcon(false);
+    }
   }
 
-  window.addEventListener('scroll', handleScroll);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

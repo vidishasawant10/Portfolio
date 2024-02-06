@@ -51,8 +51,14 @@
 //          -webkit-text-decoration-line: underline;
 //          text-decoration-line: underline;
 //       }
-      
+      .contactcard{
+         padding: 20px 40px;
+         align-items: center;
+         text-align: center;
+      }
       .buttonContainer {
+         align-items: center;
+         justify-content: center;
          display: flex;
          gap: 20px;
          flex-direction: row;
