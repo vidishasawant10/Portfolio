@@ -114,13 +114,23 @@ body .navbar {
     margin-top: 2%;
 
   }
+  .navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 10px;
+    background: #262672;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
   
   .logoimage {
     position: absolute;
     margin-top: 45px;
-    padding: 2px;
+    padding: 1px;
     width: 80px;
-    height: 100px;
+    height: 80px;
   }
 }
 

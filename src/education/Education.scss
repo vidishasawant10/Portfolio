@@ -18,3 +18,25 @@
        border-radius: 5px;
        margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+    .subtitle{
+        font-size: 20px;
+    }
+    .detail {
+        display: block;
+        font-size: 10px;
+        align-items: center;
+        text-align: center;
+    }
+    .role{
+        margin-left: 0; /* Push role to the right side */
+        text-align: center;
+        font-style: italic;
+    }
+    .date{
+        margin-left: 0; /* Push date to the right side */
+    }
+    .work {
+        padding: 5px 5px;
+    }
+}
