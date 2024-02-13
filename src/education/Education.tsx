@@ -15,7 +15,7 @@ const Education: React.FC = () => {
               <p className='name'>WelSpot Inc.</p>
               <p className='date'>July 2023 - Present</p>
               </div>
-              <p className='role'>Full Stack Developer</p>
+              <p className='role'>Software Engineer</p>
               </div>
               <h3 className='subtitle'>Education</h3>
 

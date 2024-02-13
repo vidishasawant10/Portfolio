@@ -10,6 +10,10 @@
   padding: 30px;
   
 }
+main{
+  scroll-padding-top: 270px;
+  /* margin-top: 70px; Add this line */
+}
 
 
 .App-logo {

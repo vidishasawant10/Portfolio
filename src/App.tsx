@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './navbar/Navbar';
 import Skills from './skills/Skills';
@@ -9,19 +9,43 @@ import Projects from './projects/Projects';
 import Contact from './contact/Contact';
 
 function App() {
+  const [activeSection, setActiveSection] = useState('');
+
+  const handleSetActiveSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+  };
+
+  const getContentMarginTop = () => {
+    switch (activeSection) {
+      case 'home':
+        return 200;
+      case 'about':
+        return 200; // Adjust this value as needed
+      case 'education':
+        return 200; // Adjust this value as needed
+      case 'projects':
+        return 0;
+      case 'contact':
+        return 0;
+      default:
+        return 0;
+    }
+  };
+
   return (
     <div className="App">
       <title>Vidisha Portfolio</title>
-      <Navbar />
-      <main className='content'> {/* Adjust padding top according to navbar height */}
+      <Navbar setActiveSection={handleSetActiveSection} />
+      <main className='content' style={{ marginTop: getContentMarginTop() }}>
         <Home />
         <About />
         <Education />
-{/* <Skills /> */}
+        {/* <Skills /> */}
         <Projects />
         <Contact />
       </main>
     </div>
   );
 }
+
 export default App;

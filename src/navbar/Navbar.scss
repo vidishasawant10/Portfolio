@@ -12,8 +12,8 @@
 
 .logoimage {
   padding: 2px;
-  width: 180px;
-  height: 150px;
+  width: 140px;
+  height: 120px;
 }
 
 nav ul {
@@ -92,7 +92,7 @@ body .navbar {
   right: 0;
   background: #262672;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 100;
 }
 @media (max-width: 992px) {
   .navbar .links {

@@ -1,52 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from './logo1.png';
-
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  setActiveSection: (sectionId: string) => void;
+}
+const Navbar: React.FC<NavbarProps> = (props) =>{
+  const { setActiveSection } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [fix, setFix] = useState(false);
   const [isCrossIcon, setIsCrossIcon] = useState(false);
 
-  function handleScroll() {
-    if (window.scrollY > 20) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-
-    if (isOpen) { // Check if the menu is open
-      const dropdownMenu = document.querySelector('.dropdown_menu');
-      if (dropdownMenu) {
-        dropdownMenu.classList.remove('open');
-      }
-      setIsOpen(false);
-      setIsCrossIcon(false);
-    }
-  }
-
   useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 20) {
+        setFix(true);
+      } else {
+        setFix(false);
+      }
+
+      if (isOpen) {
+        closeMenu();
+      }
+    }
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     setIsCrossIcon(!isCrossIcon);
-    const dropdownMenu = document.querySelector('.dropdown_menu');
-    if (dropdownMenu) {
-      dropdownMenu.classList.toggle('open');
-    }
   };
 
-  const closeMenuAndNavigate = (sectionId: string) => {
+  const closeMenu = () => {
     setIsOpen(false);
     setIsCrossIcon(false);
-    const dropdownMenu = document.querySelector('.dropdown_menu');
-    if (dropdownMenu) {
-      dropdownMenu.classList.remove('open');
-    }
+  };
+
+  const handleNavLinkClick = (sectionId: string) => {
+    closeMenu();
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -59,31 +53,21 @@ const Navbar: React.FC = () => {
         <img src={logo} alt="Logo" className="logoimage" />
         <nav>
           <ul className={`links ${isOpen ? 'open' : ''}`}>
-            <li><a href="#home" onClick={() => closeMenuAndNavigate('home')}>Home</a></li>
-            <li><a href="#about" onClick={() => closeMenuAndNavigate('about')}>About</a></li>
-            <li><a href="#education" onClick={() => closeMenuAndNavigate('education')}>Education</a></li>
-            <li><a href="#projects" onClick={() => closeMenuAndNavigate('projects')}>Projects</a></li>
+            <li><a href="#home" onClick={() => handleNavLinkClick('home')}>Home</a></li>
+            <li><a href="#about" onClick={() => handleNavLinkClick('about')}>About</a></li>
+            <li><a href="#education" onClick={() => handleNavLinkClick('education')}>Education</a></li>
+            <li><a href="#projects" onClick={() => handleNavLinkClick('projects')}>Projects</a></li>
             <li><a href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-            <li><a href="#contact" onClick={() => closeMenuAndNavigate('contact')}>Contact</a></li>
+            <li><a href="#contact" onClick={() => handleNavLinkClick('contact')}>Contact</a></li>
           </ul>
         </nav>
         <div className="toggle_btn" onClick={toggleMenu}>
           {isCrossIcon ? (
-            <i className="fa-solid fa-times"></i>
+            <i className="bi bi-x"></i>
           ) : (
-            <i className="fa-solid fa-bars"></i>
+            <i className="bi bi-list"></i>
           )}
         </div>
-      </div>
-      <div className="dropdown_menu">
-        <ul className='pt-5 px-4 text-center'>
-          <li><a href="#home" onClick={() => closeMenuAndNavigate('home')}>Home</a></li>
-          <li><a href="#about" onClick={() => closeMenuAndNavigate('about')}>About</a></li>
-          <li><a href="#education" onClick={() => closeMenuAndNavigate('education')}>Education</a></li>
-          <li><a href="#projects" onClick={() => closeMenuAndNavigate('projects')}>Projects</a></li>
-          <li><a href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-          <li><a href="#contact" onClick={() => closeMenuAndNavigate('contact')}>Contact</a></li>
-        </ul>
       </div>
     </>
   );
