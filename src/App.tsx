@@ -7,6 +7,8 @@ import About from './about/About';
 import Education from './education/Education';
 import Projects from './projects/Projects';
 import Contact from './contact/Contact';
+import 'animate.css';
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('');
@@ -37,7 +39,7 @@ function App() {
       <title>Vidisha Portfolio</title>
       <Navbar setActiveSection={handleSetActiveSection} />
       <main className='content' style={{ marginTop: getContentMarginTop() }}>
-        <Home />
+        <Home/>
         <About />
         <Education />
         {/* <Skills /> */}

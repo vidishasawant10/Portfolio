@@ -94,6 +94,61 @@ body .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 999; /* Ensure the overlay is above other content */
+}
+
+.overlay-menu {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background-color: #262672; /* Adjust background color as needed */
+  padding: 20px;
+  border-radius: 10px;
+  height: 80%;
+  display: flex; /* Add display flex to create a flex container */
+  flex-direction: column; /* Set flex direction to column */
+  align-items: center; /* Align items vertically */
+	-webkit-animation: ease-in 1.0s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	        animation: ease-in 1.0s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.overlay-menu ul {
+  list-style: none;
+  padding: 40px 100px;
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50% !important;
+}
+
+.overlay-menu ul li {
+  margin-bottom: 40%;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.overlay-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: block; /* Display as block to make them stack vertically */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
 @media (max-width: 992px) {
   .navbar .links {
     display: none;

@@ -6,10 +6,10 @@ const Education: React.FC = () => {
  return (
   <div className='row' id ='education'>
         <div className="col educationSection">
-          <h1 className='title'>Education & Work Experience</h1>
-          <h3 className='subtitle'>Work Experience</h3>
+          <h1 className='pagetitle animate__animated animate__fadeInRight'>Education & Work Experience</h1>
+          <h3 className='subtitle animate__animated animate__fadeInLeft'>Work Experience</h3>
 
-          <div className='work'>
+          <div className='work animate__animated animate__zoomIn'>
             
             <div className='detail'>
               <p className='name'>WelSpot Inc.</p>
@@ -17,9 +17,9 @@ const Education: React.FC = () => {
               </div>
               <p className='role'>Software Engineer</p>
               </div>
-              <h3 className='subtitle'>Education</h3>
+              <h3 className='subtitle animate__animated animate__fadeInLeft'>Education</h3>
 
-              <div className='work'>
+              <div className='work animate__animated animate__zoomIn'>
 
           <div className='detail'>
           <p className='name'>Pace University</p>

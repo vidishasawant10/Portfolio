@@ -56,7 +56,7 @@ const Projects = () => {
   return (
     <div id='projects' className='projects'>
    {/* <div className="col">  */}
-       <h1 className='title'>Projects</h1> 
+       <h1 className='pagetitle animate__animated animate__fadeInRight'>Projects</h1> 
        <div  className="d-flex justify-content-center" >
         {/* <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
         <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
@@ -231,7 +231,7 @@ const Projects = () => {
   
 </div>
 </div>
-<p className='more'>See my Certifications and more about me on Linkedln and explore many projects on my GitHub profile.</p>
+<p className='more animate__animated animate__fadeInLeft'>See my Certifications and more about me on Linkedln and explore many projects on my GitHub profile.</p>
 </div>
 </div>
   );

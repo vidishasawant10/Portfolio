@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import profile from './ProfilePhoto.jpg'
+import 'animate.css';
+
 
 const handleGithub = () => {
   window.open('https://github.com/vidishasawant10','_blank');
@@ -11,17 +13,17 @@ const handleLinkedln = () => {
 const Home: React.FC = () => {
  return (
   <div className="row" id='home'>
-    <div className="col-md-8 info-section">
+    <div className="col-md-8 info-section animate__animated animate__fadeInLeft">
           <h1 className='name'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
           <p>Hey there! I'm a passionate Software Engineer at WelSpot Inc based in California. With a solid foundation in Computer Science from Pace University and hands-on experience in the industry, I'm dedicated to crafting innovative solutions that merge cutting-edge technology with user-centric design.</p>
          </div>
-         <div className="col-md-4 profile-section p-5">
+         <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">
          <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>
          </div>
-         <div className='ps-2'>
+         <div className='ps-2 animate__animated animate__slideInLeft'>
          <h3>See my Work and Connect with me!</h3>
-         <div className="social-card">
+         <div className="social-card animate__animated animate__backInLeft">
             <button className="Btn github" onClick={handleGithub}>
               <span className="svgContainer">
                 <svg height="1.6em" viewBox="0 0 496 512" fill="white">

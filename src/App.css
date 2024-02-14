@@ -7,8 +7,9 @@
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   -o-scroll-behavior: smooth;
-  padding: 30px;
-  
+  padding: 30px; 
+  min-height: 100vh; /* Set minimum height to 100vh */
+
 }
 main{
   scroll-padding-top: 270px;
@@ -24,6 +25,7 @@ main{
   display: flex;
   flex-direction: column;
 }
+
 
 
 
@@ -69,8 +71,9 @@ main{
     transform: rotate(360deg);
   }
 }
-.title{
+.pagetitle{
   font-weight: bold;
+  font-size: 50px;
   align-items: center;
   justify-content: center;
   padding-bottom: 10px;
@@ -110,5 +113,18 @@ main{
 
   100% {
     border-right-color: transparent;
+  }
+}
+@media (max-width: 900px) {
+  .loader-text {
+    font-size: 20px;
+  }
+  .pagetitle{
+    font-weight: bold;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 }
