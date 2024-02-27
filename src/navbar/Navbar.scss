@@ -107,12 +107,12 @@ body .navbar {
 .overlay-menu {
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: #262672; /* Adjust background color as needed */
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
-  height: 80%;
+  height: 70%;
   display: flex; /* Add display flex to create a flex container */
   flex-direction: column; /* Set flex direction to column */
   align-items: center; /* Align items vertically */
@@ -177,7 +177,7 @@ body .navbar {
     margin-bottom: 10px;
     background: #262672;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 1000;
   }
   
   .logoimage {
