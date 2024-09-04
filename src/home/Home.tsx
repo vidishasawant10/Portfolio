@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     <div className="col-md-8 info-section animate__animated animate__fadeInLeft">
           <h1 className='name'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
-          <p>Hey there! I'm a passionate Software Engineer at WelSpot Inc based in California. With a solid foundation in Computer Science from Pace University and hands-on experience in the industry, I'm dedicated to crafting innovative solutions that merge cutting-edge technology with user-centric design.</p>
+          <p>Hey there! I'm currently working as an Application Developer at Los Angeles Dodgers LLC with focus in Software Engineering based in California. With a solid foundation in Computer Science from Pace University and hands-on experience in the industry, I'm dedicated to crafting innovative solutions that merge cutting-edge technology with user-centric design.</p>
          </div>
          <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">
          <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>
