@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     <div className="col-md-8 info-section animate__animated animate__fadeInLeft">
           <h1 className='name'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
-          <p>Hey there! I'm currently working as an Application Developer at Los Angeles Dodgers LLC with focus in Software Engineering based in California. With a solid foundation in Computer Science from Pace University and hands-on experience in the industry, I'm dedicated to crafting innovative solutions that merge cutting-edge technology with user-centric design.</p>
+          <p>Hey there! I'm currently working as a Software Engineer at Los Angeles Dodgers LLC with focus in Full-Stack Development, utilizing React, Node.js, and Express to create intuitive user interfaces and robust back-end systems. I integrate Salesforce for seamless data operations, perform data analysis with Python and BigQuery, and document technical processes to enhance project clarity. Proficient in CI/CD with Docker and Kubernetes, I leverage Google Cloud to deploy scalable, reliable applications.</p>
          </div>
          <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">
          <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>
