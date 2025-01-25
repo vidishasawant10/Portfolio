@@ -23,7 +23,7 @@ const Home: React.FC = () => {
          <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>
          </div>
          <div className='ps-2 animate__animated animate__slideInLeft'>
-         <h3>See my Work and Connect with me!</h3>
+         <h3><b>See my Work and Connect with me!</b></h3>
          <div className="social-card animate__animated animate__backInLeft">
             <button className="Btn github" onClick={handleGithub}>
               <span className="svgContainer">

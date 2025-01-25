@@ -1,5 +1,5 @@
 .profileimage {
-  width: 400px;
+  width: 40vw;
   height: 400px;
   animation: scaleUp 1s ease-in-out;
 }
