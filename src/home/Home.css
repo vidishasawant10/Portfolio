@@ -1,7 +1,9 @@
 .profileimage {
-  width: 40vw;
-  height: 400px;
+  width: 400vw;
+  height: 400vh;
   animation: scaleUp 1s ease-in-out;
+  border-radius: 50%;
+  border: 5px solid #181818;
 }
 
 .profileimage:hover {

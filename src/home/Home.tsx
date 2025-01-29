@@ -16,8 +16,7 @@ const Home: React.FC = () => {
     <div className="col-md-8 info-section animate__animated animate__fadeInLeft">
           <h1 className='name'>Vidisha Vijay Sawant</h1>
           <h3>San Jose, CA</h3>
-          <p>Hey there! I am a dedicated Software Engineer with expertise in full-stack development, specializing in Java, Python, JavaScript, React, Node.js, CI/CD, Database Management, and Google Cloud Platform. My industry experience at organizations like the Los Angeles Dodgers (Sports Domain - MLB Team) and WelSpot Inc. (Finance and Healthcare Domain - Startup) has honed my ability to create scalable, user-friendly solutions that boost performance and satisfaction.
-            With a Master’s degree in Computer Science from Pace University, I thrive on solving complex challenges and innovating in collaborative environments. Explore my portfolio to discover how I can contribute to your next project! </p>
+          <p>Hey there! I am a passionate Software Engineer with a Master's degree in Computer Science from Pace University and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work. </p>
          </div>
          <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">
          <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>
