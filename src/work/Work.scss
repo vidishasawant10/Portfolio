@@ -1,5 +1,5 @@
-/* Education Section */
-.education-section {
+/* Work Experience Section */
+.work-section {
     padding: 50px 0;
     margin-top: 70px;
   }
@@ -10,13 +10,13 @@
     padding-bottom: 20px;
   }
   
-  /* Education Blocks */
-  .education {
+  /* Work Blocks */
+  .work {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
   }
   
   /* Details */
@@ -35,6 +35,11 @@
     font-style: italic;
   }
   
+  /* Role */
+  .role {
+    font-style: italic;
+  }
+  
   /* Responsive Design */
   @media (max-width: 768px) {
     .pagetitle {
@@ -46,9 +51,8 @@
       text-align: center;
     }
   
-    .degree {
+    .role {
       text-align: center;
-      font-style: italic;
     }
   }
   
