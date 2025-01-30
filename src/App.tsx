@@ -8,6 +8,7 @@ import Education from './education/Education';
 import Projects from './projects/Projects';
 import Contact from './contact/Contact';
 import 'animate.css';
+import Work from './work/Work';
 
 
 function App() {
@@ -41,8 +42,8 @@ function App() {
       <main className='content' style={{ marginTop: getContentMarginTop() }}>
         <Home/>
         <About />
+        <Work/>
         <Education />
-        
         {/* <Skills /> */}
         <Projects />
         <Contact />
