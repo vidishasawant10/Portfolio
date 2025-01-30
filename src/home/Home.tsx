@@ -1,27 +1,55 @@
-import React from 'react';
-import './Home.css';
-import profile from './ProfilePhoto.jpg'
-import 'animate.css';
-
+import React from "react";
+import "./Home.css";
+import profile from "./ProfilePhoto.jpg";
+import brush from "./Brush.png";
+import "animate.css";
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
 const handleGithub = () => {
-  window.open('https://github.com/vidishasawant10','_blank');
+  window.open("https://github.com/vidishasawant10", "_blank");
 };
+
 const handleLinkedln = () => {
-  window.open('https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a','_blank');
+  window.open("https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a", "_blank");
 };
+
+const scrollToNextSection = () => {
+  const nextSection = document.getElementById("about");
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const Home: React.FC = () => {
- return (
-  <div className="row" id='home'>
-    <div className="col-md-8 info-section animate__animated animate__fadeInLeft">
-          <h1 className='name'>Vidisha Vijay Sawant</h1>
-          <h3>San Jose, CA</h3>
-          <p>Hey there! I am a passionate Software Engineer with a Master's degree in Computer Science from Pace University and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work. </p>
-         </div>
-         <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">
-         <img src= {profile} alt="Profile Photo" className='profileimage rounded img-thumbnail p-2'/>
-         </div>
-         <div className='ps-2 animate__animated animate__slideInLeft'>
+  return (
+    
+    <div className="home-container" id="home">
+      <svg width="0" height="0">
+  <defs>
+    <mask id="brush-mask" maskUnits="objectBoundingBox">
+      <image href={brush} width="100%" height="100%" />
+    </mask>
+  </defs>
+</svg>
+      {/* Parallax Background */}
+      <div className="parallax">
+        <div className="content animate__animated animate__fadeInUp">
+          {/* <h1 className="name">Vidisha Vijay Sawant</h1>
+          <h3>San Jose, CA</h3> */}
+          <p>
+            Hey there! My Name is Vidisha Sawant and I am a passionate Software Engineer with a Master's degree in Computer Science from Pace University - New York and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work.
+          </p>
+        </div>
+      </div>
+          <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">          
+          <div className="profile-container">
+          <img src={brush} alt="Brush Effect" className="brush-mask" />
+        <img src={profile} alt="Profile" className="profileimage" />
+      </div>
+      </div>
+
+
+         <div className='ps-2 animate__animated animate__slideInLeft align-items-center'>
          <h3><b>See my Work and Connect with me!</b></h3>
          <div className="social-card animate__animated animate__backInLeft">
             <button className="Btn github" onClick={handleGithub}>
@@ -55,10 +83,13 @@ const Home: React.FC = () => {
          {/* <a onClick= {handleLinkedln} className="fa-brands fa-linkedin fa-2xl p-1"></a>
          <a onClick= {handleGithub} className="fa-brands fa-square-github fa-2xl p-3"></a> */}
          </div>
-        
-         </div>
-        
- );
+
+      {/* Downward Arrow to Scroll to About Section */}
+      <div className="arrow-container" onClick={scrollToNextSection}>
+        <ArrowCircleDownIcon className="arrow-icon" />
+      </div>
+    </div>
+  );
 };
 
 export default Home;

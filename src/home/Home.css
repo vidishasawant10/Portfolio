@@ -1,41 +1,67 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.parallax {
+  text-align: center;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.profile-container {
+  position: relative;
+  width: 40vw; /* Adjust as needed */
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Ensure no cropping */
+  margin-bottom: 20px;
+}
+
 .profileimage {
-  width: 400vw;
-  height: 400vh;
-  animation: scaleUp 1s ease-in-out;
-  border-radius: 50%;
-  border: 5px solid #181818;
+  width: 50vw; /* Use vw for better responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  mask-image: url("./Brush.png");
+  mask-repeat: no-repeat;
+  mask-size: contain; /* Ensures brush effect is visible */
+  mask-position: center;
+  -webkit-mask-image: url("./Brush.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
 }
 
-.profileimage:hover {
-  transform: scale(1.021);
+.brush-mask {
+  width: 50vw; /* Use vw for better scaling */
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ensures full visibility */
+  position: absolute;
 }
 
-.profileimage:active {
-  transform: scale(0.95) rotateZ(1.1deg);
+.work-container {
+  margin-top: 30px;
+  text-align: center;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
 }
 
-.info-section {
-  align-items: left;
-  justify-content: left;
-  padding-top: 100px;
-}
-
-p {
-  font-size: 30px;
-}
-
-h1 {
-  font-weight: bold;
-}
-
-h3 {
-  font-weight: 600;
-  font-style: italic;
-}
-
-.name {
-  text-align: left;
-  font-weight: bold;
+.arrow-container {
+  margin-top: 30px;
+  cursor: pointer;
+  size: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-card {
@@ -44,8 +70,8 @@ h3 {
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   border-radius: 14px;
 }
@@ -91,7 +117,6 @@ h3 {
   font-size: 0px;
 }
 
-/* Individual social icons */
 .github .BG {
   background: #181818;
 }
@@ -100,48 +125,6 @@ h3 {
   background: #0077b5;
 }
 
-.whatsapp .BG {
-  background: #075e54;
-}
-
-.discord .BG {
-  background: #7289da;
-}
-
-.Btn:hover .BG {
-  transform: scale(1.2);
-  font-size: 20px;
-  color: white;
-}
-
-.Btn:hover .svgContainer {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-@media (max-width: 1200px) {
-  .name {
-    text-align: center;
-  }
-  p {
-    font-size: 20px;
-  }
-  .info-section {
-    text-align: center;
-    align-items: center;
-    font-size: 5px;
-  }
-  .profileimage {
-    order: 2;
-    align-items: center;
-    font-size: 5px;
-  }
-  .social-card {
-    align-items: center;
-    justify-content: center;
-  }
-  button {
-    align-items: center;
-    justify-content: center;
-  }
+p {
+  font-weight: bold;
 }/*# sourceMappingURL=Home.css.map */
