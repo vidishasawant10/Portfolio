@@ -52,15 +52,15 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   return (
     <>
       <div className={fix ? 'navbar fixed' : 'navbar'} id='navbar'>
-        <img src={logo} alt="Logo" className="logoimage" />
+        {/* <img src={logo} alt="Logo" className="logoimage" /> */}
         <nav>
           <ul className={`links ${isOpen ? 'open' : ''}`}>
-            <li><a href="#home" onClick={() => handleNavLinkClick('home')}>Home</a></li>
-            <li><a href="#about" onClick={() => handleNavLinkClick('about')}>About</a></li>
-            <li><a href="#education" onClick={() => handleNavLinkClick('education')}>Education</a></li>
-            <li><a href="#projects" onClick={() => handleNavLinkClick('projects')}>Projects</a></li>
-            <li><a href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-            <li><a href="#contact" onClick={() => handleNavLinkClick('contact')}>Contact</a></li>
+            <li className='navbar-left'><a href="#home" onClick={() => handleNavLinkClick('home')}>Home</a></li>
+            <li className='navbar-left'><a href="#about" onClick={() => handleNavLinkClick('about')}>About</a></li>
+            <li className='navbar-left'><a href="#education" onClick={() => handleNavLinkClick('education')}>Education</a></li>
+            <li className='navbar-left'><a href="#projects" onClick={() => handleNavLinkClick('projects')}>Projects</a></li>
+            <li className='navbar-right'><a href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
+            <li className='navbar-right'><a href="#contact" onClick={() => handleNavLinkClick('contact')}>Contact</a></li>
           </ul>
         </nav>
         <div className="toggle_btn" onClick={toggleMenu}>
