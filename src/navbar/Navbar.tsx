@@ -3,20 +3,22 @@ import "./Navbar.css";
 import logo from "./logo3.png";
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
+    // Ensure navbar styles apply after refresh
+    document.body.classList.add("navbar-loaded");
+
     const handleScroll = () => {
       setIsFixed(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.body.classList.remove("navbar-loaded");
+    };
   }, []);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className={`navbar ${isFixed ? "fixed" : ""}`}>
@@ -36,11 +38,6 @@ const Navbar: React.FC = () => {
           <li><button className="get-in-touch">Get In Touch</button></li>
         </ul>
       </nav>
-
-      {/* Mobile Menu Toggle */}
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <i className={`bi ${isOpen ? "bi-x" : "bi-list"}`}></i>
-      </div>
     </header>
   );
 };
