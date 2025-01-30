@@ -3,13 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px; /* Adjusted height */
-  padding: 15px 20px;
+  height: 12vh; /* Adjusted height */
   background: #ffffff !important; /* Ensure background is enforced */
   position: fixed;
   width: 100vw; /* Ensures full viewport width */
-  top: 0;
-  left: 0;
   z-index: 1000;
   border-bottom: 2px solid #ddd;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -22,10 +19,6 @@ html, body {
   padding: 0 !important;
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-body {
-  padding-top: 80px !important; /* Ensures content starts below navbar */
 }
 
 /* Logo */
