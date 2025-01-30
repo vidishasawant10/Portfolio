@@ -1,195 +1,101 @@
+/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  box-shadow: none !important;
+  height: 12vh; /* Adjust height */
+  padding: 10px 20px;
+  background: #ffffff;
   position: fixed;
   width: 100%;
-  z-index: 1000; /* Increase z-index to keep navbar above content */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ddd;
+  transition: background 0.3s ease-in-out;
 }
 
-.logoimage {
-  padding: 2px;
+/* Ensure Page Content Starts Below the Navbar */
+body {
+  padding-top: 70px; /* Push content down to prevent overlap */
+  margin: 0;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
   width: 120px;
-  height: 120px;
+  height: auto;
 }
 
-nav ul {
-  list-style: none;
+/* Navigation Links */
+.nav-links {
   display: flex;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.navbar-left {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: flex-end;
+  align-items: center;
+  flex-grow: 1;
   justify-content: flex-end;
 }
 
-body .navbar {
-  box-shadow: none;
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar .toggle_btn {
-  color: #fff;
-  font-size: 2rem;
+.nav-links ul li {
+  display: inline-block;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links ul li a:hover {
+  color: #666;
+}
+
+/* Get In Touch Button */
+.get-in-touch {
+  border: 2px solid black;
+  background: transparent;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.get-in-touch:hover {
+  background: black;
+  color: white;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  color: black;
+  font-size: 28px;
   cursor: pointer;
   display: none;
-  position: absolute;
-  right: 5px;
-  top: 0;
 }
 
-.dropdown_menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  height: 0;
-  background: rgba(38, 38, 114, 0.8745098039);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: right step-end;
-}
-
-.dropdown_menu.open {
-  height: 100%;
-}
-
-.dropdown_menu li a {
-  color: white;
-  align-items: center;
-  justify-content: center;
-  font-size: large;
-  font-weight: bold;
-  padding-top: 10px; /* Set text color to white */
-  margin-top: 10px;
-}
-
-.dropdown_menu li {
-  padding: 0.3rem 0.5rem;
-  margin-top: 30px; /* Add margin-top to move items slightly below */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end; /* Change justify-content to flex-end */
-  color: white;
-}
-
-.navbar.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #262672;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: 999; /* Ensure the overlay is above other content */
-}
-
-.overlay-menu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #262672; /* Adjust background color as needed */
-  padding: 15px;
-  border-radius: 10px;
-  height: 70%;
-  display: flex; /* Add display flex to create a flex container */
-  flex-direction: column; /* Set flex direction to column */
-  align-items: center; /* Align items vertically */
-  animation: ease-in 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.overlay-menu ul {
-  list-style: none;
-  padding: 40px 100px;
-  margin: 0;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 50% !important;
-}
-
-.overlay-menu ul li {
-  margin-bottom: 30%;
-  margin-top: 5%;
-  margin-left: 10%;
-}
-
-.overlay-menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  display: block; /* Display as block to make them stack vertically */
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
+/* Responsive Navbar */
 @media (max-width: 992px) {
-  .navbar .links {
+  .nav-links {
     display: none;
   }
-  .navbar .toggle_btn {
+  .menu-toggle {
     display: block;
-  }
-  .dropdown_menu {
-    display: block;
-  }
-  .dropdown_menu li a {
-    display: block;
-    text-align: center;
-    justify-content: flex-end;
-    margin-top: 2%;
-  }
-  .navbar.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-bottom: 10px;
-    background: #262672;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  .logoimage {
-    position: absolute;
-    margin-top: 45px;
-    padding: 1px;
-    width: 80px;
-    height: 80px;
   }
 }/*# sourceMappingURL=Navbar.css.map */

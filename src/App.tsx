@@ -37,11 +37,12 @@ function App() {
   return (
     <div className="App">
       <title>Vidisha Portfolio</title>
-      <Navbar setActiveSection={handleSetActiveSection} />
+      <Navbar/>
       <main className='content' style={{ marginTop: getContentMarginTop() }}>
         <Home/>
         <About />
         <Education />
+        
         {/* <Skills /> */}
         <Projects />
         <Contact />
