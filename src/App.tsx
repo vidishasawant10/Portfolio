@@ -42,9 +42,9 @@ function App() {
       <main className='content' style={{ marginTop: getContentMarginTop() }}>
         <Home/>
         <About />
-        <Work/>
-        <Education />
         <Skills />
+        <Work/>
+        {/* <Education /> */}
         <Projects />
         <Contact />
       </main>

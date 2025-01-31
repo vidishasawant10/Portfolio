@@ -3,7 +3,7 @@ import './Education.css';
 
 const educationData = [
   {
-    institution: "Pace University",
+    institution: "Pace University - New York",
     duration: "September 2021 - May 2023",
     degree: "Master of Science (MS) in Computer Science",
     description: `Completed coursework in full-stack development, data warehousing, and cloud computing.
