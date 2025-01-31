@@ -14,7 +14,6 @@
 .work-container {
   border-left: 2px solid #D9534F;
   width: 90vw;
-  margin: 0 auto;
 }
 
 .work-item {
@@ -107,7 +106,6 @@
   border: none;
   height: 2px;
   background-color: #d9534f;
-  margin: 10px 0;
 }
 
 /* Education Section */
