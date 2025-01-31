@@ -22,36 +22,16 @@ const scrollToNextSection = () => {
 
 const Home: React.FC = () => {
   return (
-    
-    <div className="home-container" id="">
-      <svg width="0" height="0">
-  <defs>
-    <mask id="brush-mask" maskUnits="objectBoundingBox">
-      <image href={brush} width="100%" height="100%" />
-    </mask>
-  </defs>
-</svg>
-      {/* Parallax Background */}
-      <div className="parallax">
-        <div className="content animate__animated animate__fadeInUp">
-          {/* <h1 className="name">Vidisha Vijay Sawant</h1>
-          <h3>San Jose, CA</h3> */}
-          <p>
-            Hey there! My Name is Vidisha Sawant and I am a passionate Software Engineer with a Master's degree in Computer Science from Pace University - New York and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work.
-          </p>
-        </div>
-      </div>
-          <div className="col-md-4 profile-section p-4 animate__animated animate__fadeInRight">          
-          <div className="profile-container">
-          <img src={brush} alt="Brush Effect" className="brush-mask" />
-        <img src={profile} alt="Profile" className="profileimage" />
-      </div>
-      </div>
-
-
-         <div className='ps-2 animate__animated animate__slideInLeft align-items-center'>
-         <h3><b>See my Work and Connect with me!</b></h3>
-         <div className="social-card animate__animated animate__backInLeft">
+    <div className="home-container">
+      {/* Left Side Content */}
+      <div className="content-section animate__animated animate__fadeInLeft">
+        <h1 className="name">Vidisha Vijay Sawant</h1>
+        <h3><i>San Jose, CA</i></h3>
+        <p>
+          Hey there! I am a passionate Software Engineer with a Master's degree in Computer Science from Pace University - New York and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work.
+        </p>
+        <h3><b>See my Work and Connect with me!</b></h3>
+        <div className="social-card animate__animated animate__backInLeft">
             <button className="Btn github" onClick={handleGithub}>
               <span className="svgContainer">
                 <svg height="1.6em" viewBox="0 0 496 512" fill="white">
@@ -84,9 +64,20 @@ const Home: React.FC = () => {
          <a onClick= {handleGithub} className="fa-brands fa-square-github fa-2xl p-3"></a> */}
          </div>
 
-      {/* Downward Arrow to Scroll to About Section */}
-      <div className="arrow-container" onClick={scrollToNextSection}>
-        <ArrowCircleDownIcon className="arrow-icon" />
+
+{/* 
+        Downward Arrow should be below social buttons
+        <div className="arrow-container" onClick={scrollToNextSection}>
+          <ArrowCircleDownIcon className="arrow-icon" />
+        </div>
+      </div> */}
+
+      {/* Right Side Image */}
+      <div className="profile-section animate__animated animate__fadeInRight">
+        <div className="profile-container">
+          <img src={brush} alt="Brush Effect" className="brush-mask" />
+          <img src={profile} alt="Profile" className="profileimage" />
+        </div>
       </div>
     </div>
   );

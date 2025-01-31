@@ -1,16 +1,24 @@
 .home-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Pushes content further left */
   height: 100vh;
-  text-align: center;
+  text-align: left;
+  width: 85%;
+  margin: auto;
 }
 
-.parallax {
-  text-align: center;
-  width: 80%;
-  margin-bottom: 30px;
+.content-section {
+  flex: 1;
+  max-width: 45%; /* Adjusted to move content more left */
+  padding-left: 5%;
+}
+
+.profile-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-container {
@@ -48,22 +56,6 @@
   position: absolute;
 }
 
-.work-container {
-  margin-top: 30px;
-  text-align: center;
-  width: 80%;
-  align-items: center;
-  justify-content: center;
-}
-
-.arrow-container {
-  margin-top: 30px;
-  cursor: pointer;
-  size: 50px;
-  align-items: center;
-  justify-content: center;
-}
-
 .social-card {
   height: -moz-fit-content;
   height: fit-content;
@@ -76,6 +68,14 @@
   border-radius: 14px;
 }
 
+.arrow-container {
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+/* Social Button Styling */
 .Btn {
   width: 45px;
   height: 45px;
@@ -125,6 +125,9 @@
   background: #0077b5;
 }
 
-p {
-  font-weight: bold;
+/* Arrow should be below social buttons */
+.arrow-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=Home.css.map */
