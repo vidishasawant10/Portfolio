@@ -73,16 +73,7 @@
   border-radius: 5px;
   padding: 15px;
   padding-top: 10px;
-}
-
-.card-container::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, #48557d, #4949a7);
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(10px);
+  -webkit-text-fill-color: #e8e8e8;
 }
 
 .card {
@@ -113,7 +104,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #242b40, #3030a6);
+  background-color: #d1d6e9;
   transition: scale 0.6s, rotate 0.6s, filter 1s;
   position: relative; /* Add position relative */
 }
