@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from './logo3.png';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,31 +27,31 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const handleNavLinkClick = (sectionId: string) => {
-    closeMenu();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       <div className={`navbar ${isScrolled ? 'fixed' : ''}`} id='navbar'>
-        <img src={logo} alt="Logo" className="logoimage" />
+        {/* Clicking the Logo Navigates to Home */}
+        <img src={logo} alt="Logo" className="logoimage" onClick={() => navigate('/')} />
+
         <nav>
           <ul className={`links ${isMenuOpen ? 'open' : ''}`}>
-            <li><a href="#home" onClick={() => handleNavLinkClick('home')}>Home</a></li>
-            <li><a href="#about" onClick={() => handleNavLinkClick('about')}>About</a></li>
-            <li><a href="#work" onClick={() => handleNavLinkClick('work')}>Work</a></li>
-            <li><a href="#education" onClick={() => handleNavLinkClick('education')}>Education</a></li>
-            <li><a href="#projects" onClick={() => handleNavLinkClick('projects')}>Projects</a></li>
-            <li><a href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-            <li className='get-in-touch'><a href="#contact" onClick={() => handleNavLinkClick('contact')}>Contact</a></li>
+            <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+            <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+            <li>
+              <a 
+                href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+              >
+                Resume
+              </a>
+            </li>
+            <li className='get-in-touch'><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
           </ul>
         </nav>
 
-        {/* Toggle Button */}
+        {/* Toggle Button for Mobile */}
         <div className="toggle_btn" onClick={toggleMenu}>
           {isMenuOpen ? (
             <i className="bi bi-x"></i>
@@ -63,17 +65,20 @@ const Navbar: React.FC = () => {
           <div className="overlay" onClick={closeMenu}>
             <nav className="overlay-menu">
               <ul>
-                <li><a href="#home" onClick={() => handleNavLinkClick('home')}>Home</a></li>
-                <li><a href="#about" onClick={() => handleNavLinkClick('about')}>About</a></li>
-                <li><a href="#work" onClick={() => handleNavLinkClick('work')}>Work</a></li>
-                <li><a href="#education" onClick={() => handleNavLinkClick('education')}>Education</a></li>
-                <li><a href="#projects" onClick={() => handleNavLinkClick('projects')}>Projects</a></li>
-                <li><a href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-                {/* <li><a href="#contact" onClick={() => handleNavLinkClick('contact')}>Contact</a></li> */}
-                <li><button className="get-in-touch" onClick={() => handleNavLinkClick('contact')}>Get In Touch</button></li>
-
+                <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+                <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+                <li>
+                  <a 
+                    href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMenu}
+                  >
+                    Resume
+                  </a>
+                </li>
+                <li><button className="get-in-touch" onClick={() => navigate('/contact')}>Get In Touch</button></li>
               </ul>
-
             </nav>
           </div>
         )}

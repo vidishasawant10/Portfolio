@@ -1,5 +1,8 @@
 import React from 'react';
 import './About.css';
+import Skills from "../skills/Skills";
+import Work from "../work/Work";
+
 
 const About: React.FC = () => {
  return (
@@ -13,6 +16,8 @@ const About: React.FC = () => {
          <p className='animate__animated animate__fadeInLeft'>My work involves collaborating with cross-functional teams, conducting user research, and converting insights into responsive, high-performance applications that meet both user and business needs</p>
          <p className='animate__animated animate__fadeInLeft'>I’m skilled in handling JSON data, developing RESTful APIs, and creating dynamic, responsive user interfaces that enhance user experience. </p>
           <p className='animate__animated animate__fadeInLeft'>With a focus on continuous learning and innovation, and a passion for solving complex problems, I combine technical expertise, teamwork, and a proactive mindset to deliver impactful, high-quality solutions.</p>
+          <Skills />
+          <Work />
             </div>
             </div>
             
