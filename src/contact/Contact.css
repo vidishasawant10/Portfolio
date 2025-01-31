@@ -125,12 +125,11 @@ textarea {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 6px;
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   transition: 0.3s ease-in-out;
-  width: 100%;
+  width: 200px;
 }
 
 .linkedin-button:hover {

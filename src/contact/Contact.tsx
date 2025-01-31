@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
       <div className="contact-card">
         {!submitted ? (
           <>
-            <h2>Send us a message 🚀</h2>
+            <h2>Send me a message 🚀</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <input type="text" name="fullName" placeholder="Full name*" value={formData.fullName} onChange={handleChange} />
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="form-group">
-                <textarea name="message" placeholder="Tell us more about your project*" rows={4} value={formData.message} onChange={handleChange} />
+                <textarea name="message" placeholder="Message*" rows={4} value={formData.message} onChange={handleChange} />
                 {errors.message && <span className="error">{errors.message}</span>}
               </div>
 
