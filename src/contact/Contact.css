@@ -1,58 +1,117 @@
-.contactcard {
-  padding: 20px 40px;
+.contact-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.contact-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image img {
+  max-width: 90%;
+  height: auto;
+}
+
+.contact-form {
+  flex: 1;
+  background: none;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 450px;
+  width: 100%;
+}
+
+.pagetitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c44; /* Make text match theme */
   text-align: center;
 }
 
-.buttonContainer {
+p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-button {
+  background-color: #0077b5;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #005f90;
+}
+
+.linkedin-section {
+  margin-top: 20px;
+}
+
+.linkedin-button {
+  background: transparent;
+  color: #0077b5;
+  border: 2px solid #0077b5;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-  gap: 20px;
-  flex-direction: row;
-  padding-bottom: 20px;
+  gap: 5px;
+  transition: 0.3s ease-in-out;
 }
 
-.acceptButton {
-  width: 140px;
-  height: 50px;
-  background-color: #7b57ff;
-  transition-duration: 0.2s;
-  border: none;
-  color: rgb(241, 241, 241);
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
-  transition: all 0.6s ease;
-  font-family: Arial, sans-serif;
+.linkedin-button:hover {
+  background: #0077b5;
+  color: white;
 }
 
-.declineButton {
-  width: 140px;
-  height: 50px;
-  background-color: #7b57ff;
-  transition-duration: 0.2s;
-  border: none;
-  color: rgb(241, 241, 241);
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
-  transition: all 0.6s ease;
-  font-family: Arial, sans-serif;
-}
-
-.declineButton:hover {
-  background-color: #9173ff;
-  box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
-  transition-duration: 0.2s;
-}
-
-.acceptButton:hover {
-  background-color: #9173ff;
-  box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
-  transition-duration: 0.2s;
+.arrow-icon {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=Contact.css.map */

@@ -1,19 +1,48 @@
+/* Remove scroll bar */
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Main container */
 .home-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Pushes content further left */
+    justify-content: center;
     height: 100vh;
-    text-align: left;
-    width: 85%;
-    margin: auto;
+    width: 100%;
+    text-align: center;
 }
-
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+/* Content Section */
 .content-section {
     flex: 1;
-    max-width: 45%; /* Adjusted to move content more left */
-    padding-left: 5%;
+    max-width: 50%;
+    text-align: center;
 }
 
+/* Greeting Text */
+.greeting {
+    font-size: 3rem; /* Large and bold */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Intro text */
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: normal;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Profile Section */
 .profile-section {
     flex: 1;
     display: flex;
@@ -21,6 +50,7 @@
     justify-content: center;
 }
 
+/* Profile Container */
 .profile-container {
 	position: relative;
 	width: 40vw; /* Adjust as needed */
@@ -54,29 +84,19 @@
 	object-fit: contain; /* Ensures full visibility */
 	position: absolute;
   }
-.social-card {
+  .social-card {
 	height: -moz-fit-content;
 	height: fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: center !important;
+	justify-content: center !important;
 	gap: 20px;
-  //   padding: 10px 5px;
+    padding: 10px 5px;
 	border-radius: 14px;
   }
-
-
-
-.arrow-container {
-    margin-top: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-}
-
-/* Social Button Styling */
+/* Social Media Buttons */
 .Btn {
 	width: 45px;
 	height: 45px;
@@ -126,9 +146,3 @@
 	background: #0077b5;
   }
 
-/* Arrow should be below social buttons */
-.arrow-container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-}

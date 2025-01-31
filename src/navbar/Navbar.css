@@ -26,8 +26,10 @@ main {
 
 /* Navbar when scrolling */
 .navbar.fixed {
+  background: #fff; /* Background when scrolled */
   top: 0;
   position: fixed; /* Ensures it stays fixed at the top */
+  z-index: 1000;
 }
 
 /* Navbar Links */
@@ -37,10 +39,6 @@ main {
   font-weight: bold;
   font-size: 20px;
   transition: color 0.3s ease-in-out;
-}
-
-.navbar.fixed a {
-  color: white; /* Change text color when scrolled */
 }
 
 /* Logo */

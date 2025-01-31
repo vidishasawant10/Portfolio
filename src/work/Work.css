@@ -13,8 +13,6 @@
 
 .work-container {
   border-left: 2px solid #D9534F;
-  padding-left: 20px;
-  min-width: 200px;
   width: 90vw;
   margin: 0 auto;
 }

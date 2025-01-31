@@ -1,10 +1,9 @@
-import React from "react";
+import React,  { useEffect } from "react";
 import "./Home.css";
 import profile from "./ProfilePhoto.jpg";
 import brush from "./Brush.png";
 import "animate.css";
-import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
-
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 const handleGithub = () => {
   window.open("https://github.com/vidishasawant10", "_blank");
 };
@@ -13,22 +12,24 @@ const handleLinkedln = () => {
   window.open("https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a", "_blank");
 };
 
-const scrollToNextSection = () => {
-  const nextSection = document.getElementById("about");
-  if (nextSection) {
-    nextSection.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
 const Home: React.FC = () => {
+  useEffect(() => {
+    // Add no-scroll class when Home is mounted
+    document.body.classList.add("no-scroll");
+    
+    // Remove class on unmount to restore scrolling for other pages
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, []);
+
   return (
-    <div className="home-container">
+    <div className="home-container overflow-hidden">
       {/* Left Side Content */}
       <div className="content-section animate__animated animate__fadeInLeft">
-        <h1 className="name">Vidisha Vijay Sawant</h1>
-        <h3><i>San Jose, CA</i></h3>
-        <p>
-          Hey there! I am a passionate Software Engineer with a Master's degree in Computer Science from Pace University - New York and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work.
+        <h1 className="greeting">Hi there! I'm Vidisha Sawant</h1>
+        <p className="intro-text">
+          A passionate Software Engineer with a Master's degree in Computer Science from Pace University - New York and industry experience at Los Angeles Dodgers and WelSpot Inc. specializing in full-stack development and cloud computing. I welcome you to explore my personal portfolio and see the passion, technical expertise, and creativity that drive my work.
         </p>
         <h3><b>See my Work and Connect with me!</b></h3>
         <div className="social-card animate__animated animate__backInLeft">
@@ -65,12 +66,6 @@ const Home: React.FC = () => {
          </div>
 
 
-{/* 
-        Downward Arrow should be below social buttons
-        <div className="arrow-container" onClick={scrollToNextSection}>
-          <ArrowCircleDownIcon className="arrow-icon" />
-        </div>
-      </div> */}
 
       {/* Right Side Image */}
       <div className="profile-section animate__animated animate__fadeInRight">
