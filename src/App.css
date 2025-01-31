@@ -7,7 +7,7 @@
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   -o-scroll-behavior: smooth;
-  padding: 30px; 
+  padding: 0px 30px; 
   min-height: 100vh; /* Set minimum height to 100vh */
 
 }

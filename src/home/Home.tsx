@@ -23,7 +23,7 @@ const scrollToNextSection = () => {
 const Home: React.FC = () => {
   return (
     
-    <div className="home-container" id="home">
+    <div className="home-container" id="">
       <svg width="0" height="0">
   <defs>
     <mask id="brush-mask" maskUnits="objectBoundingBox">
