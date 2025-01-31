@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
-import ContactImage from './Contact.svg'; // Import the SVG file
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-
 
 const emailAddress = 'vidishasawantv@gmail.com';
 
@@ -12,153 +10,112 @@ const handleLinkedln = () => {
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     subject: '',
     message: '',
-    agree: false,
   });
 
   const [errors, setErrors] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     subject: '',
     message: '',
-    agree: '',
   });
+  useEffect(() => {
+    // Add no-scroll class when Home is mounted
+    document.body.classList.add("no-scroll");
+    
+    // Remove class on unmount to restore scrolling for other pages
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, []);
 
-  const validateEmail = (email: string) => {
-    return /\S+@\S+\.\S+/.test(email);
-  };
+  const [submitted, setSubmitted] = useState(false);
+
+  const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
-    }));
-
-    setErrors((prev) => ({
-      ...prev,
-      [name]: '',
-    }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     let validationErrors: any = {};
-    if (!formData.firstName) validationErrors.firstName = 'First name is required';
-    if (!formData.lastName) validationErrors.lastName = 'Last name is required';
+    if (!formData.fullName) validationErrors.fullName = 'Full name is required';
     if (!formData.email) validationErrors.email = 'Email is required';
     else if (!validateEmail(formData.email)) validationErrors.email = 'Enter a valid email';
     if (!formData.subject) validationErrors.subject = 'Subject is required';
     if (!formData.message) validationErrors.message = 'Message is required';
-    if (!formData.agree) validationErrors.agree = 'You must agree before sending';
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    // Open default mail client
+    // Simulate email submission
     window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`);
+    
+    setSubmitted(true);
   };
 
   return (
-    <div id='contact' className='contact-container'>
-      {/* Left Section - SVG Image */}
-      <div className="contact-image">
-        <img src={ContactImage} alt="Contact Illustration" />
+
+    <div className="contact-container">
+      {/* Left Section - Text */}
+      <div className="contact-left">
+        <h1>Let's chat.</h1> <br /> 
+        <h3>I’m looking for new full-time opportunity in 2025 and available to join immediately and open to relocation.
+       I’d love to connect and explore ways I can contribute to your team and discuss more!</h3>
+        <p>Connect with me on LinkedIn:</p>
+            <button className="linkedin-button" onClick={handleLinkedln}>
+              LinkedIn <ArrowCircleRightIcon className="arrow-icon" />
+            </button>
+            <p>Let’s create something together ✨</p>
+
       </div>
 
       {/* Right Section - Contact Form */}
-      <div className="contact-form">
-        <h1 className='pagetitle animate__animated animate__fadeInRight'>Contact Me</h1>
-        
-        <p className='animate__animated animate__fadeInLeft'>
-          I'm actively seeking new challenges and opportunities to contribute my skills. 
-          Feel free to reach out—I’d love to hear from you!
-        </p>
+      <div className="contact-card">
+        {!submitted ? (
+          <>
+            <h2>Send us a message 🚀</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input type="text" name="fullName" placeholder="Full name*" value={formData.fullName} onChange={handleChange} />
+                {errors.fullName && <span className="error">{errors.fullName}</span>}
+              </div>
 
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={handleChange}
-            />
-            {errors.firstName && <span className="error">{errors.firstName}</span>}
+              <div className="form-group">
+                <input type="email" name="email" placeholder="Email address*" value={formData.email} onChange={handleChange} />
+                {errors.email && <span className="error">{errors.email}</span>}
+              </div>
+
+              <div className="form-group">
+                <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} />
+                {errors.subject && <span className="error">{errors.subject}</span>}
+              </div>
+
+              <div className="form-group">
+                <textarea name="message" placeholder="Tell us more about your project*" rows={4} value={formData.message} onChange={handleChange} />
+                {errors.message && <span className="error">{errors.message}</span>}
+              </div>
+
+              <button type="submit" className="submit-button">Send Message</button>
+            </form>
+
+          </>
+        ) : (
+          <div className="thank-you">
+            <h2>Thank you! 🎉</h2>
+            <p>Your message has been sent successfully.</p>
+           
           </div>
-
-          <div className="form-group">
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={handleChange}
-            />
-            {errors.lastName && <span className="error">{errors.lastName}</span>}
-          </div>
-
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            {errors.email && <span className="error">{errors.email}</span>}
-          </div>
-
-          <div className="form-group">
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
-              onChange={handleChange}
-            />
-            {errors.subject && <span className="error">{errors.subject}</span>}
-          </div>
-
-          <div className="form-group">
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows={4}
-              value={formData.message}
-              onChange={handleChange}
-            />
-            {errors.message && <span className="error">{errors.message}</span>}
-          </div>
-
-          <div className="form-group checkbox">
-            <input
-              type="checkbox"
-              name="agree"
-              checked={formData.agree}
-              onChange={handleChange}
-            />
-            <label>I agree to send this message</label>
-          </div>
-          {errors.agree && <span className="error">{errors.agree}</span>}
-
-          <button type="submit" className="submit-button">Send Message</button>
-        </form>
-
-        <div className="linkedin-section">
-          <p>Or connect with me on LinkedIn</p>
-          <button className="linkedin-button" onClick={handleLinkedln}>
-            LinkedIn <ArrowCircleRightIcon className="arrow-icon" />
-          </button>
-        </div>
+        )}
       </div>
     </div>
   );

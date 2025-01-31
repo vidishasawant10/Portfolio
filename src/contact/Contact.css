@@ -1,43 +1,64 @@
 .contact-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  padding: 20px;
-}
-
-.contact-image {
-  flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.contact-image img {
-  max-width: 90%;
-  height: auto;
-}
-
-.contact-form {
-  flex: 1;
-  background: none;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  max-width: 450px;
+  min-height: 100vh; /* Ensure proper vertical alignment */
   width: 100%;
+  box-sizing: border-box;
 }
 
-.pagetitle {
-  font-size: 2rem;
+.contact-left {
+  flex: 1;
+  text-align: center;
+  padding: 10vw;
+}
+
+.contact-left h1 {
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #c44; /* Make text match theme */
+  color: #222;
+}
+
+.contact-left p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #666;
   text-align: center;
 }
 
-p {
+.email-box {
   font-size: 1rem;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-box a {
+  color: #0077b5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-card {
+  flex: 1;
+  max-width: 450px;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8vh;
+  margin-right: 5vw;
+  margin-bottom: auto;
+}
+
+.contact-card h2 {
+  text-align: center;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   color: #333;
 }
@@ -49,10 +70,10 @@ p {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
 }
 
@@ -60,36 +81,40 @@ textarea {
   resize: none;
 }
 
-.error {
-  color: red;
-  font-size: 0.9rem;
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .submit-button {
-  background-color: #0077b5;
+  background-color: #6C63FF;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 12px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   width: 100%;
   margin-top: 10px;
   transition: 0.3s ease-in-out;
 }
 
 .submit-button:hover {
-  background-color: #005f90;
+  background-color: #5548e8;
 }
 
-.linkedin-section {
-  margin-top: 20px;
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.thank-you {
+  text-align: center;
+}
+
+.thank-you h2 {
+  font-size: 1.8rem;
+  color: #6C63FF;
+}
+
+.thank-you p {
+  font-size: 1rem;
+  margin: 10px 0;
 }
 
 .linkedin-button {
@@ -99,12 +124,13 @@ textarea {
   padding: 10px 15px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   transition: 0.3s ease-in-out;
+  width: 100%;
 }
 
 .linkedin-button:hover {
