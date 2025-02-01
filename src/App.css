@@ -26,9 +26,6 @@ main{
   flex-direction: column;
 }
 
-
-
-
 @media (max-width: 900px) {
   .App{
     padding: 10px;

@@ -1,239 +1,108 @@
-import React from 'react'
-import './Projects.css'
-import canyimage from './CANYTour.png'
-import daily from './DailyYou.png'
-import easyway from './EasyWay.png'
-import spaceinvader from './SpaceInvader.png'
-import hope from './Hope.png'
-import studenthub from './StudentHub.png'
-import nyctaxi from './nyctaxi.png'
-import audioanalysis from './audioanalysis.png'
-import cardealer from './cardealer.png'
+import React from 'react';
+import './Projects.css';
+import canyimage from './CANYTour.png';
+import easyway from './EasyWay.png';
+import spaceinvader from './SpaceInvader.png';
+import nyctaxi from './nyctaxi.png';
+import hope from './Hope.png';
+import studenthub from './StudentHub.png';
+import daily from './DailyYou1.png';
+import audioanalysis from './audioanalysis.png';
+import cardealer from './cardealer.png';
+import NorthEastIcon from '@mui/icons-material/NorthEast';
 
-type ProjectProps = {
-  title: string;
-  imgSrc: string;
-  url: string;
-  open: () => void;
-};
 
-const Project: React.FC<ProjectProps> = ({ title, imgSrc, url, open }) => {
-  const [hover, setHover] = React.useState(false);
-
-  return (
-
-    <div className="project" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={open}>
-      <img src={imgSrc}/>
-      <div className="title">{title}</div>
-      <a href={url} target="_blank" rel="noopener noreferrer" className={hover ? "hover-link" : "hidden"}>
-      </a>
-    </div>
-  );
-};
+const projectsData = [
+  {
+    title: "CANY Tour Guide",
+    description: "A tour guide application for exploring New York and California.",
+    technologies: ["React", "SCSS", "JavaScript", "HTML", "CSS"],
+    imgSrc: canyimage,
+    url: "https://github.com/vidishasawant10/CANY-Tour-Guide"
+  },
+  {
+    title: "EasyWay",
+    description: "A travel optimization platform for better routes.",
+    technologies: ["Angular", "React", "SCSS", "Machine Learning", "Cypress"],
+    imgSrc: easyway,
+    url: "https://github.com/vidishasawant10/EasyWay"
+  },
+  {
+    title: "Hope",
+    description: "A UI/UX project designed for community engagement.",
+    technologies: ["Figma", "UX Research", "Personas", "Design Thinking"],
+    imgSrc: hope,
+    url: "https://github.com/vidishasawant10/Hope"
+  },
+  {
+    title: "Student Hub",
+    description: "A platform for international students to connect and share resources.",
+    technologies: ["Bootstrap", "Figma", "Research Questions", "Marvel"],
+    imgSrc: studenthub,
+    url: "https://github.com/vidishasawant10/StudentHub"
+  },
+  {
+    title: "Space Invader",
+    description: "A classic arcade shooter game built in Python.",
+    technologies: ["Python", "Pygame", "PyCharm"],
+    imgSrc: spaceinvader,
+    url: "https://github.com/vidishasawant10/spaceInvader"
+  },
+  {
+    title: "Friendly Car Dealership",
+    description: "A database management project for managing car sales and data.",
+    technologies: ["SQL", "Oracle Database"],
+    imgSrc: cardealer,
+    url: "https://github.com/vidishasawant10/Friendly-Car-Dealership"
+  },
+  {
+    title: "NYC Taxi Trip",
+    description: "A data analysis project on NYC taxi trips.",
+    technologies: ["Python", "Pandas", "Matplotlib", "Google Colab"],
+    imgSrc: nyctaxi,
+    url: "https://github.com/vidishasawant10/NYCTaxiTrip"
+  },
+  {
+    title: "Audio Analysis",
+    description: "Analyzing audio patterns using machine learning.",
+    technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"],
+    imgSrc: audioanalysis,
+    url: "https://github.com/vidishasawant10/AudioAnalysis"
+  },
+  {
+    title: "Daily You",
+    description: "A mobile application which would have daily applications such as Clock, Reminder, To-do, Notes, Alarm Clock, and Self-care in one place to help focus!",
+    technologies: ["React Native", "CSS"],
+    imgSrc: daily,
+    url: "https://github.com/vidishasawant10/Daily-You"
+  }
+];
 
 const Projects = () => {
-  const CanyUrl = "https://github.com/vidishasawant10/CANY-Tour-Guide";
-  const EasywayUrl = "https://github.com/vidishasawant10/EasyWay";
-  const HopeUrl = "https://github.com/vidishasawant10/Hope";
-  const DailyyouUrl = "https://github.com/vidishasawant10/Daily-You";
-  const SpaceinvaderUrl = "https://github.com/vidishasawant10/spaceInvader";
-  const StudenthubUrl = "https://github.com/vidishasawant10/StudentHub";
-  const CardealerUrl = "https://github.com/vidishasawant10/Friendly-Car-Dealership";
-  const NycTaxiUrl = "https://github.com/vidishasawant10/NYCTaxiTrip";
-  const AudioanalysisUrl = "https://github.com/vidishasawant10/AudioAnalysis";
-
-  const Cany = () => window.open(CanyUrl, "_blank");
-  const Easyway = () => window.open(EasywayUrl, "_blank");
-  const Hope = () => window.open(HopeUrl, "_blank");
-  const Studenthub = () => window.open(StudenthubUrl, "_blank");
-  const Dailyyou = () => window.open(DailyyouUrl, "_blank");
-  const Spaceinvader = () => window.open(SpaceinvaderUrl, "_blank");
-  const Cardealer = () => window.open(CardealerUrl, "_blank");
-  const NycTaxitrip = () => window.open(NycTaxiUrl, "_blank");
-  const Audioanalysis = () => window.open(AudioanalysisUrl, "_blank");
-
-
   return (
-    <div id='projects' className='projects'>
-   {/* <div className="col">  */}
-       <h1 className='pagetitle animate__animated animate__fadeInRight'>Projects</h1> 
-       <div  className="d-flex justify-content-center" >
-        {/* <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
-        <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
-        <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
-        <Project title="Student Hub" imgSrc={studenthub} url={StudenthubUrl} open={Studenthub} />
-        <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
-        <Project title="Friendly Car Dealership" imgSrc={cardealer} url={CardealerUrl} open={Cardealer} />
-        <Project title="NYC Taxi Trip" imgSrc={nyctaxi} url={NycTaxiUrl} open={NycTaxitrip} />
-        <Project title="Audio Analysis" imgSrc={audioanalysis} url={AudioanalysisUrl} open={Audioanalysis} />
-        <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} /> */}
-
-
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="CANY Tour Guide" imgSrc={canyimage} url={CanyUrl} open={Cany} />
-  </div>
-  <div className="content">
-    <p className="heading">CANY Tour Guide</p>
-    <p>
-      Languages Used:
-    </p>
-    <p>
-      HTML, CSS, JavaScript, React, SCSS
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="EasyWay" imgSrc={easyway} url={EasywayUrl} open={Easyway} />
-  </div>
-  <div className="content">
-    <p className="heading">EasyWay</p>
-    <p>
-      Platform / Languages Used:
-    </p>
-    <p>
-      Agile Development, Angular, React, SCSS, Machine Learning, Jira, Cucumber, Cypress, Jira, Test Automation
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="Hope" imgSrc={hope} url={HopeUrl} open={Hope} />
-  </div>
-  <div className="content">
-    <p className="heading">Hope</p>
-    <p>
-     Platform / Languages Used:
-    </p>
-    <p>
-      Figma, UI / UX Designing, Jobs to be done + Personas, Research Questions
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="Student Hub" imgSrc={studenthub} url={StudenthubUrl} open={Studenthub} />
-  </div>
-  <div className="content">
-    <p className="heading">Student Hub</p>
-    <p>
-      Platforms / Languages Used:
-    </p>
-    <p>
-    Figma, Jobs to be Done, Personas, Research Questions, Bootstrap, Marvel 
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="Space Invader" imgSrc={spaceinvader} url={SpaceinvaderUrl} open={Spaceinvader} />
-  </div>
-  <div className="content">
-  <p className="heading">Space Invader</p>
-    <p>
-      Platforms / Languages Used:
-    </p>
-    <p>
-    Pygame, Python, PyCharm Community
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="Friendly Car Dealership" imgSrc={cardealer} url={CardealerUrl} open={Cardealer} />
-  </div>
-  <div className="content">
-  <p className="heading">Friendly Car Dealership</p>
-    <p>
-      Platforms / Languages Used:
-    </p>
-    <p>
-      SQL, Oracle Database  
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="NYC Taxi Trip" imgSrc={nyctaxi} url={NycTaxiUrl} open={NycTaxitrip} />
-  </div>
-  <div className="content">
-  <p className="heading">NYC Taxi Trip</p>
-    <p>
-      Platforms / Languages Used:
-    </p>
-    <p>
-      Python, Google Collab Notebook, Pandas, Matplotlib, NumPy
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container">
-  <div className="card">
-  <div className="img-content">
-  <Project title="Audio Analysis" imgSrc={audioanalysis} url={AudioanalysisUrl} open={Audioanalysis} />
-  </div>
-  <div className="content">
-  <p className="heading">Audio Analysis</p>
-    <p>
-      Platforms / Languages Used:
-    </p>
-    <p>
-      Machine Learning, Python, Jupyter Notebook, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras
-    </p>
-  </div>
-  
-</div>
-</div>
-
-<div className="card-container mobile p-3">
-  <div className="card">
-  <div className="img-content">
-  <Project title="Daily You" imgSrc={daily} url={DailyyouUrl} open={Dailyyou} />
-  </div>
-  <div className="content">
-    <p className="heading">Daily You</p>
-    <p>
-      Platforms / Languages Used:
-    </p>
-    <p>
-      React Native, CSS
-      </p>
-  </div>
-  
-</div>
-</div>
-<p className='more animate__animated animate__fadeInLeft'>See my Certifications and more about me on Linkedln and explore many projects on my GitHub profile.</p>
-</div>
-</div>
+    <div className="projects-section">
+      <h1 className="pagetitle">Projects</h1>
+      <div className="projects-container">
+        {projectsData.map((project, index) => (
+          <div className="project-card" key={index}>
+            <img src={project.imgSrc} alt={project.title} className="project-image" />
+            <div className="project-content">
+              <h2 className="project-title">{project.title}</h2>
+              <p className="project-description">{project.description}</p>
+              <div className="project-technologies">
+                {project.technologies.map((tech, i) => (
+                  <span className="tech-tag" key={i}>{tech}</span>
+                ))}
+              </div>
+              <button className="project-button" onClick={() => window.open(project.url, "_blank")}>
+                Know More
+                <NorthEastIcon className="arrow-icon" />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

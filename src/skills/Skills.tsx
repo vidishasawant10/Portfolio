@@ -50,9 +50,9 @@ const skills = [
 const Skills: React.FC = () => {
   return (
     <section className="skills-section">
-      <h2 className="skills-title">Skills & Experience</h2>
+      <h2 className="skills-title">Tools & Technologies</h2>
       <p className="skills-subtitle">
-        The main area of expertise is front-end development (client-side of the web).
+        The main area of expertise is full-stack development.
       </p>
       <p className="skills-description">
         Proficient in developing scalable web applications using modern front-end and back-end technologies.

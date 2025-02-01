@@ -26,7 +26,7 @@ main {
 
 /* Navbar when scrolling */
 .navbar.fixed {
-  background: #fff; /* Background when scrolled */
+  background: #ffcbc5; /* Background when scrolled */
   top: 0;
   position: fixed; /* Ensures it stays fixed at the top */
   z-index: 1000;

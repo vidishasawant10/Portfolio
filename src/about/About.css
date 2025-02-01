@@ -1,12 +1,48 @@
-.about-section {
+.about-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
   align-items: center;
   justify-content: center;
-  padding-top: 5vh;
+  margin: auto;
+  padding: 40px;
 }
 
-h1 {
-  font-weight: bold;
-  text-align: center;
-  align-items: center;
+.about-content {
+  flex: 2;
+  text-align: left;
+  padding-left: 40px; /* Space between image and text */
+}
+
+.about-image {
+  padding-top: 5vh;
+  flex: 1;
+  display: flex;
   justify-content: center;
+}
+
+.about-image img {
+  width: 30vw; /* Adjust as needed */
+  height: auto;
+  border: 10px solid #000;
+  border-radius: 10px;
+}
+
+.skills-work-container {
+  width: 100%;
+  margin-top: 50px; /* Pushes Skills and Work sections below */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image img {
+    width: 250px;
+  }
+  .about-content {
+    text-align: center;
+    padding-left: 0;
+  }
 }/*# sourceMappingURL=About.css.map */

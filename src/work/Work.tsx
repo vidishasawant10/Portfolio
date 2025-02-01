@@ -12,7 +12,7 @@ const experiences = [
     description: `Built and optimized a React-based web app for automated ticket distribution, reducing task time by 42%.
     Enhanced Dodgers Homeplate UI with lazy loading, improving response time by 54%.
     Implemented Redis caching and .NET optimizations, cutting API response time by 50%.`,
-    skills: ["React", "Node.js", "BigQuery", "Google Cloud", "Salesforce"]
+    skills: ["React", "Node.js", "Python", "CI/CD", "Google Cloud", "Salesforce"]
   },
   {
     company: "WelSpot Inc.",

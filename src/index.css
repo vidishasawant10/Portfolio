@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #FFE2DE  !important; /* Set a solid background */
+  background: #FFE2DE !important; /* Set a solid background */
   background-image: none !important; /* Remove gradient */
   background-repeat: no-repeat !important;
   background-size: cover !important;
