@@ -1,14 +1,14 @@
 import React from 'react';
 import './Projects.css';
-import canyimage from './CANYTour.png';
-import easyway from './EasyWay.png';
-import spaceinvader from './SpaceInvader.png';
+import canyimage from './CANY1.png';
+import easyway from './EasyWay1.png';
+import spaceinvader from './space.png';
 import nyctaxi from './nyctaxi.png';
 import hope from './Hope.png';
-import studenthub from './StudentHub.png';
+import studenthub from './StudentHub1.png';
 import daily from './DailyYou1.png';
 import audioanalysis from './audioanalysis.png';
-import cardealer from './cardealer.png';
+import cardealer from './CarDealership.png';
 import NorthEastIcon from '@mui/icons-material/NorthEast';
 
 
