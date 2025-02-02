@@ -20,10 +20,9 @@ const skills = [
   { name: "CSS3", icon: "devicon-css3-plain colored" },
   { name: "Material UI", icon: "devicon-materialui-plain colored" },
   { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
+  { name: "Redis", icon: "devicon-redis-plain colored" },
   { name: "jQuery", icon: "devicon-jquery-plain colored" },
   { name: "React Native", icon: "devicon-react-original colored" },
-
-
   // Back-End Development
   { name: "Git", icon: "devicon-git-plain colored" },
   { name: "Spring Boot", icon: "devicon-spring-original colored" },
@@ -32,10 +31,8 @@ const skills = [
   { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
   { name: "Microsoft SQL Server", icon: "devicon-microsoftsqlserver-plain colored" },
   { name: "Oracle Database", icon: "devicon-oracle-original colored" },
-  { name: "GraphQL", icon: "devicon-graphql-plain colored" },
 
   // Tools & Software
-  { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
   { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
   { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
   { name: "Figma", icon: "devicon-figma-plain colored" },

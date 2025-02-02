@@ -95,7 +95,7 @@ const Projects = () => {
                 ))}
               </div>
               <button className="project-button" onClick={() => window.open(project.url, "_blank")}>
-                Know More
+                Know More &nbsp;
                 <NorthEastIcon className="arrow-icon" />
               </button>
             </div>

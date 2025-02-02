@@ -28,7 +28,6 @@
   padding-bottom: 0px;
 }
 
-/* Updated work-header layout */
 .work-header {
   display: flex;
   justify-content: space-between;
@@ -57,7 +56,6 @@
   font-weight: bold;
 }
 
-/* Place location & arrow to the right */
 .work-header-right {
   align-items: center;
   text-align: right;

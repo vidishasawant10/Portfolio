@@ -51,38 +51,10 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Toggle Button for Mobile */}
-        <div className="toggle_btn" onClick={toggleMenu}>
-          {isMenuOpen ? (
-            <i className="bi bi-x"></i>
-          ) : (
-            <i className="bi bi-list"></i>
-          )}
+         {/* Mobile Hamburger Button (Only Visible in Mobile) */}
+         <div className="toggle_btn" onClick={toggleMenu}>
+          {isMenuOpen ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="overlay" onClick={closeMenu}>
-            <nav className="overlay-menu">
-              <ul>
-                <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-                <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-                <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-                <li>
-                  <a 
-                    href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={closeMenu}
-                  >
-                    Resume
-                  </a>
-                </li>
-                <li><button className="get-in-touch" onClick={() => navigate('/contact')}>Get In Touch</button></li>
-              </ul>
-            </nav>
-          </div>
-        )}
       </div>
     </>
   );

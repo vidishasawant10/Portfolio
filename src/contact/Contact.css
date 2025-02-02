@@ -144,24 +144,26 @@ textarea {
   font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .contact-container {
+    width: 100vw;
     flex-direction: column;
     text-align: center;
     padding: 40px 20px;
-  }
-  .contact-left {
-    order: 1;
-    padding: 2vw;
+    overflow: hidden;
   }
   .contact-left h3 {
     font-size: 1rem;
+  }
+  .contact-left p {
+    font-size: 0.9rem;
+    font-weight: bold;
   }
   .contact-card {
     order: 2;
     width: 100%;
     max-width: 400px;
-    margin-top: 0px;
+    margin-top: 0px !important;
   }
   .contact-card h2 {
     font-size: 1.3rem;
