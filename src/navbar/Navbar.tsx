@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -30,10 +30,9 @@ const Navbar: React.FC = () => {
   return (
     <>
       <div className={`navbar ${isScrolled ? 'fixed' : ''}`} id='navbar'>
-        {/* Clicking the Logo Navigates to Home */}
         <img src={logo} alt="Logo" className="logoimage" onClick={() => navigate('/')} />
 
-        <nav>
+        <nav className="desktop-nav">
           <ul className={`links ${isMenuOpen ? 'open' : ''}`}>
             <li><Link to="/about" onClick={closeMenu}>About</Link></li>
             <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
@@ -51,11 +50,32 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-         {/* Mobile Hamburger Button (Only Visible in Mobile) */}
-         <div className="toggle_btn" onClick={toggleMenu}>
+        <div className="toggle_btn" onClick={toggleMenu}>
           {isMenuOpen ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="overlay">
+          <div className="overlay-menu">
+            <ul>
+              <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+              <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+              <li>
+                <a 
+                  href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                >
+                  Resume
+                </a>
+              </li>
+              <li className="get-in-touch"><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+            </ul>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -102,7 +102,7 @@ nav ul li {
 /* Hide Desktop Navbar in Mobile */
 @media (max-width: 992px) {
   .desktop-nav {
-    display: none;
+    display: none; /* Hide desktop menu in mobile mode */
   }
 }
 
@@ -114,17 +114,17 @@ nav ul li {
   position: absolute;
   right: 20px;
   top: 15px;
-  display: none; /* Hidden by default, only shown in mobile */
+  display: none; /* Hidden in desktop mode */
 }
 
-/* Mobile Menu */
+/* Mobile Menu Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   z-index: 999;
   display: flex;
   align-items: center;
@@ -138,7 +138,6 @@ nav ul li {
   text-align: center;
   width: 90%;
   max-width: 400px;
-  height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -146,12 +145,9 @@ nav ul li {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
 }
 
 .overlay-menu ul li {
-  width: 100%;
-  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -171,31 +167,72 @@ nav ul li {
   color: black;
 }
 
-/* Show Hamburger Menu in Mobile */
 @media (max-width: 992px) {
-  .toggle_btn {
-    display: block; /* Show in mobile mode */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffcbc5; /* Keep background same */
+    padding: 15px 40px;
+    transition: none; /* Remove any transition affecting visibility */
   }
 
-  .navbar {
-    padding: 15px 20px; /* Adjust padding */
+  .desktop-nav {
+    display: none !important; /* Ensure desktop menu is hidden */
+  }
+
+  .toggle_btn {
+    display: block !important; /* Show hamburger menu */
+  }
+
+  /* Ensure the overlay menu does not shift */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; /* Ensure overlay is on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .overlay-menu {
-    width: 95%;
-    max-width: 380px;
-    padding: 15px;
+    background-color: #FCE8DD;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .overlay-menu ul {
-    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .overlay-menu ul li {
-    width: 100%;
+    margin-bottom: 20px;
   }
 
   .overlay-menu ul li a {
-    max-width: 90%;
+    display: block;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  .overlay-menu ul li a:hover {
+    background: #FFCBC5;
+    color: black;
   }
 }
