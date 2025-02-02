@@ -4,14 +4,17 @@
    align-items: center;
    min-height: 100vh; /* Ensure proper vertical alignment */
    width: 100%;
-   // padding: 5vh 8vw; /* Adjust padding to balance spacing */
    box-sizing: border-box;
+   gap: 40px;
+   flex-wrap: wrap; /* Ensures responsiveness */
 }
 
+/* Left Section - Text */
 .contact-left {
    flex: 1;
-   text-align: center;
-   padding: 10vw;
+   text-align: left;
+   padding: 5vw;
+   padding-top: 0px !important;
 }
 
 .contact-left h1 {
@@ -24,7 +27,7 @@
    font-size: 1.1rem;
    margin: 10px 0;
    color: #666;
-   text-align: center;
+   text-align: left;
 }
 
 .email-box {
@@ -42,6 +45,7 @@
    text-decoration: none;
 }
 
+/* Right Section - Contact Form */
 .contact-card {
    flex: 1;
    max-width: 450px;
@@ -64,6 +68,7 @@
    color: #333;
 }
 
+/* Form Styling */
 .form-group {
    margin-bottom: 15px;
 }
@@ -82,6 +87,7 @@ textarea {
    resize: none;
 }
 
+/* Submit Button */
 .submit-button {
    background-color: #6C63FF;
    color: white;
@@ -99,11 +105,13 @@ textarea {
    background-color: #5548e8;
 }
 
+/* Error Styling */
 .error {
    color: red;
    font-size: 0.9rem;
 }
 
+/* Thank You Message */
 .thank-you {
    text-align: center;
 }
@@ -118,6 +126,7 @@ textarea {
    margin: 10px 0;
 }
 
+/* LinkedIn Button */
 .linkedin-button {
    background: transparent;
    color: #0077b5;
@@ -140,4 +149,41 @@ textarea {
 
 .arrow-icon {
    font-size: 1.2rem;
+}
+
+/* ===== MOBILE VIEW (STACKS CONTENT) ===== */
+@media (max-width: 768px) {
+   .contact-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px; /* Reduce padding for mobile */
+   }
+
+   /* Keep text section at the top */
+   .contact-left {
+      order: 1;
+      padding: 2vw; /* Reduce padding for mobile */
+      h3{
+         font-size: 1rem;
+      }
+   }
+
+   /* Move form to the bottom */
+   .contact-card {
+      order: 2;
+      width: 100%;
+      max-width: 400px; /* Adjust form width */
+      margin-top: 0px;
+
+      h2{
+         font-size: 1.3rem;
+      }
+   }
+
+   .linkedin-button {
+      width: 100%;
+      max-width: 250px;
+      background-color: #0077b5;
+      color: white;
+   }
 }

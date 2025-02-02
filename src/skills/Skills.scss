@@ -71,3 +71,40 @@
     }
   }
 }
+
+/* ===== MOBILE MODE (Small Screens) ===== */
+@media (max-width: 900px) {
+  .skills-section {
+    // padding: 40px 15px; /* Less padding for mobile */
+
+
+  .skills-title {
+    font-size: 30px; /* Reduce title size */
+  }
+
+  .skills-subtitle {
+    font-size: 1rem;
+  }
+
+  .skills-description {
+    font-size: 0.9rem;
+  }
+
+  .skills-grid {
+    gap: 50px; /* Reduce gap between icons */
+  }
+
+  .skill-item {
+    width: 30px; /* Smaller skill items */
+    text-align: center;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem; /* Smaller text */
+  }
+}
+}
