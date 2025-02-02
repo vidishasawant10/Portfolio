@@ -2,7 +2,6 @@ import React from "react";
 import "./Skills.css";
 
 const skills = [
-  // Programming Languages
   { name: "Java", icon: "devicon-java-plain colored" },
   { name: "Python", icon: "devicon-python-plain colored" },
   { name: "C#", icon: "devicon-csharp-plain colored" },
@@ -11,8 +10,6 @@ const skills = [
   { name: "TypeScript", icon: "devicon-typescript-plain colored" },
   { name: "Docker", icon: "devicon-docker-plain colored" },
   { name: "Android", icon: "devicon-android-plain colored" },
-
-  // Front-End Development
   { name: "React", icon: "devicon-react-original colored" },
   { name: "Vite", icon: "devicon-vitejs-plain colored" },
   { name: "Angular", icon: "devicon-angularjs-plain colored" },
@@ -23,24 +20,18 @@ const skills = [
   { name: "Redis", icon: "devicon-redis-plain colored" },
   { name: "jQuery", icon: "devicon-jquery-plain colored" },
   { name: "React Native", icon: "devicon-react-original colored" },
-  // Back-End Development
   { name: "Git", icon: "devicon-git-plain colored" },
   { name: "Spring Boot", icon: "devicon-spring-original colored" },
-  // Databases
   { name: "MySQL", icon: "devicon-mysql-plain colored" },
   { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
   { name: "Microsoft SQL Server", icon: "devicon-microsoftsqlserver-plain colored" },
   { name: "Oracle Database", icon: "devicon-oracle-original colored" },
-
-  // Tools & Software
   { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
   { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
   { name: "Figma", icon: "devicon-figma-plain colored" },
   { name: "Jira", icon: "devicon-jira-plain colored" },
   { name: "Postman", icon: "devicon-postman-plain colored" },
   { name: "Selenium", icon: "devicon-selenium-original colored" },
-
-  // Cloud & DevOps
   { name: "Google Cloud Platform (GCP)", icon: "devicon-googlecloud-plain colored" },
   { name: "Amazon Web Services (AWS)", icon: "devicon-amazonwebservices-plain colored" },
 ];

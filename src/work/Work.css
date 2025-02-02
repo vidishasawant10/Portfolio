@@ -9,9 +9,10 @@
   color: #d9534f;
   text-transform: uppercase;
   margin-bottom: 30px;
+  text-underline-position: under;
+  text-decoration: underline;
 }
 
-/* Work Experience Styling */
 .work-header {
   position: relative;
   padding: 20px;
@@ -42,19 +43,16 @@
   background-color: rgba(217, 83, 79, 0.15);
 }
 
-/* Ensure the accordion is initially closed */
 .work-content {
   display: none;
   padding: 10px;
   text-align: left;
 }
 
-/* Open state of the accordion */
 .work-item.selected .work-content {
   display: block;
 }
 
-/* Education Sidebar Styling */
 .institution-name {
   font-weight: bold;
   text-transform: uppercase;
@@ -76,7 +74,6 @@
   padding-left: 16px;
 }
 
-/* Work Container */
 .work-container {
   border-left: 2px solid #D9534F;
   width: 90vw;
@@ -133,7 +130,10 @@
   background-color: #d9534f;
 }
 
-/* Education Section */
+.work-header-right {
+  text-align: right;
+}
+
 .education-section {
   padding: 40px 40px;
   color: #2E2E2E;
@@ -174,7 +174,6 @@
   color: #333;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .education-container {
     flex-direction: column;

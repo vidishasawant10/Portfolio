@@ -28,7 +28,6 @@ const Education: React.FC = () => {
       <h1 className='pagetitle'>Education</h1>
 
       <div className='education-container'>
-        {/* Sidebar with institution names */}
         <div className='education-sidebar'>
           {educationData.map((edu, index) => (
             <p 
@@ -41,7 +40,6 @@ const Education: React.FC = () => {
           ))}
         </div>
 
-        {/* Education Details */}
         <div className='education-details'>
           <p className='education-title'><em>{selectedEducation.duration}</em></p>
           <p className='education-degree'><strong>{selectedEducation.degree}</strong></p>

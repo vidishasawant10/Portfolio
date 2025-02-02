@@ -11,7 +11,6 @@ import audioanalysis from './audioanalysis.png';
 import cardealer from './CarDealership.png';
 import NorthEastIcon from '@mui/icons-material/NorthEast';
 
-
 const projectsData = [
   {
     title: "CANY Tour Guide",

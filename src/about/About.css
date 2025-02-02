@@ -1,6 +1,6 @@
 .about-container {
   display: flex;
-  flex-wrap: wrap; /* Ensures responsiveness */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -10,7 +10,7 @@
 .about-content {
   flex: 2;
   text-align: left;
-  padding-left: 40px; /* Space between image and text */
+  padding-left: 40px;
 }
 
 .about-image {
@@ -21,7 +21,7 @@
 }
 
 .about-image img {
-  width: 30vw; /* Adjust as needed */
+  width: 30vw;
   height: auto;
   border: 10px solid #000;
   border-radius: 10px;
@@ -29,10 +29,9 @@
 
 .skills-work-container {
   width: 100%;
-  margin-top: 50px; /* Pushes Skills and Work sections below */
+  margin-top: 50px;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;

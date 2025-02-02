@@ -59,7 +59,6 @@ const Work: React.FC = () => {
             className={`work-item ${selectedWork === index ? "selected" : ""}`}
             onClick={() => setSelectedWork(index)}
           >
-            {/* Header */}
             <div className="work-header">
               <div className="work-header-left">
                 <p className="company-name">{exp.company}</p>
@@ -72,7 +71,6 @@ const Work: React.FC = () => {
               </div>
             </div>
 
-            {/* Content */}
             {selectedWork === index && (
               <div className="work-content open">
                 <p className="work-description">{exp.description}</p>
@@ -88,11 +86,8 @@ const Work: React.FC = () => {
         ))}
       </div>
 
-      {/* Education Section */}
       <h1 className='pagetitle'>Education</h1>
-
       <div className='education-container'>
-        {/* Sidebar with institutions */}
         <div className='education-sidebar'>
           {educationData.map((edu, index) => (
             <p
@@ -105,7 +100,6 @@ const Work: React.FC = () => {
           ))}
         </div>
 
-        {/* Education Details */}
         <div className='education-details'>
           <p className='education-title'><em>{selectedEducation.duration}</em></p>
           <p className='education-degree'><strong>{selectedEducation.degree}</strong></p>

@@ -2,17 +2,15 @@ import React from 'react';
 import './About.css';
 import Skills from "../skills/Skills";
 import Work from "../work/Work";
-import profilePic from "./About.jpg"; // Replace with actual image path
+import profilePic from "./About.jpg";
 
 const About: React.FC = () => {
   return (
     <div className="about-container" id='about'>
-      {/* Image on Left */}
       <div className="about-image">
         <img src={profilePic} alt="Profile" />
       </div>
 
-      {/* Text on Right */}
       <div className="about-content">
         <h1 className='pagetitle animate__animated animate__fadeInRight'>About</h1>
         <p className='animate__animated animate__fadeInLeft'>
@@ -35,7 +33,6 @@ const About: React.FC = () => {
         </p>
       </div>
 
-      {/* Skills and Work sections below */}
       <div className="skills-work-container">
         <Skills />
         <Work />

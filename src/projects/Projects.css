@@ -1,21 +1,20 @@
 .projects-section {
   padding: 50px;
   text-align: center;
-  color: #000000; /* Black text */
+  color: #000000;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Two per row */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 40px;
   justify-content: center;
   max-width: 1300px;
   margin: 0 auto;
 }
 
-/* Project Card */
 .project-card {
-  background: #774c60; /* Dark background */
+  background: #774c60;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -30,9 +29,8 @@
   transform: scale(1.05);
 }
 
-/* Image Section with Dark Background */
 .project-image-container {
-  background: #774c60; /* Dark background for image */
+  background: #774c60;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -47,41 +45,36 @@
      object-fit: cover;
 }
 
-/* Content Section with White Background */
 .project-content {
-  background: #ffffff; /* White background */
+  background: #ffffff;
   width: 100%;
   padding: 20px;
   text-align: center;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  flex-grow: 1; /* Ensures content always expands */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Remove Extra Margins */
 .project-content:last-child {
   margin-bottom: 0;
 }
 
-/* Title */
 .project-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #000000; /* Black text */
+  color: #000000;
   margin-bottom: 10px;
 }
 
-/* Description */
 .project-description {
   font-size: 1rem;
-  color: #333333; /* Dark gray */
+  color: #333333;
   margin-bottom: 10px;
 }
 
-/* Technologies Section */
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
@@ -91,7 +84,7 @@
 }
 
 .tech-tag {
-  background: #f0f0f0; /* Light gray */
+  background: #f0f0f0;
   padding: 6px 12px;
   border-radius: 5px;
   font-size: 0.9rem;
@@ -99,9 +92,8 @@
   font-weight: 500;
 }
 
-/* Call-to-Action Button */
 .project-button {
-  background: #d97706; /* Gold */
+  background: #d97706;
   color: #ffffff;
   border: none;
   padding: 12px 20px;
@@ -117,7 +109,6 @@
   background: #b45309;
 }
 
-/* Responsive Layout */
 @media (max-width: 900px) {
   .projects-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

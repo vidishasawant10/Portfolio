@@ -1,11 +1,9 @@
-/* Remove scroll bar */
 body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-/* Main container */
 .home-container {
   display: flex;
   align-items: center;
@@ -21,21 +19,18 @@ body {
   width: 100%;
 }
 
-/* Content Section */
 .content-section {
   flex: 1;
   max-width: 50%;
   text-align: center;
 }
 
-/* Greeting Text */
 .greeting {
-  font-size: 3rem; /* Large and bold */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* Intro text */
 .intro-text {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -44,7 +39,6 @@ body {
   margin: 0 auto;
 }
 
-/* Profile Section */
 .profile-section {
   flex: 1;
   display: flex;
@@ -52,27 +46,26 @@ body {
   justify-content: center;
 }
 
-/* Profile Container */
 .profile-container {
   position: relative;
-  width: 40vw; /* Adjust as needed */
+  width: 40vw;
   height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* Ensure no cropping */
+  overflow: visible;
   margin-bottom: 20px;
 }
 
 .profileimage {
-  width: 50vw; /* Use vw for better responsiveness */
-  height: auto; /* Maintain aspect ratio */
+  width: 50vw;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
   mask-image: url("./Brush.png");
   mask-repeat: no-repeat;
-  mask-size: contain; /* Ensures brush effect is visible */
+  mask-size: contain;
   mask-position: center;
   -webkit-mask-image: url("./Brush.png");
   -webkit-mask-repeat: no-repeat;
@@ -81,10 +74,10 @@ body {
 }
 
 .brush-mask {
-  width: 50vw; /* Use vw for better scaling */
+  width: 50vw;
   height: auto;
   -o-object-fit: contain;
-     object-fit: contain; /* Ensures full visibility */
+     object-fit: contain;
   position: absolute;
 }
 
@@ -97,7 +90,6 @@ body {
   border-radius: 14px;
 }
 
-/* Social Media Buttons */
 .Btn {
   width: 45px;
   height: 45px;
@@ -147,9 +139,7 @@ body {
   background: #0077b5;
 }
 
-/* Ensure mobile-first responsiveness */
 @media screen and (max-width: 768px) {
-  /* Keep everything stacked */
   .home-container {
     flex-direction: column;
     align-items: center;
@@ -160,14 +150,12 @@ body {
   .greeting {
     font-size: x-large;
   }
-  /* Ensure content is at the top */
   .content-section {
     order: 1;
     max-width: 100%;
     text-align: center;
     padding: 10px;
   }
-  /* Keep social icons at the top */
   .social-card {
     display: flex;
     justify-content: center;
@@ -175,7 +163,6 @@ body {
     gap: 15px;
     flex-wrap: wrap;
   }
-  /* Move profile image lower and increase its size */
   .profile-section {
     order: 2;
     width: 100%;
@@ -185,12 +172,11 @@ body {
   }
   .profile-container {
     width: 100vw;
-    height: 25vh; /* Increased width */
+    height: 25vh;
   }
   .profileimage, .brush-mask {
     width: 100%;
   }
-  /* Ensure no horizontal scrolling */
   .no-scroll {
     overflow: scroll;
     width: 100%;

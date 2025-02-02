@@ -23,10 +23,7 @@ const Contact: React.FC = () => {
     message: '',
   });
   useEffect(() => {
-    // Add no-scroll class when Home is mounted
     document.body.classList.add("no-scroll");
-    
-    // Remove class on unmount to restore scrolling for other pages
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -56,17 +53,13 @@ const Contact: React.FC = () => {
       setErrors(validationErrors);
       return;
     }
-
-    // Simulate email submission
     window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`);
     
     setSubmitted(true);
   };
-
   return (
 
     <div className="contact-container">
-      {/* Left Section - Text */}
       <div className="contact-left">
         <h1>Let's chat.</h1> <br /> 
         <h3>I’m looking for new full-time opportunity in 2025 and available to join immediately and open to relocation.
@@ -78,8 +71,6 @@ const Contact: React.FC = () => {
             <p>Let’s create something together ✨</p>
 
       </div>
-
-      {/* Right Section - Contact Form */}
       <div className="contact-card">
         {!submitted ? (
           <>

@@ -60,7 +60,6 @@
   opacity: 0.8;
 }
 
-/* ===== MOBILE MODE (Small Screens) ===== */
 @media (max-width: 900px) {
   .skills-section .skills-title {
     font-size: 30px;
