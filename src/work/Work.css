@@ -25,7 +25,7 @@
 
 .work-content.open {
   display: block;
-  padding-bottom: 0px; /* Minimize bottom spacing */
+  padding-bottom: 0px;
 }
 
 /* Updated work-header layout */
@@ -61,7 +61,7 @@
 .work-header-right {
   align-items: center;
   text-align: right;
-  gap: 10px; /* Space between location and arrow */
+  gap: 10px;
 }
 
 .work-location {

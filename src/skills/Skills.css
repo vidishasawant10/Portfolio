@@ -63,7 +63,7 @@
 /* ===== MOBILE MODE (Small Screens) ===== */
 @media (max-width: 900px) {
   .skills-section .skills-title {
-    font-size: 30px; /* Reduce title size */
+    font-size: 30px;
   }
   .skills-section .skills-subtitle {
     font-size: 1rem;
@@ -72,16 +72,19 @@
     font-size: 0.9rem;
   }
   .skills-section .skills-grid {
-    gap: 50px; /* Reduce gap between icons */
+    gap: 50px;
+  }
+  .skills-section .skills-grid .skill-item .skill-icon {
+    font-size: 3rem;
   }
   .skills-section .skill-item {
-    width: 30px; /* Smaller skill items */
+    width: 30px;
     text-align: center;
   }
   .skills-section .skill-icon {
     font-size: 1.5rem;
   }
   .skills-section .skill-name {
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem;
   }
 }/*# sourceMappingURL=Skills.css.map */

@@ -55,7 +55,7 @@
       }
 
       .skill-icon {
-        font-size: 5rem; // Adjust the icon size
+        font-size: 5rem; 
         transition: transform 0.3s ease;
 
         &:hover {
@@ -75,11 +75,11 @@
 /* ===== MOBILE MODE (Small Screens) ===== */
 @media (max-width: 900px) {
   .skills-section {
-    // padding: 40px 15px; /* Less padding for mobile */
+    // padding: 40px 15px; 
 
 
   .skills-title {
-    font-size: 30px; /* Reduce title size */
+    font-size: 30px; 
   }
 
   .skills-subtitle {
@@ -91,11 +91,16 @@
   }
 
   .skills-grid {
-    gap: 50px; /* Reduce gap between icons */
+    gap: 50px; 
+    .skill-item{
+      .skill-icon{
+        font-size: 3rem; 
+      }
+    }
   }
 
   .skill-item {
-    width: 30px; /* Smaller skill items */
+    width: 30px; 
     text-align: center;
   }
 
@@ -104,7 +109,7 @@
   }
 
   .skill-name {
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.9rem; 
   }
 }
 }

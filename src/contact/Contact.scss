@@ -2,14 +2,13 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   min-height: 100vh; /* Ensure proper vertical alignment */
+   min-height: 100vh; 
    width: 100%;
    box-sizing: border-box;
    gap: 40px;
-   flex-wrap: wrap; /* Ensures responsiveness */
+   flex-wrap: wrap;
 }
 
-/* Left Section - Text */
 .contact-left {
    flex: 1;
    text-align: left;
@@ -45,7 +44,6 @@
    text-decoration: none;
 }
 
-/* Right Section - Contact Form */
 .contact-card {
    flex: 1;
    max-width: 450px;
@@ -68,7 +66,6 @@
    color: #333;
 }
 
-/* Form Styling */
 .form-group {
    margin-bottom: 15px;
 }
@@ -87,7 +84,6 @@ textarea {
    resize: none;
 }
 
-/* Submit Button */
 .submit-button {
    background-color: #6C63FF;
    color: white;
@@ -105,13 +101,11 @@ textarea {
    background-color: #5548e8;
 }
 
-/* Error Styling */
 .error {
    color: red;
    font-size: 0.9rem;
 }
 
-/* Thank You Message */
 .thank-you {
    text-align: center;
 }
@@ -126,7 +120,6 @@ textarea {
    margin: 10px 0;
 }
 
-/* LinkedIn Button */
 .linkedin-button {
    background: transparent;
    color: #0077b5;
@@ -151,34 +144,32 @@ textarea {
    font-size: 1.2rem;
 }
 
-/* ===== MOBILE VIEW (STACKS CONTENT) ===== */
 @media (max-width: 768px) {
    .contact-container {
       flex-direction: column;
       text-align: center;
-      padding: 40px 20px; /* Reduce padding for mobile */
+      padding: 40px 20px;
    }
 
-   /* Keep text section at the top */
    .contact-left {
       order: 1;
-      padding: 2vw; /* Reduce padding for mobile */
+      padding: 2vw; 
       h3{
          font-size: 1rem;
       }
    }
 
-   /* Move form to the bottom */
    .contact-card {
       order: 2;
       width: 100%;
-      max-width: 400px; /* Adjust form width */
+      max-width: 400px; 
       margin-top: 0px;
 
       h2{
          font-size: 1.3rem;
       }
    }
+
 
    .linkedin-button {
       width: 100%;

@@ -7,12 +7,13 @@ const skills = [
   { name: "Python", icon: "devicon-python-plain colored" },
   { name: "C#", icon: "devicon-csharp-plain colored" },
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+  { name: "Node.js", icon: "devicon-nodejs-plain colored" },
   { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+  { name: "Docker", icon: "devicon-docker-plain colored" },
   { name: "Android", icon: "devicon-android-plain colored" },
 
   // Front-End Development
   { name: "React", icon: "devicon-react-original colored" },
-  { name: "React Native", icon: "devicon-react-original colored" },
   { name: "Vite", icon: "devicon-vitejs-plain colored" },
   { name: "Angular", icon: "devicon-angularjs-plain colored" },
   { name: "HTML5", icon: "devicon-html5-plain colored" },
@@ -20,21 +21,21 @@ const skills = [
   { name: "Material UI", icon: "devicon-materialui-plain colored" },
   { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
   { name: "jQuery", icon: "devicon-jquery-plain colored" },
+  { name: "React Native", icon: "devicon-react-original colored" },
+
 
   // Back-End Development
-  { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+  { name: "Git", icon: "devicon-git-plain colored" },
   { name: "Spring Boot", icon: "devicon-spring-original colored" },
   // Databases
   { name: "MySQL", icon: "devicon-mysql-plain colored" },
-  { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
   { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
   { name: "Microsoft SQL Server", icon: "devicon-microsoftsqlserver-plain colored" },
   { name: "Oracle Database", icon: "devicon-oracle-original colored" },
   { name: "GraphQL", icon: "devicon-graphql-plain colored" },
 
   // Tools & Software
-  { name: "Git", icon: "devicon-git-plain colored" },
-  { name: "Docker", icon: "devicon-docker-plain colored" },
+  { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
   { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
   { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
   { name: "Figma", icon: "devicon-figma-plain colored" },
