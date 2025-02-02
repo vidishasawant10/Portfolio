@@ -145,4 +145,57 @@ body{
   .linkdin .BG {
 	background: #0077b5;
   }
+/* Ensure mobile-first responsiveness */
+@media screen and (max-width: 768px) {
+    /* Keep everything stacked */
+    .home-container {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+    }
+	.greeting{
+		font-size:x-large;
+	}
+    /* Ensure content is at the top */
+    .content-section {
+        order: 1;
+        max-width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
 
+    /* Keep social icons at the top */
+    .social-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* Move profile image lower and increase its size */
+    .profile-section {
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-container {
+        width: 100vw; 
+		height: 25vh;/* Increased width */
+    }
+
+    .profileimage, .brush-mask {
+        width: 100%;
+    }
+
+    /* Ensure no horizontal scrolling */
+    .no-scroll {
+        overflow:scroll;
+        width: 100%;
+    }
+}

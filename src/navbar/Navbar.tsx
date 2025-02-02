@@ -65,6 +65,7 @@ const Navbar: React.FC = () => {
           <div className="overlay" onClick={closeMenu}>
             <nav className="overlay-menu">
               <ul>
+                <li><Link to="/" onClick={closeMenu}>Home</Link></li>
                 <li><Link to="/about" onClick={closeMenu}>About</Link></li>
                 <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
                 <li>
