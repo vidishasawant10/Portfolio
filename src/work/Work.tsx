@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './Work.css';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 const experiences = [
   {
@@ -25,6 +23,7 @@ const experiences = [
     skills: ["React", "TypeScript", "AWS RDS", "PostgreSQL", "Docker"]
   }
 ];
+
 const educationData = [
   {
     institution: "Pace University - New York",
@@ -43,14 +42,11 @@ const educationData = [
     Worked on real-world projects involving software development and system design.`
   }
 ];
+
 const Work: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [selectedWork, setSelectedWork] = useState<number | null>(null);
   const [selectedEducation, setSelectedEducation] = useState(educationData[0]);
   
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
     <div className="work-section" id="work">
@@ -58,65 +54,65 @@ const Work: React.FC = () => {
 
       <div className="work-container">
         {experiences.map((exp, index) => (
-          <div key={index} className="work-item">
-            {/* Header with layout changes */}
-            <div className="work-header" onClick={() => toggleAccordion(index)}>
+          <div
+            key={index}
+            className={`work-item ${selectedWork === index ? "selected" : ""}`}
+            onClick={() => setSelectedWork(index)}
+          >
+            {/* Header */}
+            <div className="work-header">
               <div className="work-header-left">
                 <p className="company-name">{exp.company}</p>
-                <p className="role-name"><em>{exp.role}</em></p> {/* Role in italics */}
+                <p className="role-name"><em>{exp.role}</em></p>
               </div>
 
               <div className="work-header-right">
-              <p className="work-duration">{exp.duration}</p>
+                <p className="work-duration">{exp.duration}</p>
                 <p className="work-location"><em>{exp.location}</em></p>
-                {/* <span className="toggle-icon">
-                  {openIndex === index ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                </span> */}
               </div>
-
             </div>
 
-            {/* Expandable content */}
-            <div className={`work-content ${openIndex === index ? "open" : ""}`}>
-              <p className="work-description">{exp.description}</p>
-              <ul className="work-skills">
-                {exp.skills.map((skill, idx) => (
-                  <li key={idx}>+ {skill}</li>
-                ))}
-              </ul>
-              <hr className="work-divider" />
-
-            </div>
-
-            {/* Divider for better separation */}
+            {/* Content */}
+            {selectedWork === index && (
+              <div className="work-content open">
+                <p className="work-description">{exp.description}</p>
+                <ul className="work-skills">
+                  {exp.skills.map((skill, idx) => (
+                    <li key={idx}> {skill}</li>
+                  ))}
+                </ul>
+                <hr className="work-divider" />
+              </div>
+            )}
           </div>
         ))}
       </div>
+
+      {/* Education Section */}
       <h1 className='pagetitle'>Education</h1>
 
-<div className='education-container'>
-  {/* Sidebar with institution names */}
-  <div className='education-sidebar'>
-    {educationData.map((edu, index) => (
-      <p 
-        key={index} 
-        className='institution-name' 
-        onClick={() => setSelectedEducation(edu)}
-      >
-        {edu.institution}
-      </p>
-    ))}
-  </div>
+      <div className='education-container'>
+        {/* Sidebar with institutions */}
+        <div className='education-sidebar'>
+          {educationData.map((edu, index) => (
+            <p
+              key={index}
+              className={`institution-name ${selectedEducation === edu ? "selected" : ""}`}
+              onClick={() => setSelectedEducation(edu)}
+            >
+              {edu.institution}
+            </p>
+          ))}
+        </div>
 
-  {/* Education Details */}
-  <div className='education-details'>
-    <p className='education-title'><em>{selectedEducation.duration}</em></p>
-    <p className='education-degree'><strong>{selectedEducation.degree}</strong></p>
-    <p className='education-description'>{selectedEducation.description}</p>
-  </div>
-</div>
+        {/* Education Details */}
+        <div className='education-details'>
+          <p className='education-title'><em>{selectedEducation.duration}</em></p>
+          <p className='education-degree'><strong>{selectedEducation.degree}</strong></p>
+          <p className='education-description'>{selectedEducation.description}</p>
+        </div>
+      </div>
     </div>
-    
   );
 };
 
