@@ -11,7 +11,7 @@ const experiences = [
     My role involved building React and Node.js applications, creating tools for data migration, optimizing backend services, and automating workflows using Cloud Functions and BigQuery. 
     I also worked with Salesforce, creating and maintaining technical documentation for workflows, flows, process builders, Apex code, and Google Cloud Functions. 
     Additionally, I contributed to cloud deployments and implemented caching solutions to improve performance and efficiency.`,
-    skills: "React, Node.js, Python, CI/CD, Google Cloud Platform (GCP), Salesforce, Figma"
+    skills: "React, Node.js, Python, CI/CD, Google Cloud Platform (GCP), Docker, Salesforce"
   },
   {
     company: "WelSpot Inc.",
@@ -29,19 +29,18 @@ const educationData = [
     institution: "Pace University - New York",
     duration: "September 2021 - May 2023",
     degree: "Master of Science (MS) in Computer Science",
-    description: `Completed coursework in full-stack development, cloud computing, and data management. 
-    Developed a BigQuery-based data warehouse for large-scale data analysis. 
-    Implemented CI/CD pipelines to enhance software deployment efficiency.`,
-    coursework: "Full-Stack Development, Cloud Computing, Database Management, Machine Learning, Human-Computer Interaction (HCI), UX Design"
+    description: `At Pace University, I gained expertise in full-stack development, cloud computing, machine learning, and UX design. Throughout my master's, I developed multiple projects,
+     including a BigQuery-based data warehouse for large-scale analytics, an AI-powered object detection model, a home utility web application, a volunteering platform, and a mobile app for daily productivity. 
+     I also implemented CI/CD pipelines to enhance software deployment efficiency and applied Agile methodologies to streamline project development.`,
+    coursework: "Algorithm & Data Structure, Full-Stack Development, Cloud Computing, Database Management System, Machine Learning, Human-Computer Interaction (HCI), UX Design"
   },
   {
     institution: "University of Mumbai",
     duration: "June 2016 - June 2019",
     degree: "Bachelor of Science (BS) in Information Technology",
-    description: `Studied software engineering, algorithms, and system design. 
-    Built an Android-based tourism app using Java and MySQL. 
-    Gained hands-on experience in web development and database management.`,
-    coursework: "Data Structures, Web Development, Database Management Systems, Software Engineering, Artificial Intelligence, Cyber Security"
+    description: `At University of Mumbai, I built a strong foundation in software engineering, algorithms, and system design. I developed an Android-based tourism app, Mumbai Tour, which provided navigation and information for over 50+ attractions, integrating GPS for improved accuracy. 
+    Additionally, I worked on a game development project, applying Java core programming and UI/UX principles to create an interactive user experience.`,
+    coursework: "Data Structures, Object-Oriented Programming, Core Java, Web Development, Software Engineering, Artificial Intelligence"
   }
 ];
 
