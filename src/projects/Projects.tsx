@@ -81,6 +81,8 @@ const Projects = () => {
   return (
     <div className="projects-section">
       <h1 className="pagetitle">Projects</h1>
+      <p>A showcase of innovative mobile and web applications I’ve built, focusing on full-stack development, UI/UX, and optimized performance. 
+        Each project highlights my expertise in modern technologies, problem-solving, and creating impactful digital solutions.</p> &nbsp;
       <div className="projects-container">
         {projectsData.map((project, index) => (
           <div className="project-card" key={index}>

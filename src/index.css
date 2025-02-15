@@ -3,8 +3,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #FFE2DE !important; /* Set a solid background */
-  background-image: none !important; /* Remove gradient */
+  background: #FFF5EE !important; 
+  background-image: none !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
@@ -13,7 +13,7 @@ html, body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-    color: #010b12;
+    color: #1A1110;
     
 }
 .container, .root, .app { 

@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="form-group">
-                <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} />
+                <input type="text" name="subject" placeholder="Subject*" value={formData.subject} onChange={handleChange} />
                 {errors.subject && <span className="error">{errors.subject}</span>}
               </div>
 

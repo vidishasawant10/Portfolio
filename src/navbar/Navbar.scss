@@ -10,14 +10,20 @@
   border-bottom: 2px solid black;
   z-index: 1000;
   box-shadow: none !important;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
 .navbar.fixed {
-  background: #ffcbc5; 
+  background: #FFF5EE; 
   top: 0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   z-index: 1000;
+  width: 100%;
+  padding: 15px 40px; 
 }
 
 .navbar a {
@@ -62,14 +68,14 @@ nav ul li {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #FF7B72; 
+  background-color: #AB274F; 
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-in-out;
 }
 
 .navbar a:hover {
-  color: #FF7B72; 
+  color: #AB274F; 
 }
 
 .navbar a:hover::after {
@@ -87,9 +93,9 @@ nav ul li {
 }
 
 .get-in-touch:hover {
-  background: #FFCBC5; 
+  background: #e5aaa5; 
   color: black; 
-  border-color: #FF7B72; 
+  border-color: #AB274F; 
 }
 
 @media (max-width: 992px) {
@@ -122,7 +128,7 @@ nav ul li {
 }
 
 .overlay-menu {
-  background-color: #FCE8DD; 
+  background-color: #780000; 
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -153,7 +159,7 @@ nav ul li {
 }
 
 .overlay-menu ul li a:hover {
-  background: #FFCBC5;
+  background: #780000;
   color: black;
 }
 
@@ -163,7 +169,7 @@ nav ul li {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: #ffcbc5; 
+    background: #FFF5EE; 
     padding: 15px 40px;
     transition: none; 
   }
@@ -221,7 +227,7 @@ nav ul li {
   }
 
   .overlay-menu ul li a:hover {
-    background: #FFCBC5;
+    background: #780000;
     color: black;
   }
 }

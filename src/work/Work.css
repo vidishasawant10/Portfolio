@@ -6,7 +6,7 @@
 .pagetitle {
   font-size: 28px;
   font-weight: bold;
-  color: #d9534f;
+  color: #c1121f;
   text-transform: uppercase;
   margin-bottom: 30px;
   text-underline-position: under;
@@ -64,13 +64,13 @@
 }
 
 .institution-name:hover {
-  color: #D9534F;
+  color: #780000;
 }
 
 .institution-name.selected {
-  color: #D9534F;
+  color: #c1121f;
   font-weight: bold;
-  border-left: 4px solid #D9534F;
+  border-left: 4px solid #c1121f;
   padding-left: 16px;
 }
 
