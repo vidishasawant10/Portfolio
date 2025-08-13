@@ -1,27 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #FFF5EE !important; 
+  background: #FFF5EE !important;
   background-image: none !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-    color: #1A1110;
-    
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  color: #1A1110;
 }
-.container, .root, .app { 
+
+.container, .root, .app {
   background: transparent !important;
 }
-/* @media (max-width: 991px) {
-  body {
-    padding-left: 20px;
-    padding-right: 10px;
-  }
-} */
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}

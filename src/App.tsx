@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import './App.css';
 import Navbar from './navbar/Navbar';
 import Home from './home/Home';
 import About from './about/About'; // About Page with About, Skills, and Work
@@ -10,7 +9,7 @@ import Contact from './contact/Contact';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="min-h-screen px-8 md:px-10">
         <title>Vidisha Portfolio</title>
         <Navbar />
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Projects.css';
+import SectionTitle from "../components/SectionTitle";
 import canyimage from './CANY1.png';
 import easyway from './EasyWay1.png';
 import spaceinvader from './space.png';
@@ -79,26 +79,24 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <div className="projects-section">
-      <h1 className="pagetitle">Projects</h1>
-      <p>A showcase of innovative mobile and web applications I’ve built, focusing on full-stack development, UI/UX, and optimized performance. 
-        Each project highlights my expertise in modern technologies, problem-solving, and creating impactful digital solutions.</p> &nbsp;
-      <div className="projects-container">
+    <div className="py-12 px-10 text-center text-black">
+      <SectionTitle>Projects</SectionTitle>
+      <p className="max-w-3xl mx-auto mb-4">
+        A showcase of innovative mobile and web applications I’ve built, focusing on full-stack development, UI/UX, and optimized performance. Each project highlights my expertise in modern technologies, problem-solving, and creating impactful digital solutions.
+      </p>
+      <div className="grid gap-10 justify-center max-w-5xl mx-auto grid-cols-1 md:grid-cols-2">
         {projectsData.map((project, index) => (
-          <div className="project-card" key={index}>
-            <img src={project.imgSrc} alt={project.title} className="project-image" />
-            <div className="project-content">
-              <h2 className="project-title">{project.title}</h2>
-              <p className="project-description">{project.description}</p>
-              <div className="project-technologies">
+          <div className="bg-[#774c60] rounded-xl overflow-hidden shadow-md flex flex-col items-center transition-transform hover:scale-105" key={index}>
+            <img src={project.imgSrc} alt={project.title} className="w-full p-5 object-cover" />
+            <div className="bg-white w-full p-5 flex flex-col items-center flex-grow">
+              <h2 className="text-xl font-bold mb-2">{project.title}</h2>
+              <p className="text-sm text-gray-700 mb-2">{project.description}</p>
+              <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {project.technologies.map((tech, i) => (
-                  <span className="tech-tag" key={i}>{tech}</span>
+                  <span className="bg-gray-100 px-3 py-1 rounded text-sm" key={i}>{tech}</span>
                 ))}
               </div>
-              <button className="project-button" onClick={() => window.open(project.url, "_blank")}>
-                Know More &nbsp;
-                <NorthEastIcon className="arrow-icon" />
-              </button>
+              <button className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2 rounded w-full" onClick={() => window.open(project.url, "_blank")}>Know More&nbsp;<NorthEastIcon className="inline" /></button>
             </div>
           </div>
         ))}

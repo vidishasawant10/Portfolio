@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Education.css';
+import SectionTitle from "../components/SectionTitle";
 
 const educationData = [
   {
@@ -23,31 +23,31 @@ const educationData = [
 const Education: React.FC = () => {
   const [selectedEducation, setSelectedEducation] = useState(educationData[0]);
 
-  return (
-    <div className='education-section' id='education'>
-      <h1 className='pagetitle'>Education</h1>
+    return (
+      <div className='py-10 px-10 text-gray-800' id='education'>
+        <SectionTitle>Education</SectionTitle>
 
-      <div className='education-container'>
-        <div className='education-sidebar'>
-          {educationData.map((edu, index) => (
-            <p 
-              key={index} 
-              className='institution-name' 
-              onClick={() => setSelectedEducation(edu)}
-            >
-              {edu.institution}
-            </p>
-          ))}
-        </div>
+        <div className='flex flex-row gap-12 w-[90vw] max-md:flex-col'>
+          <div className='border-l-2 border-red-500 pl-5 min-w-[200px] max-md:border-l-0 max-md:border-t-2 max-md:pt-2 max-md:text-center'>
+            {educationData.map((edu, index) => (
+              <p
+                key={index}
+                className='font-bold uppercase py-2 text-lg cursor-pointer transition-colors hover:text-red-500'
+                onClick={() => setSelectedEducation(edu)}
+              >
+                {edu.institution}
+              </p>
+            ))}
+          </div>
 
-        <div className='education-details'>
-          <p className='education-title'><em>{selectedEducation.duration}</em></p>
-          <p className='education-degree'><strong>{selectedEducation.degree}</strong></p>
-          <p className='education-description'>{selectedEducation.description}</p>
+          <div className='flex-1'>
+            <p className='italic text-sm mb-2'>{selectedEducation.duration}</p>
+            <p className='text-lg font-bold mb-2'>{selectedEducation.degree}</p>
+            <p className='text-base leading-relaxed text-gray-700'>{selectedEducation.description}</p>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default Education;
