@@ -1,5 +1,5 @@
 import React from "react";
-import "./Skills.css";
+import SectionTitle from "../components/SectionTitle";
 
 const skills = [
   { name: "Java", icon: "devicon-java-plain colored" },
@@ -38,24 +38,23 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <section className="skills-section">
-      <h2 className="skills-title">Tools & Technologies</h2>
-      <p className="skills-subtitle">
+    <section className="bg-[#121212] text-white text-center py-16 px-5">
+      <SectionTitle>Tools & Technologies</SectionTitle>
+      <p className="text-lg mt-2 opacity-80">
         The main area of expertise is full-stack development.
       </p>
-      <p className="skills-description">
-        Proficient in developing scalable web applications using modern front-end and back-end technologies.
-        Experienced in cloud computing, database management, DevOps, and UI/UX design.
+      <p className="max-w-2xl mx-auto mt-2 text-base opacity-70">
+        Proficient in developing scalable web applications using modern front-end and back-end technologies. Experienced in cloud computing, database management, DevOps, and UI/UX design.
       </p>
-      <p className="skills-link">
-        Visit my <a href="https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a" target="_blank" rel="noopener noreferrer">LinkedIn</a> for more details.
+      <p className="mt-4 text-base">
+        Visit my <a href="https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a" target="_blank" rel="noopener noreferrer" className="text-yellow-400 font-semibold hover:underline">LinkedIn</a> for more details.
       </p>
 
-      <div className="skills-grid">
+      <div className="flex flex-wrap justify-center gap-8 mt-10">
         {skills.map((skill, index) => (
-          <div key={index} className="skill-item">
-            <i className={`skill-icon ${skill.icon}`}></i>
-            <p className="skill-name">{skill.name}</p>
+          <div key={index} className="flex flex-col items-center transition-transform hover:scale-110">
+            <i className={`text-5xl ${skill.icon}`}></i>
+            <p className="mt-2 text-base opacity-80">{skill.name}</p>
           </div>
         ))}
       </div>
