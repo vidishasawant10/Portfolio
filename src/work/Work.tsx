@@ -4,15 +4,24 @@ import Education from "../education/Education";
 
 const experiences = [
   {
+    company: "Phinite.ai",
+    duration: "April 2025 - Present",
+    role: "Software Engineer",
+    location: "California, US",
+    description: `Developed scalable systems and tools, including a Rust-based distributed chat platform, an optimized AI pipeline with Python, and a real-time log monitoring app using React, ELK, and WebSockets.
+    Implemented a CI/CD pipeline for web applications, optimizing deployment speed and reliability.
+    Worked on real-world projects involving software development and system design.
+    Collaborated with cross-functional teams, conducted user research, and converted insights into high-performance applications.`,
+    skills: "Python, AI, ML, AWS, Rust, React, Elasticsearch, Kibana, Logstash(ELK)"
+  },
+  {
     company: "Los Angeles Dodgers",
     duration: "March 2024 - December 2024",
     role: "Software Engineer",
     location: "California, US",
-    description: `I worked on developing and enhancing web applications to improve internal processes and user experience. 
-    My role involved building React and Node.js applications, creating tools for data migration, optimizing backend services, and automating workflows using Cloud Functions and BigQuery. 
-    I also worked with Salesforce, creating and maintaining technical documentation for workflows, flows, process builders, Apex code, and Google Cloud Functions. 
-    Additionally, I contributed to cloud deployments and implemented caching solutions to improve performance and efficiency.`,
-    skills: "React, Node.js, Python, CI/CD, Google Cloud Platform (GCP), Docker, Salesforce"
+    description: `Developed and deployed Google Cloud Platform (GCP)-based web applications using React, Node.js, Java, and Spring Boot, including automated onboarding systems, community engagement platforms, and secure ID verification services. 
+    Built microservices, implemented CI/CD pipelines with Docker, optimized backend performance with caching, and integrated Salesforce workflows, flows, and Apex code to streamline operations and improve user experience.`,
+    skills: "React, Node.js, Python, CI/CD, Google Cloud Platform (GCP), Docker, Salesforce, Java, Spring Boot"
   },
   {
     company: "WelSpot Inc.",

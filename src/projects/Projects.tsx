@@ -79,6 +79,10 @@ const projectsData = [
 
 const Projects = () => {
   return (
+    <section
+      id="projects"
+      className="scroll-mt-24 md:scroll-mt-28 py-8 md:pt-28 overflow-x-clip"
+    >
     <div className="py-12 px-10 text-center text-black">
       <SectionTitle>Projects</SectionTitle>
       <p className="max-w-3xl mx-auto mb-4">
@@ -102,6 +106,7 @@ const Projects = () => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
 

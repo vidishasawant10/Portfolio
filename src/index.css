@@ -4,6 +4,8 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
+:root { --nav-h: 64px; } /* fallback until JS measures it */
+html { scroll-padding-top: calc(var(--nav-h) + 0.75rem + env(safe-area-inset-top)); }
 html, body {
   height: 100%;
   margin: 0;
