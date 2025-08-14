@@ -15,57 +15,95 @@ import {
   Camera,
 } from "lucide-react";
 
-type TabKey = "certs" | "leetcode" | "hobbies";
+type TabKey = "certs" | "leetcode" | "hackerrank" | "hobbies";
 
 const TABS: { key: TabKey; label: string }[] = [
   { key: "certs", label: "Certifications" },
   { key: "leetcode", label: "LeetCode" },
+  { key: "hackerrank", label: "HackerRank" },
   { key: "hobbies", label: "Hobbies" },
 ];
 
 
-// ----- Example Data (replace with yours) -----
 const CERTS = [
   {
-    title: "AWS Certified Developer – Associate",
-    issuer: "Amazon Web Services",
-    year: "2024",
+    title: "Java Masterclass 2025",
+    issuer: "Udemy",
+    year: "2025",
     href: "#",
   },
   {
-    title: "Google Cloud Digital Leader",
-    issuer: "Google Cloud",
-    year: "2024",
+    title: "Frontend Developer (React)",
+    issuer: "HackerRank",
+    year: "2025",
+    href: "#",
+  },
+    {
+    title: "SQL Intermediate",
+    issuer: "HackerRank",
+    year: "2022",
     href: "#",
   },
   {
-    title: "Salesforce Administrator (ADM-201)",
-    issuer: "Salesforce",
-    year: "2023",
+    title: "SQL Basic",
+    issuer: "HackerRank",
+    year: "2022",
+    href: "#",
+  },
+    {
+    title: "Big Data Foundations - Level 1",
+    issuer: "IBM",
+    year: "2022",
+    href: "#",
+  },  {
+    title: "Python Bootcamp",
+    issuer: "Udemy",
+    year: "2021",
+    href: "#",
+  },  {
+    title: "The Web Developer Bootcamp",
+    issuer: "Udemy",
+    year: "2020",
+    href: "#",
+  },
+    {
+    title: "Software Engineering Virtual Experience",
+    issuer: "JPMorgan Chase & Co.",
+    year: "2020",
+    href: "#",
+  },
+    {
+    title: "The Complete HTML5 and CSS3 Course",
+    issuer: "Udemy",
+    year: "2020",
     href: "#",
   },
 ];
 
 const LEETCODE = {
-  handle: "your-handle", // ← update
-  profileUrl: "https://leetcode.com/",
-  // You can also show featured problems or badges here
+  handle: "sawantvidishav", 
+  profileUrl: "https://leetcode.com/sawantvidishav",
   highlights: [
-    { label: "Top Patterns", value: "Two Pointers, Sliding Window, Binary Search" },
+    { label: "Top Patterns", value: "Two Pointers, Sliding Window, Binary Search, Linked Lists, Arrays" },
     { label: "Recent Focus", value: "DP & Graphs" },
-    { label: "Daily Streak", value: "🔥 Keep it going!" },
   ],
 };
-
+const HACKERRANK = {
+  handle: "vidishasawantv", 
+  profileUrl: "https://www.hackerrank.com/profile/vidishasawantv",
+  highlights: [
+    { label: "Top Patterns", value: "Arrays, Linked Lists" },
+    { label: "Recent Focus", value: "Problem Solving" },
+  ],
+};
 const HOBBIES = [
-  { icon: Paintbrush, label: "Sketching / UI Mockups" },
-  { icon: Music4, label: "Piano + Chillhop" },
+  { icon: Paintbrush, label: "Sketching / Painting / UI Mockups" },
+  { icon: Music4, label: "Dance" },
   { icon: Gamepad2, label: "Indie Games" },
-  { icon: Camera, label: "Street Photography" },
-  { icon: BookOpen, label: "Tech Blogs & Systems" },
+  { icon: Camera, label: "Street & Potrait Photography" },
+  { icon: BookOpen, label: "Reading Novels & Tech Blogs" },
 ];
 
-// Card shell
 function Card({
   children,
   className = "",
@@ -92,7 +130,6 @@ export default function More() {
     >
     <div
       className="mx-auto max-w-6xl px-6 md:px-10 pt-24 md:pt-28 pb-16"
-      // If you set --nav-h globally, you can use: pt-[calc(var(--nav-h)+0.75rem)]
     >
       {/* Header */}
       <div className="flex items-center justify-between gap-4 mb-10">
@@ -106,7 +143,6 @@ export default function More() {
           </p>
         </div>
 
-        {/* Optional back/CTA */}
         <Link
           to="/projects"
           className="hidden md:inline-flex items-center gap-2 border-2 border-black px-4 py-2 rounded-xl font-bold hover:bg-black hover:text-white"
@@ -228,10 +264,6 @@ export default function More() {
                         ))}
                       </ul>
 
-                      <p className="text-sm text-black/60 mt-4">
-                        Tip: you can swap this card for a live stats widget later (API or image
-                        badge). For now, it’s a clean, fast placeholder.
-                      </p>
                     </div>
                   </div>
                 </Card>
@@ -250,13 +282,84 @@ export default function More() {
                       )
                     )}
                   </div>
-                  <p className="text-sm text-black/60 mt-4">
-                    Link these to your internal pages or curated problem lists.
-                  </p>
                 </Card>
               </div>
             </motion.section>
           )}
+
+          {tab === "hackerrank" && (
+          <motion.section
+            key="hackerrank"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="grid lg:grid-cols-2 gap-6">
+              <Card>
+                <div className="flex items-start gap-3">
+                  <div className="shrink-0 rounded-full border-2 border-black p-2 bg-white">
+                    <BookOpen className="size-5" />
+                  </div>
+
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-extrabold text-xl">HackerRank Profile</h3>
+                      <a
+                        href={HACKERRANK.profileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 border-2 border-black px-3 py-1.5 rounded-xl font-bold hover:bg-black hover:text-white"
+                      >
+                        Open
+                        <ExternalLink className="size-4" />
+                      </a>
+                    </div>
+
+                    <p className="text-black/70 mt-1">
+                      Handle: <span className="font-semibold">{HACKERRANK.handle}</span>
+                    </p>
+
+                    <ul className="mt-4 space-y-2">
+                      {HACKERRANK.highlights.map((h) => (
+                        <li key={h.label} className="flex items-start gap-2">
+                          <Trophy className="size-4 mt-1" />
+                          <span>
+                            <span className="font-semibold">{h.label}:</span> {h.value}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                  </div>
+                </div>
+              </Card>
+
+              <Card>
+                <h3 className="font-extrabold text-xl mb-3">Tracks & Certificates</h3>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    "Problem Solving",
+                    "SQL",
+                    "Java",
+                    "Python",
+                    "30 Days of Code",
+                    "Data Structures",
+                  ].map((t) => (
+                    <button
+                      key={t}
+                      className="w-full text-left px-4 py-3 rounded-xl border-2 border-black font-semibold hover:bg-black hover:text-white"
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+
+              </Card>
+            </div>
+          </motion.section>
+        )}
+
 
           {tab === "hobbies" && (
             <motion.section

@@ -14,6 +14,7 @@ type Tab = {
 const DESKTOP_TABS: Tab[] = [
   { key: "home", label: "Home", to: "/" },
   { key: "about", label: "About", to: "/about" },
+  { key: "work", label: "Education & Experience", to: "/work" },
   { key: "projects", label: "Projects", to: "/projects" },
   {
     key: "resume",
@@ -34,13 +35,11 @@ const Navbar: React.FC = () => {
   const barRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  // --- Measure navbar height and expose as CSS var (no hard-coded heights) ---
   useLayoutEffect(() => {
     const el = barRef.current;
     if (!el) return;
 
     const setVar = () => {
-      // real pixel height of the fixed navbar
       document.documentElement.style.setProperty("--nav-h", `${el.offsetHeight}px`);
     };
 
@@ -92,7 +91,11 @@ const Navbar: React.FC = () => {
   const indicatorKey = hoverKey ?? activeKey;
 
   const tabClasses =
-    "relative px-3 py-1.5 rounded-xl font-bold text-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40";
+      "group relative inline-flex items-center justify-center gap-2 \
+      px-4 md:px-5 py-2.5 md:py-3 rounded-xl font-semibold text-base md:text-lg leading-none \
+      border-2 border-transparent hover:border-black/60 hover:bg-black/5 \
+      transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 \
+      active:scale-[0.98]";
 
   return (
     <>

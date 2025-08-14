@@ -1,21 +1,17 @@
 import React from 'react';
 import Skills from "../skills/Skills";
-import Work from "../work/Work";
 import profilePic from "./About.jpg";
 import SectionTitle from "../components/SectionTitle";
 
 const About: React.FC = () => {
   return (
-    // Start content below fixed navbar + prevent horizontal scroll on small screens
     <section
       id="about"
       className="scroll-mt-24 md:scroll-mt-28 py-8 md:pt-28 overflow-x-clip"
     >
       <div className="mx-auto px-6 md:px-10 py-5">
-        {/* Keep desktop layout; mobile stacks nicely without overflow */}
         <div className="flex flex-wrap items-center justify-center md:justify-normal gap-6 md:gap-0">
           
-          {/* Image */}
           <div className="flex justify-center md:w-1/3 w-full">
             <img
               src={profilePic}
@@ -57,7 +53,6 @@ const About: React.FC = () => {
           {/* Bottom sections */}
           <div className="w-full mt-12 overflow-x-clip">
             <Skills />
-            <Work />
           </div>
         </div>
       </div>
