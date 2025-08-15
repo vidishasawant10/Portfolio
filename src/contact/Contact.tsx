@@ -47,7 +47,11 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center items-center min-h-screen w-full gap-10 p-10">
+    <section
+        id="contact"
+        className=" page-shell flex items-center justify-center"
+      >
+    <div className="flex flex-wrap justify-center items-center w-full gap-10 p-10">
       <div className="md:w-1/2 w-full text-left p-[5vw] pt-0 max-md:text-center">
         <h1 className="text-4xl font-bold">Let's chat.</h1>
         <h3 className="mt-4 mb-4">
@@ -129,6 +133,7 @@ const Contact: React.FC = () => {
         )}
       </div>
     </div>
+    </section>
   );
 };
 

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {
   BadgeCheck,
   BookOpen,
+  Volleyball,
   Code2,
   Trophy,
   Sparkles,
@@ -11,7 +12,6 @@ import {
   Heart,
   Music4,
   Paintbrush,
-  Gamepad2,
   Camera,
 } from "lucide-react";
 
@@ -99,7 +99,7 @@ const HACKERRANK = {
 const HOBBIES = [
   { icon: Paintbrush, label: "Sketching / Painting / UI Mockups" },
   { icon: Music4, label: "Dance" },
-  { icon: Gamepad2, label: "Indie Games" },
+  { icon: Volleyball, label: "Volleyball & Baseball" },
   { icon: Camera, label: "Street & Potrait Photography" },
   { icon: BookOpen, label: "Reading Novels & Tech Blogs" },
 ];
@@ -126,11 +126,10 @@ export default function More() {
   return (
     <section
       id="projects"
-      className="scroll-mt-24 md:scroll-mt-28 py-8 md:pt-28 overflow-x-clip"
+      className="page-shell flex items-center justify-center"
     >
-    <div
-      className="mx-auto max-w-6xl px-6 md:px-10 pt-24 md:pt-28 pb-16"
-    >
+      <div className="mx-auto max-w-6xl px-6 md:px-10 pt-24 md:pt-28 pb-16">
+
       {/* Header */}
       <div className="flex items-center justify-between gap-4 mb-10">
         <div>
@@ -178,6 +177,8 @@ export default function More() {
 
       {/* Content */}
       <div className="mt-8">
+        <div className="min-h-[28rem] sm:min-h-[24rem]">
+
         <AnimatePresence mode="wait">
           {tab === "certs" && (
             <motion.section
@@ -400,6 +401,7 @@ export default function More() {
             </motion.section>
           )}
         </AnimatePresence>
+        </div>
       </div>
     </div>
     </section>

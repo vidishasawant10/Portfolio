@@ -16,6 +16,7 @@ const DESKTOP_TABS: Tab[] = [
   { key: "about", label: "About", to: "/about" },
   { key: "work", label: "Education & Experience", to: "/work" },
   { key: "projects", label: "Projects", to: "/projects" },
+  { key: "contact", label: "Contact", to: "/contact" },
   {
     key: "resume",
     label: "Resume",
@@ -38,19 +39,14 @@ const Navbar: React.FC = () => {
   useLayoutEffect(() => {
     const el = barRef.current;
     if (!el) return;
-
     const setVar = () => {
       document.documentElement.style.setProperty("--nav-h", `${el.offsetHeight}px`);
     };
-
-    setVar(); // initial
+    setVar();
     const ro = new ResizeObserver(setVar);
     ro.observe(el);
-
-    // also react to viewport changes
     window.addEventListener("resize", setVar);
     window.addEventListener("orientationchange", setVar);
-
     return () => {
       ro.disconnect();
       window.removeEventListener("resize", setVar);
@@ -58,14 +54,12 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  // Elevation / blur on scroll
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 0);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll and close with ESC when mobile drawer is open
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsMenuOpen(false);
     if (isMenuOpen) {
@@ -81,7 +75,6 @@ const Navbar: React.FC = () => {
     };
   }, [isMenuOpen]);
 
-  // Active tab detection
   const activeKey: string = (() => {
     if (pathname === "/") return "home";
     const match = DESKTOP_TABS.find((t) => t.to === pathname);
@@ -91,22 +84,22 @@ const Navbar: React.FC = () => {
   const indicatorKey = hoverKey ?? activeKey;
 
   const tabClasses =
-      "group relative inline-flex items-center justify-center gap-2 \
-      px-4 md:px-5 py-2.5 md:py-3 rounded-xl font-semibold text-base md:text-lg leading-none \
-      border-2 border-transparent hover:border-black/60 hover:bg-black/5 \
-      transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 \
-      active:scale-[0.98]";
+    "group relative inline-flex items-center justify-center gap-2 " +
+    "px-4 md:px-5 py-2.5 md:py-3 rounded-xl font-semibold text-base md:text-lg leading-none " +
+    "border-2 border-transparent hover:border-black/60 hover:bg-black/5 " +
+    "transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 " +
+    "active:scale-[0.98]";
 
   return (
     <>
-      {/* Top bar */}
       <div
         ref={barRef}
         id="navbar"
         className={`fixed top-0 left-0 right-0 z-50 border-b-2 border-black p-4 md:px-10
-        flex items-center justify-between ${isScrolled ? "bg-[#FFF5EE] backdrop-blur" : "bg-transparent"}`}
+        flex items-center justify-between ${
+          isMenuOpen || isScrolled ? "bg-[#FFF5EE] backdrop-blur" : "bg-transparent"
+        }`}
       >
-        {/* Logo */}
         <button
           onClick={() => navigate("/")}
           className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded"
@@ -115,28 +108,22 @@ const Navbar: React.FC = () => {
           <img src={logo} alt="Logo" className="w-24" />
         </button>
 
-        {/* Desktop tabs with pill highlight */}
         <nav className="hidden md:block">
           <ul className="relative flex items-center gap-3">
             {DESKTOP_TABS.map((tab) => {
               const isActive = indicatorKey === tab.key;
               const linkColor = isActive ? "text-black" : "text-black/70 hover:text-black";
 
-              const Content = (
-                <span
-                  className="relative inline-block"
-                  onMouseEnter={() => setHoverKey(tab.key)}
-                  onMouseLeave={() => setHoverKey(null)}
-                >
-                  {/* Pill highlight */}
+              const AnchorContent = (
+                <>
                   {isActive && (
                     <motion.span
                       layoutId="tab-pill"
-                      className="absolute inset-0 -z-10 rounded-xl bg-black/10"
+                      className="absolute inset-0 -z-10 rounded-lg bg-black/10"
                     />
                   )}
-                  {tab.label}
-                </span>
+                  <span className="relative">{tab.label}</span>
+                </>
               );
 
               return (
@@ -150,18 +137,22 @@ const Navbar: React.FC = () => {
                       onMouseEnter={() => setHoverKey(tab.key)}
                       onMouseLeave={() => setHoverKey(null)}
                     >
-                      {Content}
+                      {AnchorContent}
                     </a>
                   ) : (
-                    <NavLink to={tab.to!} className={`${tabClasses} ${linkColor}`}>
-                      {Content}
+                    <NavLink
+                      to={tab.to!}
+                      className={`${tabClasses} ${linkColor}`}
+                      onMouseEnter={() => setHoverKey(tab.key)}
+                      onMouseLeave={() => setHoverKey(null)}
+                    >
+                      {AnchorContent}
                     </NavLink>
                   )}
                 </li>
               );
             })}
 
-            {/* Circular More button → /more */}
             <li className="relative">
               <Link
                 to="/more"
@@ -174,37 +165,30 @@ const Navbar: React.FC = () => {
                 +
               </Link>
             </li>
-
-            {/* Contact as outlined button */}
-            <li>
-              <Link
-                to="/contact"
-                className="border-2 border-black px-4 py-2 rounded-xl font-bold hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
-              >
-                Contact
-              </Link>
-            </li>
           </ul>
         </nav>
 
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden text-2xl p-2 -mr-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded"
-          onClick={() => setIsMenuOpen(true)}
-          aria-label="Open menu"
+          className="md:hidden p-2 -mr-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded"
+          onClick={() => setIsMenuOpen((v) => !v)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
         >
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            {isMenuOpen ? (
+              <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            ) : (
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile drawer */}
       <div
-        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-200
-        ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-200 ${
+          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
         aria-hidden={!isMenuOpen}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -216,40 +200,16 @@ const Navbar: React.FC = () => {
           aria-modal="true"
           ref={drawerRef}
           className={`absolute top-0 right-0 h-full w-72 max-w-[85vw] bg-[#FCE8DD] border-l-2 border-black
-          p-6 pt-8 shadow-xl transition-transform duration-200
+          p-6 pt-[calc(var(--nav-h)+0.5rem)] shadow-xl transition-transform duration-200
           ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex items-center justify-between mb-6">
-            <span className="text-xl font-extrabold">Menu</span>
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="p-2 -mr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded"
-              aria-label="Close menu"
-            >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
           <nav>
-            <ul className="space-y-5">
-              <li>
-                <Link to="/" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">
-                  Projects
-                </Link>
-              </li>
+            <ul className="space-y-5 mt-10">
+              <li><Link to="/" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">Home</Link></li>
+              <li><Link to="/about" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">About</Link></li>
+              <li><Link to="/work" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">Education & Experience</Link></li>
+              <li><Link to="/projects" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">Projects</Link></li>
               <li>
                 <a
                   href="https://drive.google.com/file/d/1TaRrZTXcsK6an-29l90MQGoqqbAuPyt3/view?usp=sharing"
@@ -261,16 +221,12 @@ const Navbar: React.FC = () => {
                   Resume
                 </a>
               </li>
-              <li>
-                <Link to="/more" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">
-                  More
-                </Link>
-              </li>
+              <li><Link to="/more" onClick={() => setIsMenuOpen(false)} className="block text-lg font-bold">More</Link></li>
               <li>
                 <Link
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className="inline-block border-2 border-black px-4 py-2 rounded-xl font-bold hover:bg-red-200"
+                  className="inline-block border-2 border-black px-4 py-2 rounded-xl font-bold hover:bg-black/5"
                 >
                   Contact
                 </Link>

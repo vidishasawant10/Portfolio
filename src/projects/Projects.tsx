@@ -81,7 +81,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="scroll-mt-24 md:scroll-mt-28 py-8 md:pt-28 overflow-x-clip"
+      className="page-shell flex items-center justify-center"
     >
     <div className="py-12 px-10 text-center text-black">
       <SectionTitle>Projects</SectionTitle>

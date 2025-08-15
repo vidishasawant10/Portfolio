@@ -35,18 +35,15 @@ const CATEGORIES: Category[] = [
     key: "backend",
     title: "Backend & Data",
     skills: [
-      // Services & APIs
       { name: "Node.js", icon: "devicon-nodejs-plain colored" },
       { name: "Spring Boot", icon: "devicon-spring-original colored" },
       { name: "Express.js", icon: "devicon-express-original colored" },
 
-      // Datastores & Query
       { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
       { name: "MySQL", icon: "devicon-mysql-plain colored" },
       { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
       { name: "Redis", icon: "devicon-redis-plain colored" },
 
-      // API Model
       { name: "GraphQL", icon: "devicon-graphql-plain colored" },
     ],
   },
@@ -167,7 +164,6 @@ const Skills: React.FC = () => {
           </a>.
         </p>
 
-        {/* Search ABOVE the category pills */}
         <div className="mt-6">
           <label htmlFor="skill-search" className="sr-only">Search skills</label>
           <input
@@ -181,7 +177,6 @@ const Skills: React.FC = () => {
           />
         </div>
 
-        {/* Category pills BELOW the search (scrollable on mobile) */}
         <div className="mt-4 overflow-x-auto -mx-2 px-2">
           <div className="inline-flex gap-2" role="tablist" aria-label="Skill categories">
             {[
@@ -205,7 +200,6 @@ const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Category grid */}
         <motion.div
           className="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
           initial="hidden"

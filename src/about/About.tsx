@@ -7,7 +7,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-24 md:scroll-mt-28 py-8 md:pt-28 overflow-x-clip"
+      className="page-shell flex items-center justify-center"
     >
       <div className="mx-auto px-6 md:px-10 py-5">
         <div className="flex flex-wrap items-center justify-center md:justify-normal gap-6 md:gap-0">
@@ -23,11 +23,10 @@ const About: React.FC = () => {
             />
           </div>
 
-          {/* Text */}
+     
           <div className="flex-1 w-full text-left md:pl-10 max-md:text-center overflow-x-clip">
             <SectionTitle>About</SectionTitle>
 
-            {/* Clip left-translate animation on mobile to avoid horizontal scrolling */}
             <div className="space-y-4 max-md:overflow-x-clip">
               <p className="animate__animated animate__fadeInLeft">
                 I'm deeply fascinated by the ever-evolving world of Software Engineering and committed to continuous learning and growth.
@@ -50,7 +49,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom sections */}
+
           <div className="w-full mt-12 overflow-x-clip">
             <Skills />
           </div>
