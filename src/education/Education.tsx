@@ -11,7 +11,7 @@ type EducationItem = {
 
 const educationData: EducationItem[] = [
   {
-    institution: "Pace University - New York",
+    institution: "Pace University - New York, USA",
     duration: "September 2021 - May 2023",
     degree: "Master of Science (MS) in Computer Science",
     description: `Completed coursework in full-stack development, data warehousing, and cloud computing.
@@ -19,7 +19,7 @@ Developed a BigQuery-based data warehouse to analyze flight data, enhancing insi
 Implemented a CI/CD pipeline for web applications, improving deployment speed and reliability.`,
   },
   {
-    institution: "University of Mumbai",
+    institution: "University of Mumbai - Mumbai, India",
     duration: "June 2016 - June 2019",
     degree: "Bachelor of Science (BS) in Information Technology",
     description: `Gained a strong foundation in software engineering, algorithms, and database management.
@@ -32,14 +32,26 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const listStagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } };
 const itemFade: Variants = { hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0, transition: { duration: 0.45, ease } } };
 
-const Education: React.FC = () => {
+// Accept container and card classes so sizes match Work cards 1:1
+type Props = {
+  containerClass?: string;
+  cardClass?: string;
+};
+
+const DEFAULT_CONTAINER = "mx-auto w-[80vw]";
+const DEFAULT_CARD = "rounded-2xl border border-black/10 bg-white shadow-md ring-1 ring-black/5";
+
+const Education: React.FC<Props> = ({ containerClass = DEFAULT_CONTAINER, cardClass = DEFAULT_CARD }) => {
   const [active, setActive] = useState(0);
   const activeItem = educationData[active];
-  const bullets = useMemo(() => activeItem.description.split("\n").map(s => s.trim()).filter(Boolean), [activeItem]);
+  const bullets = useMemo(
+    () => activeItem.description.split("\n").map(s => s.trim()).filter(Boolean),
+    [activeItem]
+  );
 
   return (
-    <section id="education" className="page-shell overflow-x-hidden scroll-mt-nav py-8 md:pt-16">
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
+    <section id="education" className="page-shell flex justify-center overflow-x-hidden scroll-mt-nav py-8 md:pt-16">
+      <div className={containerClass}>
         <h2 className="text-center">
           <SectionTitle>Education</SectionTitle>
         </h2>
@@ -51,7 +63,7 @@ const Education: React.FC = () => {
             whileInView="show"
             viewport={{ once: true, margin: "-10% 0px" }}
             variants={listStagger}
-            className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3"
+            className="mx-auto flex flex-wrap items-center justify-center gap-3"
           >
             {educationData.map((edu, i) => {
               const selected = i === active;
@@ -79,18 +91,19 @@ const Education: React.FC = () => {
           </motion.ul>
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            id={`edu-panel-${active}`}
-            role="tabpanel"
-            aria-labelledby={`edu-tab-${active}`}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.4, ease }}
-            className="mx-auto mt-6 w-full max-w-4xl rounded-2xl border border-black/10 bg-white shadow-md ring-1 ring-black/5"
-          >
+       <div className="md:pl-14 lg:pl-24">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              id={`edu-panel-${active}`}
+              role="tabpanel"
+              aria-labelledby={`edu-tab-${active}`}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.4, ease }}
+              className={`${cardClass ?? "rounded-2xl border border-black/10 bg-white shadow-md ring-1 ring-black/5"} mx-auto mt-6 w-full`}
+            >
             <div className="p-5 sm:p-6">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                 <div className="min-w-0">
@@ -119,6 +132,7 @@ const Education: React.FC = () => {
             </div>
           </motion.div>
         </AnimatePresence>
+        </div>
       </div>
     </section>
   );
