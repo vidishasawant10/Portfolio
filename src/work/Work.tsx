@@ -73,7 +73,7 @@ const Work: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="work" className="page-shell flex justify-center mt-6 overflow-x-hidden">
+    <section id="work" className="page-shell flex justify-center mt-10 overflow-x-hidden">
       <div className={CONTAINER}>
         <h2 className="text-center">
           <SectionTitle>Work Experience</SectionTitle>
