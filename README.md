@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+# Portfolio (React + TypeScript + Tailwind)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion. It showcases Home, About, Education & Experience, Projects, Skills, and Contact sections with a responsive, animated UI and a mobile-friendly navigation drawer.
 
-## Available Scripts
+If you’re looking for where to change content, see the “Edit Content” section below.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+- React 18 + TypeScript
+- React Router (`react-router-dom`)
+- Tailwind CSS (+ PostCSS + Autoprefixer)
+- Framer Motion (micro‑interactions and transitions)
+- UI/Icons: MDB UI Kit CSS, MUI Icons, Devicon, Font Awesome, Bootstrap Icons
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Key source files and folders:
 
-### `npm test`
+- `src/App.tsx`: App shell and routes
+- `src/index.tsx`: App entry, global CSS imports
+- `src/index.css`: Tailwind layers and global styles (including `.page-shell`)
+- `src/navbar/`: Responsive navigation with desktop tabs and mobile drawer
+- `src/home/`, `src/about/`, `src/work/`, `src/projects/`, `src/skills/`, `src/contact/`, `src/more/`: Page sections
+- `src/components/`: Shared UI (e.g., `SectionTitle`, `WelcomeScreen`, `Layout`, `Loader`)
+- `tailwind.config.js`, `postcss.config.js`: Styling configuration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+Prerequisites:
+- Node.js 18+ and npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install dependencies:
+- `npm install`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run locally:
+- `npm start`
+- Opens `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run tests:
+- `npm test`
 
-### `npm run eject`
+Build for production:
+- `npm run build`
+- Outputs to `build/`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Routing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Routes are defined in `src/App.tsx` using `react-router-dom`:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `/` → Home
+- `/about` → About
+- `/work` → Education & Experience
+- `/projects` → Projects
+- `/skills` → Skills (section component used in pages)
+- `/contact` → Contact (mailto form)
+- `/more` → Misc / Extras
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The navbar also includes an external Resume link.
 
-## Learn More
+## Styling & Animation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Tailwind is configured in `tailwind.config.js` and applied via `src/index.css`.
+- Global utility classes like `.page-shell` are defined in `@layer components` within `index.css`.
+- Animations and transitions use Framer Motion (see `src/home/Home.tsx`, `src/navbar/Navbar.tsx`, `src/skills/Skills.tsx`).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Edit Content
+
+- Header/Nav: `src/navbar/Navbar.tsx` (tabs, external resume link)
+- Home hero: `src/home/Home.tsx` (intro text, social links, hero image)
+- About: `src/about/About.tsx`
+- Education & Experience: `src/work/Work.tsx`
+- Projects: `src/projects/Projects.tsx`
+- Skills: `src/skills/Skills.tsx` (categories and icons via Devicon)
+- Contact: `src/contact/Contact.tsx` (opens default mail client via `mailto:`)
+
+Update images and assets within their respective folders under `src/`.
+
+## Accessibility & UX
+
+- Keyboard and screen-reader friendly nav (focus rings, aria‑labels).
+- Mobile drawer locks body scroll while open.
+- Form validation and clear error messaging in Contact.
+- Global `scroll-padding-top` adjusts for fixed navbar height.
+
+## Deployment
+
+This is a static React app. Common options:
+
+- GitHub Pages: build with `npm run build`, then deploy `build/` with your preferred action or `gh-pages`.
+- Netlify/Vercel: connect the repo, set build command to `npm run build` and output directory to `build`.
+
+Tip: Set the site title and metadata in your host’s settings or add an HTML `<title>` tag and meta tags in the root HTML template if needed (CRA uses `public/index.html`).
+
+## Notes
+
+- Icons come from Devicon, Font Awesome, and Bootstrap Icons.
+- MUI Icons are used where needed (e.g., Contact page button icon).
+- The Contact form uses `mailto:`; there is no backend in this repo.
+
+## License
+
+No license specified. If you plan to open‑source, consider adding a LICENSE file.

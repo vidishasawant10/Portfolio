@@ -71,11 +71,10 @@ export default function More() {
 
   return (
     <section id="more" className="page-shell flex items-center justify-center">
-      {/* Mobile stays 92vw; desktop breathes more */}
+     
       <div className="mx-auto w-[92vw] lg:w-[80vw] max-w-6xl lg:max-w-7xl
                       px-3 sm:px-6 md:px-10 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16">
 
-        {/* Header */}
         <div className="flex items-center justify-between gap-4 mb-6 sm:mb-10">
           <div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight flex items-center gap-2 sm:gap-3">
@@ -100,7 +99,6 @@ export default function More() {
           </Link>
         </div>
 
-        {/* Tabs: sticky; bigger on desktop */}
         <div className="sticky top-14 lg:top-16 z-20 -mx-3 sm:mx-0 bg-[#FFF5EE]/80 backdrop-blur supports-[backdrop-filter]:bg-[#FFF5EE]/60 py-2">
           <div
             className="relative inline-flex w-full overflow-x-auto no-scrollbar gap-1 sm:gap-2

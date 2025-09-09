@@ -49,8 +49,7 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const listVariants: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } };
 const itemVariants: Variants = { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.35, ease } } };
 
-// Shared layout classes to keep sizes aligned with Education
-const CONTAINER = "mx-auto w-[80vw]";
+const CONTAINER = "mx-auto max-w-[2400px] ";
 const CARD = "rounded-2xl border border-black/10 bg-white shadow-md ring-1 ring-black/5";
 
 function SkillChips({ list }: { list: string }) {
@@ -86,7 +85,7 @@ const Work: React.FC = () => {
           variants={listVariants}
           className="relative mt-6 sm:mt-8"
         >
-          {/* timeline rail */}
+          
           <span
             aria-hidden
             className="pointer-events-none absolute left-5 md:left-6 lg:left-7 top-0 hidden h-full w-[2px] bg-black/15 md:block"
@@ -112,7 +111,7 @@ const Work: React.FC = () => {
                 variants={itemVariants}
                 className="relative min-w-0 md:pl-14 lg:pl-16"
               >
-                {/* timeline dot */}
+               
                 <span
                   aria-hidden
                   className={`absolute left-5 md:left-6 lg:left-7 top-8 hidden h-3 w-3 -translate-x-1/2 transform rounded-full border-2 border-black md:block ${
@@ -204,7 +203,7 @@ const Work: React.FC = () => {
           })}
         </motion.ol>
 
-        {/* Education uses the exact same container width and card style */}
+       
         <div className="mt-12">
           <Education containerClass={CONTAINER} cardClass={CARD} />
         </div>

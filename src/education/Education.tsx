@@ -7,6 +7,7 @@ type EducationItem = {
   duration: string;
   degree: string;
   description: string;
+  coursework:string;
 };
 
 const educationData: EducationItem[] = [
@@ -17,6 +18,7 @@ const educationData: EducationItem[] = [
     description: `Completed coursework in full-stack development, data warehousing, and cloud computing.
 Developed a BigQuery-based data warehouse to analyze flight data, enhancing insights for research.
 Implemented a CI/CD pipeline for web applications, improving deployment speed and reliability.`,
+coursework: "Introduction to Parallel & Distributed Computing, Algorithm & Computing Theory, Internet Computing, Python Programming, Mobile and Web Development, Database Management System, Introduction to Human Computer Interaction (HCI), Introduction to User Experience Design (UXD)"
   },
   {
     institution: "University of Mumbai - Mumbai, India",
@@ -25,6 +27,7 @@ Implemented a CI/CD pipeline for web applications, improving deployment speed an
     description: `Gained a strong foundation in software engineering, algorithms, and database management.
 Developed an Android-based Mumbai tourism app using Java and MySQL, enhancing user engagement.
 Worked on real-world projects involving software development and system design.`,
+coursework: " Object Oriented Programming, Data Structures, Python Programming, Computer Networks, Artificial Intelligence, Software Quality Assurance, Security in Computing, Principles of G.I.S. Cyber Laws, Advanced Mobile Programming, Java, Database Management Systems, Applied Mathematics, Internet of Things (IOT), Advanced Web Programming,  Next Generation Technology, Imperative Programming, Digital Electronics, Operating Systems, Discrete Mathematics, Microprocessor Architecture, Web Programming, Numerical & Statistical Methods "
   },
 ];
 
@@ -38,8 +41,23 @@ type Props = {
   cardClass?: string;
 };
 
-const DEFAULT_CONTAINER = "mx-auto w-[80vw]";
+const DEFAULT_CONTAINER = "mx-auto max-w-[2400px] ";
 const DEFAULT_CARD = "rounded-2xl border border-black/10 bg-white shadow-md ring-1 ring-black/5";
+function SkillChips({ list }: { list: string }) {
+  const chips = useMemo(() => list.split(",").map(s => s.trim()).filter(Boolean), [list]);
+  return (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {chips.map(c => (
+        <span
+          key={c}
+          className="inline-flex items-center rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-semibold"
+        >
+          {c}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 const Education: React.FC<Props> = ({ containerClass = DEFAULT_CONTAINER, cardClass = DEFAULT_CARD }) => {
   const [active, setActive] = useState(0);
@@ -129,6 +147,8 @@ const Education: React.FC<Props> = ({ containerClass = DEFAULT_CONTAINER, cardCl
                   </motion.li>
                 ))}
               </ul>
+              <SkillChips list ={activeItem.coursework} />
+
             </div>
           </motion.div>
         </AnimatePresence>

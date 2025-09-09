@@ -9,7 +9,7 @@ const About: React.FC = () => {
       id="about"
       className="page-shell flex items-center justify-center"
     >
-      <div className="mx-auto px-6 md:px-10 py-5">
+      <div className="mx-auto max-w-[2500px] px-6 md:px-10 py-5">
         <div className="flex flex-wrap items-center justify-center md:justify-normal gap-6 md:gap-0">
           
           <div className="flex justify-center md:w-1/3 w-full">

@@ -32,7 +32,7 @@ export default function Home() {
         id="home"
         className=" page-shell flex items-center justify-center"
       >
-      <div className="mx-auto w-full px-6 md:px-10 mt-10">
+      <div className="mx-auto w-full max-w-[2500px] px-6 md:px-10 mt-10">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between gap-10"
           variants={container}
