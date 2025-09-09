@@ -46,16 +46,11 @@ Built CI/CD pipelines, testing frameworks, and cloud-based deployments to ensure
 ];
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const listVariants: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } };
+const itemVariants: Variants = { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.35, ease } } };
 
-const listVariants: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } }
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease } }
-};
+const CONTAINER = "mx-auto max-w-[2400px] ";
+const CARD = "rounded-2xl border border-black/10 bg-white shadow-md ring-1 ring-black/5";
 
 function SkillChips({ list }: { list: string }) {
   const chips = useMemo(() => list.split(",").map(s => s.trim()).filter(Boolean), [list]);
@@ -77,8 +72,8 @@ const Work: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="work" className="page-shell flex items-center justify-center mt-6 overflow-x-hidden">
-      <div className="mx-auto w-full max-w-6xl">
+    <section id="work" className="page-shell flex justify-center mt-10 overflow-x-hidden">
+      <div className={CONTAINER}>
         <h2 className="text-center">
           <SectionTitle>Work Experience</SectionTitle>
         </h2>
@@ -90,6 +85,7 @@ const Work: React.FC = () => {
           variants={listVariants}
           className="relative mt-6 sm:mt-8"
         >
+          
           <span
             aria-hidden
             className="pointer-events-none absolute left-5 md:left-6 lg:left-7 top-0 hidden h-full w-[2px] bg-black/15 md:block"
@@ -115,6 +111,7 @@ const Work: React.FC = () => {
                 variants={itemVariants}
                 className="relative min-w-0 md:pl-14 lg:pl-16"
               >
+               
                 <span
                   aria-hidden
                   className={`absolute left-5 md:left-6 lg:left-7 top-8 hidden h-3 w-3 -translate-x-1/2 transform rounded-full border-2 border-black md:block ${
@@ -127,14 +124,8 @@ const Work: React.FC = () => {
                   aria-controls={panelId}
                   aria-expanded={isOpen}
                   onClick={() => setOpenIdx(isOpen ? null : i)}
-                  className="
-                    group w-full text-left
-                    rounded-2xl border border-black/10 bg-white
-                    shadow-md ring-1 ring-black/5
-                    transition-colors
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40
-                    min-w-0
-                  "
+                  className={`${CARD} group w-full text-left min-w-0
+                    transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40`}
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.985 }}
                   layout
@@ -212,8 +203,9 @@ const Work: React.FC = () => {
           })}
         </motion.ol>
 
+       
         <div className="mt-12">
-          <Education />
+          <Education containerClass={CONTAINER} cardClass={CARD} />
         </div>
       </div>
     </section>

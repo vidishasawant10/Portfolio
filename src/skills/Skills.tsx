@@ -119,7 +119,7 @@ const CategoryCard: React.FC<{ title: string; skills: Skill[] }> = ({ title, ski
     className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 shadow-sm"
     variants={containerVariants}
   >
-    <h3 className="text-left text-lg md:text-xl font-semibold mb-3">{title}</h3>
+    <h3 className="text-center text-lg md:text-xl font-semibold mb-3">{title}</h3>
     <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
       {skills.map((s) => (
         <SkillItem key={s.name} {...s} />
