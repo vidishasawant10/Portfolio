@@ -51,8 +51,14 @@ const CATEGORIES: Category[] = [
     key: "cloud",
     title: "Cloud & Orchestration",
     skills: [
-      { name: "Google Cloud Platform (GCP)", icon: "devicon-googlecloud-plain colored" },
-      { name: "Amazon Web Services (AWS)", icon: "devicon-amazonwebservices-plain colored" },
+      {
+        name: "Google Cloud Platform (GCP)",
+        icon: "devicon-googlecloud-plain colored",
+      },
+      {
+        name: "Amazon Web Services (AWS)",
+        icon: "devicon-amazonwebservices-plain colored",
+      },
       { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
       { name: "Docker", icon: "devicon-docker-plain colored" },
     ],
@@ -90,8 +96,6 @@ const CATEGORIES: Category[] = [
   },
 ];
 
-
-
 const containerVariants = {
   hidden: { opacity: 0, y: 8 },
   show: { opacity: 1, y: 0, transition: { duration: 0.25 } },
@@ -99,27 +103,35 @@ const containerVariants = {
 
 const SkillItem: React.FC<Skill> = ({ name, icon }) => (
   <motion.li
-    className="flex flex-col items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 px-3 py-3 transition-colors text-center"
+    className="flex flex-col items-center justify-center rounded-xl bg-white shadow-sm hover:shadow-md px-3 py-3 transition-all text-center border border-neutral-200"
     initial={{ opacity: 0, y: 6 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
     transition={{ duration: 0.2 }}
     aria-label={name}
   >
-    <i className={`block text-3xl md:text-4xl ${icon}`} title={name} aria-hidden="true" />
-
-    <span className="mt-2 block text-xs md:text-sm leading-tight break-words">
+    <i
+      className={`block text-3xl md:text-4xl ${icon}`}
+      title={name}
+      aria-hidden="true"
+    />
+    <span className="mt-2 block text-xs md:text-sm leading-tight break-words text-neutral-900">
       {name}
     </span>
   </motion.li>
 );
 
-const CategoryCard: React.FC<{ title: string; skills: Skill[] }> = ({ title, skills }) => (
+const CategoryCard: React.FC<{ title: string; skills: Skill[] }> = ({
+  title,
+  skills,
+}) => (
   <motion.section
     className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 shadow-sm"
     variants={containerVariants}
   >
-    <h3 className="text-center text-lg md:text-xl font-semibold mb-3">{title}</h3>
+    <h3 className="text-center text-lg md:text-xl font-semibold mb-3 text-neutral-900">
+      {title}
+    </h3>
     <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
       {skills.map((s) => (
         <SkillItem key={s.name} {...s} />
@@ -134,51 +146,63 @@ const Skills: React.FC = () => {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const cats = active === "all" ? CATEGORIES : CATEGORIES.filter((c) => c.key === active);
+    const cats =
+      active === "all" ? CATEGORIES : CATEGORIES.filter((c) => c.key === active);
     if (!q) return cats;
     return cats
-      .map((c) => ({ ...c, skills: c.skills.filter((s) => s.name.toLowerCase().includes(q)) }))
+      .map((c) => ({
+        ...c,
+        skills: c.skills.filter((s) => s.name.toLowerCase().includes(q)),
+      }))
       .filter((c) => c.skills.length > 0);
   }, [query, active]);
 
   return (
     <section
       id="skills"
-      className="scroll-mt-24 md:scroll-mt-28 md:pt-28 overflow-x-clip bg-[#121212] text-white py-16 px-5"
-    >   
-      <div className=" mx-auto text-center">
-        <SectionTitle>Tools & Technologies</SectionTitle>
+      className="scroll-mt-24 md:scroll-mt-28 md:pt-28 overflow-x-clip py-16 px-5 bg-transparent text-neutral-900"
+    >
+      <div className="mx-auto text-center">
+        <SectionTitle>Tools &amp; Technologies</SectionTitle>
 
-        <p className="text-center text-lg mt-2 opacity-80">
+        <p className="text-center text-lg mt-2 opacity-90">
           Full-stack engineer with focus on performant UI and reliable backends.
         </p>
-        <p className="text-center max-w-3xl mx-auto mt-2 text-base opacity-70">
-          Experience across frontend, backend, cloud, data, and DevOps. See more on{" "}
+        <p className="text-center max-w-3xl mx-auto mt-2 text-base opacity-80">
+          Experience across frontend, backend, cloud, data, and DevOps. See more
+          on{" "}
           <a
             href="https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-yellow-400 font-semibold hover:underline"
+            className="text-red-500 font-semibold hover:underline"
           >
             LinkedIn
-          </a>.
+          </a>
+          .
         </p>
 
         <div className="mt-6">
-          <label htmlFor="skill-search" className="sr-only">Search skills</label>
+          <label htmlFor="skill-search" className="sr-only">
+            Search skills
+          </label>
           <input
             id="skill-search"
             type="text"
             inputMode="search"
             placeholder="Search skills (e.g., React, AWS, SQL)…"
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 outline-none placeholder-white/50 focus:ring-2 focus:ring-yellow-400/60"
+            className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 outline-none placeholder-neutral-400 focus:ring-2 focus:ring-[#c0392b]/70"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
 
         <div className="mt-4 overflow-x-auto -mx-2 px-2">
-          <div className="inline-flex gap-2" role="tablist" aria-label="Skill categories">
+          <div
+            className="inline-flex gap-2"
+            role="tablist"
+            aria-label="Skill categories"
+          >
             {[
               { key: "all", title: "All" },
               ...CATEGORIES.map(({ key, title }) => ({ key, title })),
@@ -190,7 +214,11 @@ const Skills: React.FC = () => {
                   role="tab"
                   aria-selected={isActive}
                   className={`whitespace-nowrap rounded-full px-4 py-2 text-sm border transition
-                  ${isActive ? "bg-yellow-400 text-black border-yellow-400" : "bg-white/5 border-white/10 hover:bg-white/10"}`}
+                  ${
+                    isActive
+                      ? "bg-red-500 text-white border-bg-red-500"
+                      : "bg-white border-neutral-300 text-neutral-800 hover:bg-neutral-50"
+                  }`}
                   onClick={() => setActive(key)}
                 >
                   {title}
@@ -207,7 +235,11 @@ const Skills: React.FC = () => {
           variants={{ show: { transition: { staggerChildren: 0.04 } } }}
         >
           {filtered.map((cat) => (
-            <CategoryCard key={cat.key} title={cat.title} skills={cat.skills} />
+            <CategoryCard
+              key={cat.key}
+              title={cat.title}
+              skills={cat.skills}
+            />
           ))}
 
           {filtered.length === 0 && (
