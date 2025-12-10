@@ -45,12 +45,11 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp(0.05)} className="mt-4 text-base md:text-xl text-black/80">
-              Software Engineer (MS, Pace University) with 2 years ofindustry experience at Phinite.ai, Los Angeles Dodgers and
-              WelSpot Inc. I build reliable, scalable products across React, Node.js, Java, Python, TypeScript, and Cloud Infrastructre. Explore
-              my work—where performance meets clean UX.
+           I’m a Software Engineer (MS, Pace University) with 2 years of industry experience at Phinite.ai, Los Angeles Dodgers, and WelSpot. I build reliable, scalable web applications end-to-end across React, Node.js, Java, Python, TypeScript, and cloud infrastructure—where performance meets clean, accessible UX. 
+            I also have a passion for Design, Machine Learning, and AI and am committed to stay aligned with the latest AI tooling along with always improving my coding skills through projects.
             </motion.p>
 
-            <motion.h3 variants={fadeUp(0.1)} className="mt-5 font-bold text-lg">
+            <motion.h3 variants={fadeUp(0.1)} className="mt-5 font-bold">
               See my work & connect with me
             </motion.h3>
 
