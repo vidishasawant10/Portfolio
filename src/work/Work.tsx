@@ -18,10 +18,11 @@ const experiences: Experience[] = [
     duration: "April 2025 - Present",
     role: "Software Engineer",
     location: "California, US",
-    description: `Developed scalable systems and tools, including a Rust-based distributed chat platform, an optimized AI pipeline with Python, and a real-time log monitoring app using React, ELK, and WebSockets.
-Implemented a CI/CD pipeline for web applications, optimizing deployment speed and reliability.
-Worked on real-world projects involving software development and system design.
-Collaborated with cross-functional teams, conducted user research, and converted insights into high-performance applications.`,
+    description: `Developed a distributed chat system with Rust and AWS, resulting in p95 tail latency at 12k RPS during peak traffic.
+    Integrated an LLM agent for intent, summaries, and draft replies, 24/7 coverage, and clearing overnight backlogs.
+    Optimized AI pipeline using Python, Redis caching to reduce AWS S3 storage calls to lower latency and cost.
+    Built a log monitor app using React, JavaScript, and ELK, sending live signals during incidents, reducing triage time.
+    Wrote a Bash script for health checks, accelerating the root cause analysis during the log monitoring incidents.`,
     skills: "Python, AI, ML, AWS, Rust, React, Elasticsearch, Kibana, Logstash(ELK)"
   },
   {
@@ -29,8 +30,13 @@ Collaborated with cross-functional teams, conducted user research, and converted
     duration: "March 2024 - December 2024",
     role: "Software Engineer",
     location: "California, US",
-    description: `Developed and deployed GCP-based web applications using React, Node.js, Java, and Spring Boot, including automated onboarding systems, community engagement platforms, and secure ID verification services.
-Built microservices, implemented CI/CD pipelines with Docker, optimized backend performance with caching, and integrated Salesforce workflows, flows, and Apex code to streamline operations and improve user experience.`,
+    description: `Increased neighborhood community engagement during events by 72% and saved 15 hours/week by developing React, Node.js, and TypeScript app on GCP with Salesforce and OAuth2, ID.me address verification. 
+    Improved Dodger’s runtime performance and speed by creating reusable React components and optimizing rendering.
+    Developed an automated onboarding system with Java, Spring Boot, and GCP, reducing the HR department's manual workload.
+    Automated CRUD operations for new hire employee data into BigQuery using Google Cloud Functions, reducing decision time.
+    Built a microservice Java scheduler using thread pools and CRON to trigger badge verification via Python Google Cloud Functions.
+    Integrated ID.me API with OAuth2 authentication and SSL to automate address verification and secure sensitive neighbor data.
+    Deployed containerized apps via CI/CD pipeline, Docker, Kubernetes, Git, and GCP, improving efficiency and app releases faster.`,
     skills: "React, Node.js, Python, CI/CD, Google Cloud Platform (GCP), Docker, Salesforce, Java, Spring Boot"
   },
   {
@@ -38,9 +44,14 @@ Built microservices, implemented CI/CD pipelines with Docker, optimized backend 
     duration: "July 2023 - March 2024",
     role: "Software Engineer",
     location: "California, US",
-    description: `Built and maintained a healthcare loan portal across frontend and backend to enhance functionality and UX.
-Designed intuitive interfaces, optimized database operations, and implemented automation to improve system stability.
-Built CI/CD pipelines, testing frameworks, and cloud-based deployments to ensure smooth releases.`,
+    description: `Developed the loan portal using React and Node.js, increasing loan applications and seamless user experience.
+    Created reusable React components using TypeScript for the loan portal core features for a consistent UI theme.
+    Integrated testing framework using Jest for unit tests and Cypress for end-to-end testing, reducing release defects.
+    Designed normalized SQL loan schemas and FK constraints in AWS RDS, improving integrity and traceability.
+    Built ACID transactions and idempotent endpoints, eliminating duplicate loan submission under concurrency
+    Automated CI/CD with Git and Jenkins for Docker-based deployments using Nginx proxies across environments.
+    Designed asynchronous job queues with Node.js and AWS SQS for reliable backend loan verification. 
+    Optimized RESTful APIs with data structures and indexing strategies to support high-throughput user flows.`,
     skills: "React, TypeScript, AWS RDS, PostgreSQL, Docker"
   }
 ];

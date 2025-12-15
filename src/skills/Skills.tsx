@@ -103,7 +103,7 @@ const containerVariants = {
 
 const SkillItem: React.FC<Skill> = ({ name, icon }) => (
   <motion.li
-    className="flex flex-col items-center justify-center rounded-xl bg-white shadow-sm hover:shadow-md px-3 py-3 transition-all text-center border border-neutral-200"
+    className="flex flex-col items-center justify-center rounded-xl bg-gray-50 shadow-sm hover:shadow-md px-3 py-3 transition-all text-center border border-neutral-200"
     initial={{ opacity: 0, y: 6 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
@@ -126,10 +126,10 @@ const CategoryCard: React.FC<{ title: string; skills: Skill[] }> = ({
   skills,
 }) => (
   <motion.section
-    className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 shadow-sm"
+    className="rounded-2xl border border-black/10 bg-white p-4 md:p-5 shadow-sm"
     variants={containerVariants}
   >
-    <h3 className="text-center text-lg md:text-xl font-semibold mb-3 text-neutral-900">
+    <h3 className="text-center text-lg md:text-xl font-semibold mb-4 text-neutral-900">
       {title}
     </h3>
     <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
@@ -172,7 +172,7 @@ const Skills: React.FC = () => {
           Experience across frontend, backend, cloud, data, and DevOps. See more
           on{" "}
           <a
-            href="https://www.linkedin.com/in/vidisha-vijay-sawant-23a63613a"
+            href="https://www.linkedin.com/in/vidisha-vijay-sawant"
             target="_blank"
             rel="noopener noreferrer"
             className="text-red-500 font-semibold hover:underline"
